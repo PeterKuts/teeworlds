@@ -6,6 +6,7 @@
 
 // TODO: remove this
 #include "././game/variables.h"
+#include "././game/advanced_variables.h"
 
 
 MACRO_CONFIG_STR(PlayerName, player_name, 16, "nameless tee", CFGFLAG_SAVE|CFGFLAG_CLIENT, "Name of the player")

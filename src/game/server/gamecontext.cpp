@@ -11,6 +11,7 @@
 #include <game/gamecore.h>
 #include "gamemodes/dm.h"
 #include "gamemodes/tdm.h"
+#include "gamemodes/actf.h"
 #include "gamemodes/ctf.h"
 #include "gamemodes/mod.h"
 
@@ -1491,6 +1492,8 @@ void CGameContext::OnInit(/*class IKernel *pKernel*/)
 	// select gametype
 	if(str_comp(g_Config.m_SvGametype, "mod") == 0)
 		m_pController = new CGameControllerMOD(this);
+    else if(str_comp(g_Config.m_SvGametype, "a_ctf") == 0)
+        m_pController = new CGameControllerACTF(this);
 	else if(str_comp(g_Config.m_SvGametype, "ctf") == 0)
 		m_pController = new CGameControllerCTF(this);
 	else if(str_comp(g_Config.m_SvGametype, "tdm") == 0)
