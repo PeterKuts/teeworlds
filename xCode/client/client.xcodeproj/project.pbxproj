@@ -963,6 +963,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CE4945DD1BD563360031EFEC /* Build configuration list for PBXNativeTarget "client" */;
 			buildPhases = (
+				CE20C6421BD6680100063C08 /* ShellScript */,
 				CE4945D21BD563360031EFEC /* Sources */,
 				CE4945D31BD563360031EFEC /* Frameworks */,
 				CE4945D41BD563360031EFEC /* CopyFiles */,
@@ -1006,6 +1007,22 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CE20C6421BD6680100063C08 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "currDir=`pwd`\ncd $PROJECT_DIR/../../\npython datasrc/compile.py network_source > src/game/generated/protocol.cpp\npython datasrc/compile.py network_header > src/game/generated/protocol.h\npython datasrc/compile.py client_content_source > src/game/generated/client_data.cpp\npython datasrc/compile.py client_content_header > src/game/generated/client_data.h\npython scripts/cmd5.py src/engine/shared/protocol.h src/game/generated/protocol.h src/game/tuning.h src/game/gamecore.cpp src/game/generated/protocol.h > src/game/generated/nethash.cpp\ncd $currDir";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CE4945D21BD563360031EFEC /* Sources */ = {
