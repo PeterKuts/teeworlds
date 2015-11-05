@@ -7,60 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE49471E1BD5634B0031EFEC /* system.c in Sources */ = {isa = PBXBuildFile; fileRef = CE4945E41BD5634B0031EFEC /* system.c */; settings = {ASSET_TAGS = (); }; };
-		CE49473D1BD5634B0031EFEC /* register.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946451BD5634B0031EFEC /* register.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE49473E1BD5634B0031EFEC /* server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946471BD5634B0031EFEC /* server.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE49473F1BD5634B0031EFEC /* compression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49464C1BD5634B0031EFEC /* compression.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947401BD5634B0031EFEC /* config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49464E1BD5634B0031EFEC /* config.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947411BD5634B0031EFEC /* console.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946511BD5634B0031EFEC /* console.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947421BD5634B0031EFEC /* datafile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946531BD5634B0031EFEC /* datafile.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947431BD5634B0031EFEC /* demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946551BD5634B0031EFEC /* demo.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947441BD5634B0031EFEC /* econ.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946571BD5634B0031EFEC /* econ.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947451BD5634B0031EFEC /* engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946591BD5634B0031EFEC /* engine.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947461BD5634B0031EFEC /* filecollection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49465A1BD5634B0031EFEC /* filecollection.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947471BD5634B0031EFEC /* huffman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49465C1BD5634B0031EFEC /* huffman.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947481BD5634B0031EFEC /* jobs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49465E1BD5634B0031EFEC /* jobs.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947491BD5634B0031EFEC /* kernel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946601BD5634B0031EFEC /* kernel.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE49474A1BD5634B0031EFEC /* linereader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946611BD5634B0031EFEC /* linereader.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE49474B1BD5634B0031EFEC /* map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946631BD5634B0031EFEC /* map.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE49474C1BD5634B0031EFEC /* mapchecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946641BD5634B0031EFEC /* mapchecker.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE49474D1BD5634B0031EFEC /* masterserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946661BD5634B0031EFEC /* masterserver.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE49474E1BD5634B0031EFEC /* memheap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946671BD5634B0031EFEC /* memheap.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE49474F1BD5634B0031EFEC /* netban.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49466A1BD5634B0031EFEC /* netban.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947501BD5634B0031EFEC /* network.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49466C1BD5634B0031EFEC /* network.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947511BD5634B0031EFEC /* network_client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49466E1BD5634B0031EFEC /* network_client.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947521BD5634B0031EFEC /* network_conn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49466F1BD5634B0031EFEC /* network_conn.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947531BD5634B0031EFEC /* network_console.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946701BD5634B0031EFEC /* network_console.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947541BD5634B0031EFEC /* network_console_conn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946711BD5634B0031EFEC /* network_console_conn.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947551BD5634B0031EFEC /* network_server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946721BD5634B0031EFEC /* network_server.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947561BD5634B0031EFEC /* packer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946731BD5634B0031EFEC /* packer.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947571BD5634B0031EFEC /* ringbuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946761BD5634B0031EFEC /* ringbuffer.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947581BD5634B0031EFEC /* snapshot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946781BD5634B0031EFEC /* snapshot.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947591BD5634B0031EFEC /* storage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49467A1BD5634B0031EFEC /* storage.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE49477F1BD5634B0031EFEC /* collision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946C71BD5634B0031EFEC /* collision.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947871BD5634B0031EFEC /* gamecore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946D31BD5634B0031EFEC /* gamecore.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947891BD5634B0031EFEC /* nethash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946D91BD5634B0031EFEC /* nethash.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE49478A1BD5634B0031EFEC /* protocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946DA1BD5634B0031EFEC /* protocol.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE49478B1BD5634B0031EFEC /* server_data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946DC1BD5634B0031EFEC /* server_data.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE49478C1BD5634B0031EFEC /* layers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946DE1BD5634B0031EFEC /* layers.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE49478D1BD5634B0031EFEC /* localization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946E01BD5634B0031EFEC /* localization.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE49478E1BD5634B0031EFEC /* character.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946E51BD5634B0031EFEC /* character.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE49478F1BD5634B0031EFEC /* flag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946E71BD5634B0031EFEC /* flag.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947901BD5634B0031EFEC /* laser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946E91BD5634B0031EFEC /* laser.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947911BD5634B0031EFEC /* pickup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946EB1BD5634B0031EFEC /* pickup.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947921BD5634B0031EFEC /* projectile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946ED1BD5634B0031EFEC /* projectile.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947931BD5634B0031EFEC /* entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946EF1BD5634B0031EFEC /* entity.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947941BD5634B0031EFEC /* eventhandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946F11BD5634B0031EFEC /* eventhandler.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947951BD5634B0031EFEC /* gamecontext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946F31BD5634B0031EFEC /* gamecontext.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947961BD5634B0031EFEC /* gamecontroller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946F51BD5634B0031EFEC /* gamecontroller.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947971BD5634B0031EFEC /* ctf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946F81BD5634B0031EFEC /* ctf.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947981BD5634B0031EFEC /* dm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946FA1BD5634B0031EFEC /* dm.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE4947991BD5634B0031EFEC /* mod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946FC1BD5634B0031EFEC /* mod.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE49479A1BD5634B0031EFEC /* tdm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946FE1BD5634B0031EFEC /* tdm.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE49479B1BD5634B0031EFEC /* gameworld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4947001BD5634B0031EFEC /* gameworld.cpp */; settings = {ASSET_TAGS = (); }; };
-		CE49479C1BD5634B0031EFEC /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4947021BD5634B0031EFEC /* player.cpp */; settings = {ASSET_TAGS = (); }; };
+		CE22ED7F1BEC11A8009F573A /* ptctf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE22ED7D1BEC11A8009F573A /* ptctf.cpp */; };
+		CE49471E1BD5634B0031EFEC /* system.c in Sources */ = {isa = PBXBuildFile; fileRef = CE4945E41BD5634B0031EFEC /* system.c */; };
+		CE49473D1BD5634B0031EFEC /* register.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946451BD5634B0031EFEC /* register.cpp */; };
+		CE49473E1BD5634B0031EFEC /* server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946471BD5634B0031EFEC /* server.cpp */; };
+		CE49473F1BD5634B0031EFEC /* compression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49464C1BD5634B0031EFEC /* compression.cpp */; };
+		CE4947401BD5634B0031EFEC /* config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49464E1BD5634B0031EFEC /* config.cpp */; };
+		CE4947411BD5634B0031EFEC /* console.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946511BD5634B0031EFEC /* console.cpp */; };
+		CE4947421BD5634B0031EFEC /* datafile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946531BD5634B0031EFEC /* datafile.cpp */; };
+		CE4947431BD5634B0031EFEC /* demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946551BD5634B0031EFEC /* demo.cpp */; };
+		CE4947441BD5634B0031EFEC /* econ.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946571BD5634B0031EFEC /* econ.cpp */; };
+		CE4947451BD5634B0031EFEC /* engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946591BD5634B0031EFEC /* engine.cpp */; };
+		CE4947461BD5634B0031EFEC /* filecollection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49465A1BD5634B0031EFEC /* filecollection.cpp */; };
+		CE4947471BD5634B0031EFEC /* huffman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49465C1BD5634B0031EFEC /* huffman.cpp */; };
+		CE4947481BD5634B0031EFEC /* jobs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49465E1BD5634B0031EFEC /* jobs.cpp */; };
+		CE4947491BD5634B0031EFEC /* kernel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946601BD5634B0031EFEC /* kernel.cpp */; };
+		CE49474A1BD5634B0031EFEC /* linereader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946611BD5634B0031EFEC /* linereader.cpp */; };
+		CE49474B1BD5634B0031EFEC /* map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946631BD5634B0031EFEC /* map.cpp */; };
+		CE49474C1BD5634B0031EFEC /* mapchecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946641BD5634B0031EFEC /* mapchecker.cpp */; };
+		CE49474D1BD5634B0031EFEC /* masterserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946661BD5634B0031EFEC /* masterserver.cpp */; };
+		CE49474E1BD5634B0031EFEC /* memheap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946671BD5634B0031EFEC /* memheap.cpp */; };
+		CE49474F1BD5634B0031EFEC /* netban.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49466A1BD5634B0031EFEC /* netban.cpp */; };
+		CE4947501BD5634B0031EFEC /* network.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49466C1BD5634B0031EFEC /* network.cpp */; };
+		CE4947511BD5634B0031EFEC /* network_client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49466E1BD5634B0031EFEC /* network_client.cpp */; };
+		CE4947521BD5634B0031EFEC /* network_conn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49466F1BD5634B0031EFEC /* network_conn.cpp */; };
+		CE4947531BD5634B0031EFEC /* network_console.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946701BD5634B0031EFEC /* network_console.cpp */; };
+		CE4947541BD5634B0031EFEC /* network_console_conn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946711BD5634B0031EFEC /* network_console_conn.cpp */; };
+		CE4947551BD5634B0031EFEC /* network_server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946721BD5634B0031EFEC /* network_server.cpp */; };
+		CE4947561BD5634B0031EFEC /* packer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946731BD5634B0031EFEC /* packer.cpp */; };
+		CE4947571BD5634B0031EFEC /* ringbuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946761BD5634B0031EFEC /* ringbuffer.cpp */; };
+		CE4947581BD5634B0031EFEC /* snapshot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946781BD5634B0031EFEC /* snapshot.cpp */; };
+		CE4947591BD5634B0031EFEC /* storage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49467A1BD5634B0031EFEC /* storage.cpp */; };
+		CE49477F1BD5634B0031EFEC /* collision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946C71BD5634B0031EFEC /* collision.cpp */; };
+		CE4947871BD5634B0031EFEC /* gamecore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946D31BD5634B0031EFEC /* gamecore.cpp */; };
+		CE4947891BD5634B0031EFEC /* nethash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946D91BD5634B0031EFEC /* nethash.cpp */; };
+		CE49478A1BD5634B0031EFEC /* protocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946DA1BD5634B0031EFEC /* protocol.cpp */; };
+		CE49478B1BD5634B0031EFEC /* server_data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946DC1BD5634B0031EFEC /* server_data.cpp */; };
+		CE49478C1BD5634B0031EFEC /* layers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946DE1BD5634B0031EFEC /* layers.cpp */; };
+		CE49478D1BD5634B0031EFEC /* localization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946E01BD5634B0031EFEC /* localization.cpp */; };
+		CE49478E1BD5634B0031EFEC /* character.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946E51BD5634B0031EFEC /* character.cpp */; };
+		CE49478F1BD5634B0031EFEC /* flag.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946E71BD5634B0031EFEC /* flag.cpp */; };
+		CE4947901BD5634B0031EFEC /* laser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946E91BD5634B0031EFEC /* laser.cpp */; };
+		CE4947911BD5634B0031EFEC /* pickup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946EB1BD5634B0031EFEC /* pickup.cpp */; };
+		CE4947921BD5634B0031EFEC /* projectile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946ED1BD5634B0031EFEC /* projectile.cpp */; };
+		CE4947931BD5634B0031EFEC /* entity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946EF1BD5634B0031EFEC /* entity.cpp */; };
+		CE4947941BD5634B0031EFEC /* eventhandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946F11BD5634B0031EFEC /* eventhandler.cpp */; };
+		CE4947951BD5634B0031EFEC /* gamecontext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946F31BD5634B0031EFEC /* gamecontext.cpp */; };
+		CE4947961BD5634B0031EFEC /* gamecontroller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946F51BD5634B0031EFEC /* gamecontroller.cpp */; };
+		CE4947971BD5634B0031EFEC /* ctf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946F81BD5634B0031EFEC /* ctf.cpp */; };
+		CE4947981BD5634B0031EFEC /* dm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946FA1BD5634B0031EFEC /* dm.cpp */; };
+		CE4947991BD5634B0031EFEC /* mod.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946FC1BD5634B0031EFEC /* mod.cpp */; };
+		CE49479A1BD5634B0031EFEC /* tdm.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946FE1BD5634B0031EFEC /* tdm.cpp */; };
+		CE49479B1BD5634B0031EFEC /* gameworld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4947001BD5634B0031EFEC /* gameworld.cpp */; };
+		CE49479C1BD5634B0031EFEC /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4947021BD5634B0031EFEC /* player.cpp */; };
 		CE4947AF1BD5697B0031EFEC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4947AE1BD5697B0031EFEC /* libz.tbd */; };
-		CE83C6CB1BD58BB800248396 /* actf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE83C6C91BD58BB800248396 /* actf.cpp */; settings = {ASSET_TAGS = (); }; };
+		CE83C6CB1BD58BB800248396 /* actf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE83C6C91BD58BB800248396 /* actf.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -76,6 +77,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE22ED7D1BEC11A8009F573A /* ptctf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ptctf.cpp; sourceTree = "<group>"; };
+		CE22ED7E1BEC11A8009F573A /* ptctf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ptctf.h; sourceTree = "<group>"; };
 		CE4945C31BD563060031EFEC /* server */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = server; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4945E21BD5634B0031EFEC /* detect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detect.h; sourceTree = "<group>"; };
 		CE4945E31BD5634B0031EFEC /* math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = math.h; sourceTree = "<group>"; };
@@ -453,6 +456,8 @@
 		CE4946F71BD5634B0031EFEC /* gamemodes */ = {
 			isa = PBXGroup;
 			children = (
+				CE22ED7D1BEC11A8009F573A /* ptctf.cpp */,
+				CE22ED7E1BEC11A8009F573A /* ptctf.h */,
 				CE83C6C91BD58BB800248396 /* actf.cpp */,
 				CE83C6CA1BD58BB800248396 /* actf.h */,
 				CE4946F81BD5634B0031EFEC /* ctf.cpp */,
@@ -573,6 +578,7 @@
 				CE4947551BD5634B0031EFEC /* network_server.cpp in Sources */,
 				CE49471E1BD5634B0031EFEC /* system.c in Sources */,
 				CE4947471BD5634B0031EFEC /* huffman.cpp in Sources */,
+				CE22ED7F1BEC11A8009F573A /* ptctf.cpp in Sources */,
 				CE4947461BD5634B0031EFEC /* filecollection.cpp in Sources */,
 				CE49479B1BD5634B0031EFEC /* gameworld.cpp in Sources */,
 				CE49478C1BD5634B0031EFEC /* layers.cpp in Sources */,

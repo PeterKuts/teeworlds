@@ -144,6 +144,8 @@ public:
 	int ClampTeam(int Team);
 
 	virtual void PostReset();
+    
+    virtual void OnMessage(int MsgID, class CUnpacker *pUnpacker, int ClientID);
 };
 
 #endif

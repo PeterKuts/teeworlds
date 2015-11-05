@@ -923,6 +923,10 @@ void CGameContext::OnMessage(int MsgID, CUnpacker *pUnpacker, int ClientID)
 			pPlayer->m_LastKill = Server()->Tick();
 			pPlayer->KillCharacter(WEAPON_SELF);
 		}
+        else
+        {
+            m_pController->OnMessage(MsgID, pUnpacker, ClientID);
+        }
 	}
 	else
 	{
