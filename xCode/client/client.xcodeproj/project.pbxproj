@@ -108,6 +108,109 @@
 		CE494C031BD583120031EFEC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE494C021BD583120031EFEC /* Cocoa.framework */; };
 		CE494C051BD584550031EFEC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE494C041BD584550031EFEC /* libz.tbd */; };
 		CE85D7121BEE4CC7000CC545 /* client.m in Sources */ = {isa = PBXBuildFile; fileRef = CE85D7101BEE4CC7000CC545 /* client.m */; };
+		CE85D79E1BEE5020000CC545 /* system.c in Sources */ = {isa = PBXBuildFile; fileRef = CE49497F1BD576C90031EFEC /* system.c */; };
+		CE85D79F1BEE5020000CC545 /* backend_sdl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49498D1BD576C90031EFEC /* backend_sdl.cpp */; };
+		CE85D7A01BEE5020000CC545 /* client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49498F1BD576C90031EFEC /* client.cpp */; };
+		CE85D7A11BEE5020000CC545 /* friends.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4949911BD576C90031EFEC /* friends.cpp */; };
+		CE85D7A21BEE5020000CC545 /* graphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4949931BD576C90031EFEC /* graphics.cpp */; };
+		CE85D7A31BEE5020000CC545 /* graphics_threaded.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4949951BD576C90031EFEC /* graphics_threaded.cpp */; };
+		CE85D7A41BEE5020000CC545 /* input.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4949971BD576C90031EFEC /* input.cpp */; };
+		CE85D7A51BEE5020000CC545 /* serverbrowser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49499A1BD576C90031EFEC /* serverbrowser.cpp */; };
+		CE85D7A61BEE5020000CC545 /* sound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49499C1BD576C90031EFEC /* sound.cpp */; };
+		CE85D7A71BEE5020000CC545 /* text.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49499E1BD576C90031EFEC /* text.cpp */; };
+		CE85D7A81BEE5020000CC545 /* pnglite.c in Sources */ = {isa = PBXBuildFile; fileRef = CE4949AD1BD576C90031EFEC /* pnglite.c */; };
+		CE85D7A91BEE5020000CC545 /* bits.c in Sources */ = {isa = PBXBuildFile; fileRef = CE4949B31BD576C90031EFEC /* bits.c */; };
+		CE85D7AA1BEE5020000CC545 /* float.c in Sources */ = {isa = PBXBuildFile; fileRef = CE4949B51BD576C90031EFEC /* float.c */; };
+		CE85D7AB1BEE5020000CC545 /* metadata.c in Sources */ = {isa = PBXBuildFile; fileRef = CE4949B71BD576C90031EFEC /* metadata.c */; };
+		CE85D7AC1BEE5020000CC545 /* unpack.c in Sources */ = {isa = PBXBuildFile; fileRef = CE4949B91BD576C90031EFEC /* unpack.c */; };
+		CE85D7AD1BEE5020000CC545 /* words.c in Sources */ = {isa = PBXBuildFile; fileRef = CE4949BC1BD576C90031EFEC /* words.c */; };
+		CE85D7AE1BEE5020000CC545 /* wputils.c in Sources */ = {isa = PBXBuildFile; fileRef = CE4949BD1BD576C90031EFEC /* wputils.c */; };
+		CE85D7AF1BEE5020000CC545 /* compression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4949E71BD576C90031EFEC /* compression.cpp */; };
+		CE85D7B01BEE5020000CC545 /* config.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4949E91BD576C90031EFEC /* config.cpp */; };
+		CE85D7B11BEE5020000CC545 /* console.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4949EC1BD576C90031EFEC /* console.cpp */; };
+		CE85D7B21BEE5020000CC545 /* datafile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4949EE1BD576C90031EFEC /* datafile.cpp */; };
+		CE85D7B31BEE5020000CC545 /* demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4949F01BD576C90031EFEC /* demo.cpp */; };
+		CE85D7B41BEE5020000CC545 /* econ.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4949F21BD576C90031EFEC /* econ.cpp */; };
+		CE85D7B51BEE5020000CC545 /* engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4949F41BD576C90031EFEC /* engine.cpp */; };
+		CE85D7B61BEE5020000CC545 /* filecollection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4949F51BD576C90031EFEC /* filecollection.cpp */; };
+		CE85D7B71BEE5020000CC545 /* huffman.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4949F71BD576C90031EFEC /* huffman.cpp */; };
+		CE85D7B81BEE5020000CC545 /* jobs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4949F91BD576C90031EFEC /* jobs.cpp */; };
+		CE85D7B91BEE5020000CC545 /* kernel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4949FB1BD576C90031EFEC /* kernel.cpp */; };
+		CE85D7BA1BEE5020000CC545 /* linereader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4949FC1BD576C90031EFEC /* linereader.cpp */; };
+		CE85D7BB1BEE5020000CC545 /* map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4949FE1BD576C90031EFEC /* map.cpp */; };
+		CE85D7BC1BEE5020000CC545 /* mapchecker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4949FF1BD576C90031EFEC /* mapchecker.cpp */; };
+		CE85D7BD1BEE5020000CC545 /* masterserver.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A011BD576C90031EFEC /* masterserver.cpp */; };
+		CE85D7BE1BEE5020000CC545 /* memheap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A021BD576C90031EFEC /* memheap.cpp */; };
+		CE85D7BF1BEE5020000CC545 /* netban.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A051BD576C90031EFEC /* netban.cpp */; };
+		CE85D7C01BEE5020000CC545 /* network.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A071BD576C90031EFEC /* network.cpp */; };
+		CE85D7C11BEE5020000CC545 /* network_client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A091BD576C90031EFEC /* network_client.cpp */; };
+		CE85D7C21BEE5020000CC545 /* network_conn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A0A1BD576C90031EFEC /* network_conn.cpp */; };
+		CE85D7C31BEE5020000CC545 /* network_console.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A0B1BD576C90031EFEC /* network_console.cpp */; };
+		CE85D7C41BEE5020000CC545 /* network_console_conn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A0C1BD576C90031EFEC /* network_console_conn.cpp */; };
+		CE85D7C51BEE5020000CC545 /* network_server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A0D1BD576C90031EFEC /* network_server.cpp */; };
+		CE85D7C61BEE5020000CC545 /* packer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A0E1BD576C90031EFEC /* packer.cpp */; };
+		CE85D7C71BEE5020000CC545 /* ringbuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A111BD576C90031EFEC /* ringbuffer.cpp */; };
+		CE85D7C81BEE5020000CC545 /* snapshot.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A131BD576C90031EFEC /* snapshot.cpp */; };
+		CE85D7C91BEE5020000CC545 /* storage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A151BD576C90031EFEC /* storage.cpp */; };
+		CE85D7CA1BEE5020000CC545 /* animstate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A1B1BD576C90031EFEC /* animstate.cpp */; };
+		CE85D7CB1BEE5020000CC545 /* binds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A1F1BD576C90031EFEC /* binds.cpp */; };
+		CE85D7CC1BEE5020000CC545 /* broadcast.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A211BD576C90031EFEC /* broadcast.cpp */; };
+		CE85D7CD1BEE5020000CC545 /* camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A231BD576C90031EFEC /* camera.cpp */; };
+		CE85D7CE1BEE5020000CC545 /* chat.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A251BD576C90031EFEC /* chat.cpp */; };
+		CE85D7CF1BEE5020000CC545 /* console.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A271BD576C90031EFEC /* console.cpp */; };
+		CE85D7D01BEE5020000CC545 /* controls.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A291BD576C90031EFEC /* controls.cpp */; };
+		CE85D7D11BEE5020000CC545 /* countryflags.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A2B1BD576C90031EFEC /* countryflags.cpp */; };
+		CE85D7D21BEE5020000CC545 /* damageind.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A2D1BD576C90031EFEC /* damageind.cpp */; };
+		CE85D7D31BEE5020000CC545 /* debughud.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A2F1BD576C90031EFEC /* debughud.cpp */; };
+		CE85D7D41BEE5020000CC545 /* effects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A311BD576C90031EFEC /* effects.cpp */; };
+		CE85D7D51BEE5020000CC545 /* emoticon.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A331BD576C90031EFEC /* emoticon.cpp */; };
+		CE85D7D61BEE5020000CC545 /* flow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A351BD576C90031EFEC /* flow.cpp */; };
+		CE85D7D71BEE5020000CC545 /* hud.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A371BD576C90031EFEC /* hud.cpp */; };
+		CE85D7D81BEE5020000CC545 /* items.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A391BD576C90031EFEC /* items.cpp */; };
+		CE85D7D91BEE5020000CC545 /* killmessages.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A3B1BD576C90031EFEC /* killmessages.cpp */; };
+		CE85D7DA1BEE5020000CC545 /* mapimages.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A3D1BD576C90031EFEC /* mapimages.cpp */; };
+		CE85D7DB1BEE5020000CC545 /* maplayers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A3F1BD576C90031EFEC /* maplayers.cpp */; };
+		CE85D7DC1BEE5020000CC545 /* menus.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A411BD576C90031EFEC /* menus.cpp */; };
+		CE85D7DD1BEE5020000CC545 /* menus_browser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A431BD576C90031EFEC /* menus_browser.cpp */; };
+		CE85D7DE1BEE5020000CC545 /* menus_demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A441BD576C90031EFEC /* menus_demo.cpp */; };
+		CE85D7DF1BEE5020000CC545 /* menus_ingame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A451BD576C90031EFEC /* menus_ingame.cpp */; };
+		CE85D7E01BEE5020000CC545 /* menus_settings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A461BD576C90031EFEC /* menus_settings.cpp */; };
+		CE85D7E11BEE5020000CC545 /* motd.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A471BD576C90031EFEC /* motd.cpp */; };
+		CE85D7E21BEE5020000CC545 /* nameplates.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A491BD576C90031EFEC /* nameplates.cpp */; };
+		CE85D7E31BEE5020000CC545 /* particles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A4B1BD576C90031EFEC /* particles.cpp */; };
+		CE85D7E41BEE5020000CC545 /* players.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A4D1BD576C90031EFEC /* players.cpp */; };
+		CE85D7E51BEE5020000CC545 /* scoreboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A4F1BD576C90031EFEC /* scoreboard.cpp */; };
+		CE85D7E61BEE5020000CC545 /* skins.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A511BD576C90031EFEC /* skins.cpp */; };
+		CE85D7E71BEE5020000CC545 /* sounds.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A531BD576C90031EFEC /* sounds.cpp */; };
+		CE85D7E81BEE5020000CC545 /* spectator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A551BD576C90031EFEC /* spectator.cpp */; };
+		CE85D7E91BEE5020000CC545 /* voting.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A571BD576C90031EFEC /* voting.cpp */; };
+		CE85D7EA1BEE5020000CC545 /* gameclient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A591BD576C90031EFEC /* gameclient.cpp */; };
+		CE85D7EB1BEE5020000CC545 /* lineinput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A5B1BD576C90031EFEC /* lineinput.cpp */; };
+		CE85D7EC1BEE5020000CC545 /* render.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A5D1BD576C90031EFEC /* render.cpp */; };
+		CE85D7ED1BEE5020000CC545 /* render_map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A5F1BD576C90031EFEC /* render_map.cpp */; };
+		CE85D7EE1BEE5020000CC545 /* ui.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A601BD576C90031EFEC /* ui.cpp */; };
+		CE85D7EF1BEE5020000CC545 /* collision.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A621BD576C90031EFEC /* collision.cpp */; };
+		CE85D7F01BEE5020000CC545 /* auto_map.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A651BD576C90031EFEC /* auto_map.cpp */; };
+		CE85D7F11BEE5020000CC545 /* editor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A671BD576C90031EFEC /* editor.cpp */; };
+		CE85D7F21BEE5020000CC545 /* io.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A691BD576C90031EFEC /* io.cpp */; };
+		CE85D7F31BEE5020000CC545 /* layer_game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A6A1BD576C90031EFEC /* layer_game.cpp */; };
+		CE85D7F41BEE5020000CC545 /* layer_quads.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A6B1BD576C90031EFEC /* layer_quads.cpp */; };
+		CE85D7F51BEE5020000CC545 /* layer_tiles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A6C1BD576C90031EFEC /* layer_tiles.cpp */; };
+		CE85D7F61BEE5020000CC545 /* popups.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A6D1BD576C90031EFEC /* popups.cpp */; };
+		CE85D7F71BEE5020000CC545 /* gamecore.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A6E1BD576C90031EFEC /* gamecore.cpp */; };
+		CE85D7F81BEE5020000CC545 /* client_data.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A711BD576C90031EFEC /* client_data.cpp */; };
+		CE85D7F91BEE5020000CC545 /* nethash.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A741BD576C90031EFEC /* nethash.cpp */; };
+		CE85D7FA1BEE5020000CC545 /* protocol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A751BD576C90031EFEC /* protocol.cpp */; };
+		CE85D7FB1BEE5020000CC545 /* layers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A791BD576C90031EFEC /* layers.cpp */; };
+		CE85D7FC1BEE5020000CC545 /* localization.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE494A7B1BD576C90031EFEC /* localization.cpp */; };
+		CE85D7FD1BEE507A000CC545 /* client.m in Sources */ = {isa = PBXBuildFile; fileRef = CE85D7101BEE4CC7000CC545 /* client.m */; };
+		CE85D7FF1BEE50C4000CC545 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE494C041BD584550031EFEC /* libz.tbd */; };
+		CE85D8001BEE50C6000CC545 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE494C021BD583120031EFEC /* Cocoa.framework */; };
+		CE85D8011BEE50C7000CC545 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE494C001BD582EA0031EFEC /* OpenGL.framework */; };
+		CE85D8021BEE50C9000CC545 /* libfreetype.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CE494BFE1BD582290031EFEC /* libfreetype.dylib */; };
+		CE85D8031BEE50CB000CC545 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE494B491BD57DBF0031EFEC /* SDL.framework */; };
+		CE85D9F61BEE521D000CC545 /* data in Resources */ = {isa = PBXBuildFile; fileRef = CE85D9F51BEE521D000CC545 /* data */; };
+		CE85D9FA1BEE5394000CC545 /* Teeworlds.icns in Resources */ = {isa = PBXBuildFile; fileRef = CE85D9F91BEE5394000CC545 /* Teeworlds.icns */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -437,6 +540,11 @@
 		CE494C041BD584550031EFEC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		CE85D70F1BEE4CC7000CC545 /* client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = client.h; sourceTree = "<group>"; };
 		CE85D7101BEE4CC7000CC545 /* client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = client.m; sourceTree = "<group>"; };
+		CE85D71E1BEE4EA6000CC545 /* clientApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = clientApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE85D72B1BEE4EA6000CC545 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE85D79D1BEE4F45000CC545 /* client copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "client copy-Info.plist"; path = "/Users/user/Repositories/teeworlds/xCode/client/client copy-Info.plist"; sourceTree = "<absolute>"; };
+		CE85D9F51BEE521D000CC545 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../../data; sourceTree = "<group>"; };
+		CE85D9F91BEE5394000CC545 /* Teeworlds.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Teeworlds.icns; path = ../../../other/icons/Teeworlds.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -452,16 +560,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CE85D71B1BEE4EA6000CC545 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE85D7FF1BEE50C4000CC545 /* libz.tbd in Frameworks */,
+				CE85D8001BEE50C6000CC545 /* Cocoa.framework in Frameworks */,
+				CE85D8011BEE50C7000CC545 /* OpenGL.framework in Frameworks */,
+				CE85D8021BEE50C9000CC545 /* libfreetype.dylib in Frameworks */,
+				CE85D8031BEE50CB000CC545 /* SDL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		CE4945CD1BD563360031EFEC = {
 			isa = PBXGroup;
 			children = (
+				CE85D9F51BEE521D000CC545 /* data */,
 				CE494B4F1BD581660031EFEC /* other */,
 				CE49497B1BD576C90031EFEC /* src */,
+				CE85D71F1BEE4EA6000CC545 /* clientApp */,
 				CE494B461BD578A70031EFEC /* Frameworks */,
 				CE4945D71BD563360031EFEC /* Products */,
+				CE85D79D1BEE4F45000CC545 /* client copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -469,6 +592,7 @@
 			isa = PBXGroup;
 			children = (
 				CE4945D61BD563360031EFEC /* client */,
+				CE85D71E1BEE4EA6000CC545 /* clientApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -969,6 +1093,15 @@
 			path = osxlaunch;
 			sourceTree = "<group>";
 		};
+		CE85D71F1BEE4EA6000CC545 /* clientApp */ = {
+			isa = PBXGroup;
+			children = (
+				CE85D9F91BEE5394000CC545 /* Teeworlds.icns */,
+				CE85D72B1BEE4EA6000CC545 /* Info.plist */,
+			);
+			path = clientApp;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -990,6 +1123,24 @@
 			productReference = CE4945D61BD563360031EFEC /* client */;
 			productType = "com.apple.product-type.tool";
 		};
+		CE85D71D1BEE4EA6000CC545 /* clientApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE85D72C1BEE4EA6000CC545 /* Build configuration list for PBXNativeTarget "clientApp" */;
+			buildPhases = (
+				CE85D7FE1BEE509B000CC545 /* ShellScript */,
+				CE85D71A1BEE4EA6000CC545 /* Sources */,
+				CE85D71B1BEE4EA6000CC545 /* Frameworks */,
+				CE85D71C1BEE4EA6000CC545 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = clientApp;
+			productName = clientApp;
+			productReference = CE85D71E1BEE4EA6000CC545 /* clientApp.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1002,6 +1153,9 @@
 					CE4945D51BD563360031EFEC = {
 						CreatedOnToolsVersion = 7.0;
 					};
+					CE85D71D1BEE4EA6000CC545 = {
+						CreatedOnToolsVersion = 7.1;
+					};
 				};
 			};
 			buildConfigurationList = CE4945D11BD563360031EFEC /* Build configuration list for PBXProject "client" */;
@@ -1010,6 +1164,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CE4945CD1BD563360031EFEC;
 			productRefGroup = CE4945D71BD563360031EFEC /* Products */;
@@ -1017,12 +1172,38 @@
 			projectRoot = "";
 			targets = (
 				CE4945D51BD563360031EFEC /* client */,
+				CE85D71D1BEE4EA6000CC545 /* clientApp */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		CE85D71C1BEE4EA6000CC545 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE85D9FA1BEE5394000CC545 /* Teeworlds.icns in Resources */,
+				CE85D9F61BEE521D000CC545 /* data in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXShellScriptBuildPhase section */
 		CE20C6421BD6680100063C08 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "currDir=`pwd`\ncd $PROJECT_DIR/../../\npython datasrc/compile.py network_source > src/game/generated/protocol.cpp\npython datasrc/compile.py network_header > src/game/generated/protocol.h\npython datasrc/compile.py client_content_source > src/game/generated/client_data.cpp\npython datasrc/compile.py client_content_header > src/game/generated/client_data.h\npython scripts/cmd5.py src/engine/shared/protocol.h src/game/generated/protocol.h src/game/tuning.h src/game/gamecore.cpp src/game/generated/protocol.h > src/game/generated/nethash.cpp\ncd $currDir";
+		};
+		CE85D7FE1BEE509B000CC545 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1141,6 +1322,109 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CE85D71A1BEE4EA6000CC545 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE85D7FD1BEE507A000CC545 /* client.m in Sources */,
+				CE85D79E1BEE5020000CC545 /* system.c in Sources */,
+				CE85D79F1BEE5020000CC545 /* backend_sdl.cpp in Sources */,
+				CE85D7A01BEE5020000CC545 /* client.cpp in Sources */,
+				CE85D7A11BEE5020000CC545 /* friends.cpp in Sources */,
+				CE85D7A21BEE5020000CC545 /* graphics.cpp in Sources */,
+				CE85D7A31BEE5020000CC545 /* graphics_threaded.cpp in Sources */,
+				CE85D7A41BEE5020000CC545 /* input.cpp in Sources */,
+				CE85D7A51BEE5020000CC545 /* serverbrowser.cpp in Sources */,
+				CE85D7A61BEE5020000CC545 /* sound.cpp in Sources */,
+				CE85D7A71BEE5020000CC545 /* text.cpp in Sources */,
+				CE85D7A81BEE5020000CC545 /* pnglite.c in Sources */,
+				CE85D7A91BEE5020000CC545 /* bits.c in Sources */,
+				CE85D7AA1BEE5020000CC545 /* float.c in Sources */,
+				CE85D7AB1BEE5020000CC545 /* metadata.c in Sources */,
+				CE85D7AC1BEE5020000CC545 /* unpack.c in Sources */,
+				CE85D7AD1BEE5020000CC545 /* words.c in Sources */,
+				CE85D7AE1BEE5020000CC545 /* wputils.c in Sources */,
+				CE85D7AF1BEE5020000CC545 /* compression.cpp in Sources */,
+				CE85D7B01BEE5020000CC545 /* config.cpp in Sources */,
+				CE85D7B11BEE5020000CC545 /* console.cpp in Sources */,
+				CE85D7B21BEE5020000CC545 /* datafile.cpp in Sources */,
+				CE85D7B31BEE5020000CC545 /* demo.cpp in Sources */,
+				CE85D7B41BEE5020000CC545 /* econ.cpp in Sources */,
+				CE85D7B51BEE5020000CC545 /* engine.cpp in Sources */,
+				CE85D7B61BEE5020000CC545 /* filecollection.cpp in Sources */,
+				CE85D7B71BEE5020000CC545 /* huffman.cpp in Sources */,
+				CE85D7B81BEE5020000CC545 /* jobs.cpp in Sources */,
+				CE85D7B91BEE5020000CC545 /* kernel.cpp in Sources */,
+				CE85D7BA1BEE5020000CC545 /* linereader.cpp in Sources */,
+				CE85D7BB1BEE5020000CC545 /* map.cpp in Sources */,
+				CE85D7BC1BEE5020000CC545 /* mapchecker.cpp in Sources */,
+				CE85D7BD1BEE5020000CC545 /* masterserver.cpp in Sources */,
+				CE85D7BE1BEE5020000CC545 /* memheap.cpp in Sources */,
+				CE85D7BF1BEE5020000CC545 /* netban.cpp in Sources */,
+				CE85D7C01BEE5020000CC545 /* network.cpp in Sources */,
+				CE85D7C11BEE5020000CC545 /* network_client.cpp in Sources */,
+				CE85D7C21BEE5020000CC545 /* network_conn.cpp in Sources */,
+				CE85D7C31BEE5020000CC545 /* network_console.cpp in Sources */,
+				CE85D7C41BEE5020000CC545 /* network_console_conn.cpp in Sources */,
+				CE85D7C51BEE5020000CC545 /* network_server.cpp in Sources */,
+				CE85D7C61BEE5020000CC545 /* packer.cpp in Sources */,
+				CE85D7C71BEE5020000CC545 /* ringbuffer.cpp in Sources */,
+				CE85D7C81BEE5020000CC545 /* snapshot.cpp in Sources */,
+				CE85D7C91BEE5020000CC545 /* storage.cpp in Sources */,
+				CE85D7CA1BEE5020000CC545 /* animstate.cpp in Sources */,
+				CE85D7CB1BEE5020000CC545 /* binds.cpp in Sources */,
+				CE85D7CC1BEE5020000CC545 /* broadcast.cpp in Sources */,
+				CE85D7CD1BEE5020000CC545 /* camera.cpp in Sources */,
+				CE85D7CE1BEE5020000CC545 /* chat.cpp in Sources */,
+				CE85D7CF1BEE5020000CC545 /* console.cpp in Sources */,
+				CE85D7D01BEE5020000CC545 /* controls.cpp in Sources */,
+				CE85D7D11BEE5020000CC545 /* countryflags.cpp in Sources */,
+				CE85D7D21BEE5020000CC545 /* damageind.cpp in Sources */,
+				CE85D7D31BEE5020000CC545 /* debughud.cpp in Sources */,
+				CE85D7D41BEE5020000CC545 /* effects.cpp in Sources */,
+				CE85D7D51BEE5020000CC545 /* emoticon.cpp in Sources */,
+				CE85D7D61BEE5020000CC545 /* flow.cpp in Sources */,
+				CE85D7D71BEE5020000CC545 /* hud.cpp in Sources */,
+				CE85D7D81BEE5020000CC545 /* items.cpp in Sources */,
+				CE85D7D91BEE5020000CC545 /* killmessages.cpp in Sources */,
+				CE85D7DA1BEE5020000CC545 /* mapimages.cpp in Sources */,
+				CE85D7DB1BEE5020000CC545 /* maplayers.cpp in Sources */,
+				CE85D7DC1BEE5020000CC545 /* menus.cpp in Sources */,
+				CE85D7DD1BEE5020000CC545 /* menus_browser.cpp in Sources */,
+				CE85D7DE1BEE5020000CC545 /* menus_demo.cpp in Sources */,
+				CE85D7DF1BEE5020000CC545 /* menus_ingame.cpp in Sources */,
+				CE85D7E01BEE5020000CC545 /* menus_settings.cpp in Sources */,
+				CE85D7E11BEE5020000CC545 /* motd.cpp in Sources */,
+				CE85D7E21BEE5020000CC545 /* nameplates.cpp in Sources */,
+				CE85D7E31BEE5020000CC545 /* particles.cpp in Sources */,
+				CE85D7E41BEE5020000CC545 /* players.cpp in Sources */,
+				CE85D7E51BEE5020000CC545 /* scoreboard.cpp in Sources */,
+				CE85D7E61BEE5020000CC545 /* skins.cpp in Sources */,
+				CE85D7E71BEE5020000CC545 /* sounds.cpp in Sources */,
+				CE85D7E81BEE5020000CC545 /* spectator.cpp in Sources */,
+				CE85D7E91BEE5020000CC545 /* voting.cpp in Sources */,
+				CE85D7EA1BEE5020000CC545 /* gameclient.cpp in Sources */,
+				CE85D7EB1BEE5020000CC545 /* lineinput.cpp in Sources */,
+				CE85D7EC1BEE5020000CC545 /* render.cpp in Sources */,
+				CE85D7ED1BEE5020000CC545 /* render_map.cpp in Sources */,
+				CE85D7EE1BEE5020000CC545 /* ui.cpp in Sources */,
+				CE85D7EF1BEE5020000CC545 /* collision.cpp in Sources */,
+				CE85D7F01BEE5020000CC545 /* auto_map.cpp in Sources */,
+				CE85D7F11BEE5020000CC545 /* editor.cpp in Sources */,
+				CE85D7F21BEE5020000CC545 /* io.cpp in Sources */,
+				CE85D7F31BEE5020000CC545 /* layer_game.cpp in Sources */,
+				CE85D7F41BEE5020000CC545 /* layer_quads.cpp in Sources */,
+				CE85D7F51BEE5020000CC545 /* layer_tiles.cpp in Sources */,
+				CE85D7F61BEE5020000CC545 /* popups.cpp in Sources */,
+				CE85D7F71BEE5020000CC545 /* gamecore.cpp in Sources */,
+				CE85D7F81BEE5020000CC545 /* client_data.cpp in Sources */,
+				CE85D7F91BEE5020000CC545 /* nethash.cpp in Sources */,
+				CE85D7FA1BEE5020000CC545 /* protocol.cpp in Sources */,
+				CE85D7FB1BEE5020000CC545 /* layers.cpp in Sources */,
+				CE85D7FC1BEE5020000CC545 /* localization.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
@@ -1233,10 +1517,12 @@
 		CE4945DE1BD563360031EFEC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				INFOPLIST_FILE = clientApp/Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peterkuts.client;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1244,10 +1530,52 @@
 		CE4945DF1BD563360031EFEC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				INFOPLIST_FILE = clientApp/Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peterkuts.client;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		CE85D72D1BEE4EA6000CC545 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = clientApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peterkuts.clientApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CE85D72E1BEE4EA6000CC545 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				INFOPLIST_FILE = clientApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.peterkuts.clientApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -1272,6 +1600,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		CE85D72C1BEE4EA6000CC545 /* Build configuration list for PBXNativeTarget "clientApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE85D72D1BEE4EA6000CC545 /* Debug */,
+				CE85D72E1BEE4EA6000CC545 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
