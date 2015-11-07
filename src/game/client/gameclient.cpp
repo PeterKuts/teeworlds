@@ -45,6 +45,7 @@
 #include "components/players.h"
 #include "components/nameplates.h"
 #include "components/scoreboard.h"
+#include "components/perksboard.h"
 #include "components/skins.h"
 #include "components/sounds.h"
 #include "components/spectator.h"
@@ -70,6 +71,7 @@ static CDebugHud gs_DebugHud;
 static CControls gs_Controls;
 static CEffects gs_Effects;
 static CScoreboard gs_Scoreboard;
+static CPerksboard gs_Perksboard;
 static CSounds gs_Sounds;
 static CEmoticon gs_Emoticon;
 static CDamageInd gsDamageInd;
@@ -124,6 +126,7 @@ void CGameClient::OnConsoleInit()
 	m_pMapimages = &::gs_MapImages;
 	m_pVoting = &::gs_Voting;
 	m_pScoreboard = &::gs_Scoreboard;
+    m_pPerksboard = &::gs_Perksboard;
 	m_pItems = &::gs_Items;
 	m_pMapLayersBackGround = &::gs_MapLayersBackGround;
 	m_pMapLayersForeGround = &::gs_MapLayersForeGround;
@@ -157,6 +160,7 @@ void CGameClient::OnConsoleInit()
 	m_All.Add(m_pChat);
 	m_All.Add(&gs_Broadcast);
 	m_All.Add(&gs_DebugHud);
+    m_All.Add(&gs_Perksboard);
 	m_All.Add(&gs_Scoreboard);
 	m_All.Add(m_pMotd);
 	m_All.Add(m_pMenus);
@@ -169,6 +173,7 @@ void CGameClient::OnConsoleInit()
 	m_Input.Add(m_pChat); // chat has higher prio due to tha you can quit it by pressing esc
 	m_Input.Add(m_pMotd); // for pressing esc to remove it
 	m_Input.Add(m_pMenus);
+    m_Input.Add(m_pPerksboard);
 	m_Input.Add(&gs_Spectator);
 	m_Input.Add(&gs_Emoticon);
 	m_Input.Add(m_pControls);

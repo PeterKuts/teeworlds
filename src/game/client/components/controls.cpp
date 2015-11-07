@@ -10,6 +10,7 @@
 #include <game/client/components/chat.h>
 #include <game/client/components/menus.h>
 #include <game/client/components/scoreboard.h>
+#include <game/client/components/perksboard.h>
 
 #include "controls.h"
 
@@ -114,7 +115,7 @@ int CControls::SnapInput(int *pData)
 	// update player state
 	if(m_pClient->m_pChat->IsActive())
 		m_InputData.m_PlayerFlags = PLAYERFLAG_CHATTING;
-	else if(m_pClient->m_pMenus->IsActive())
+	else if(m_pClient->m_pMenus->IsActive() || m_pClient->m_pPerksboard->Active())
 		m_InputData.m_PlayerFlags = PLAYERFLAG_IN_MENU;
 	else
 		m_InputData.m_PlayerFlags = PLAYERFLAG_PLAYING;

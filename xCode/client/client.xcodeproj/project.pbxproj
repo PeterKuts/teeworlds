@@ -110,6 +110,7 @@
 		CE85D8031BEE50CB000CC545 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE494B491BD57DBF0031EFEC /* SDL.framework */; };
 		CE85D9F61BEE521D000CC545 /* data in Resources */ = {isa = PBXBuildFile; fileRef = CE85D9F51BEE521D000CC545 /* data */; };
 		CE85DA031BEE563B000CC545 /* Teeworlds.icns in Resources */ = {isa = PBXBuildFile; fileRef = CE85DA021BEE563B000CC545 /* Teeworlds.icns */; };
+		CE85DA2E1BEE65FA000CC545 /* perksboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE85DA2C1BEE65FA000CC545 /* perksboard.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -430,6 +431,8 @@
 		CE85D9F51BEE521D000CC545 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../../data; sourceTree = "<group>"; };
 		CE85DA001BEE5619000CC545 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE85DA021BEE563B000CC545 /* Teeworlds.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Teeworlds.icns; path = ../../../other/icons/Teeworlds.icns; sourceTree = "<group>"; };
+		CE85DA2C1BEE65FA000CC545 /* perksboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = perksboard.cpp; sourceTree = "<group>"; };
+		CE85DA2D1BEE65FA000CC545 /* perksboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = perksboard.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -700,6 +703,8 @@
 		CE494A1E1BD576C90031EFEC /* components */ = {
 			isa = PBXGroup;
 			children = (
+				CE85DA2C1BEE65FA000CC545 /* perksboard.cpp */,
+				CE85DA2D1BEE65FA000CC545 /* perksboard.h */,
 				CE494A1F1BD576C90031EFEC /* binds.cpp */,
 				CE494A201BD576C90031EFEC /* binds.h */,
 				CE494A211BD576C90031EFEC /* broadcast.cpp */,
@@ -1146,6 +1151,7 @@
 				CE85D7F21BEE5020000CC545 /* io.cpp in Sources */,
 				CE85D7F31BEE5020000CC545 /* layer_game.cpp in Sources */,
 				CE85D7F41BEE5020000CC545 /* layer_quads.cpp in Sources */,
+				CE85DA2E1BEE65FA000CC545 /* perksboard.cpp in Sources */,
 				CE85D7F51BEE5020000CC545 /* layer_tiles.cpp in Sources */,
 				CE85D7F61BEE5020000CC545 /* popups.cpp in Sources */,
 				CE85D7F71BEE5020000CC545 /* gamecore.cpp in Sources */,
@@ -1305,6 +1311,7 @@
 				CE85D72E1BEE4EA6000CC545 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

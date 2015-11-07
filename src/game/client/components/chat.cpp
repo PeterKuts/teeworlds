@@ -13,6 +13,7 @@
 #include <game/client/gameclient.h>
 
 #include <game/client/components/scoreboard.h>
+#include <game/client/components/perksboard.h>
 #include <game/client/components/sounds.h>
 #include <game/localization.h>
 
@@ -475,12 +476,13 @@ void CChat::OnRender()
 	y -= 8.0f;
 
 	int64 Now = time_get();
-	float LineWidth = m_pClient->m_pScoreboard->Active() ? 90.0f : 200.0f;
-	float HeightLimit = m_pClient->m_pScoreboard->Active() ? 230.0f : m_Show ? 50.0f : 200.0f;
+    bool boardIsActive = m_pClient->m_pScoreboard->Active() || m_pClient->m_pPerksboard->Active();
+	float LineWidth = boardIsActive ? 90.0f : 200.0f;
+	float HeightLimit = boardIsActive ? 230.0f : m_Show ? 50.0f : 200.0f;
 	float Begin = x;
 	float FontSize = 6.0f;
 	CTextCursor Cursor;
-	int OffsetType = m_pClient->m_pScoreboard->Active() ? 1 : 0;
+	int OffsetType = boardIsActive ? 1 : 0;
 	for(int i = 0; i < MAX_LINES; i++)
 	{
 		int r = ((m_CurrentLine-i)+MAX_LINES)%MAX_LINES;

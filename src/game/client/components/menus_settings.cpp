@@ -449,6 +449,7 @@ static CKeyInfo gs_aKeys[] =
 	{ "Remote console", "toggle_remote_console", 0 },
 	{ "Screenshot", "screenshot", 0 },
 	{ "Scoreboard", "+scoreboard", 0 },
+    { "Perksboard", "+perksboard", 0 },
 	{ "Respawn", "kill", 0 },
 };
 
@@ -592,11 +593,11 @@ void CMenus::RenderSettingsControls(CUIRect MainView)
 		MiscSettings.HSplitTop(10.0f, 0, &MiscSettings);
 		RenderTools()->DrawUIRect(&MiscSettings, vec4(1,1,1,0.25f), CUI::CORNER_ALL, 10.0f);
 		MiscSettings.Margin(10.0f, &MiscSettings);
+//
+//		TextRender()->Text(0, MiscSettings.x, MiscSettings.y, 14.0f*UI()->Scale(), Localize("Miscellaneous"), -1);
 
-		TextRender()->Text(0, MiscSettings.x, MiscSettings.y, 14.0f*UI()->Scale(), Localize("Miscellaneous"), -1);
-
-		MiscSettings.HSplitTop(14.0f+5.0f+10.0f, 0, &MiscSettings);
-		UiDoGetButtons(17, 26, MiscSettings);
+		MiscSettings.HSplitTop(5.0f, 0, &MiscSettings);
+		UiDoGetButtons(17, 27, MiscSettings);
 	}
 
 }
