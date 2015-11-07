@@ -62,7 +62,22 @@
 		CE49479C1BD5634B0031EFEC /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4947021BD5634B0031EFEC /* player.cpp */; };
 		CE4947AF1BD5697B0031EFEC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4947AE1BD5697B0031EFEC /* libz.tbd */; };
 		CE83C6CB1BD58BB800248396 /* actf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE83C6C91BD58BB800248396 /* actf.cpp */; };
+		CE85DA1C1BEE57ED000CC545 /* data in Resources */ = {isa = PBXBuildFile; fileRef = CE85DA1B1BEE57ED000CC545 /* data */; };
+		CE85DA231BEE5BC6000CC545 /* teeworlds_srv in CopyFiles */ = {isa = PBXBuildFile; fileRef = CE4945C31BD563060031EFEC /* teeworlds_srv */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		CE85DA271BEE5FB0000CC545 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE85DA261BEE5FB0000CC545 /* Info.plist */; };
+		CE85DA291BEE5FD8000CC545 /* server.m in Sources */ = {isa = PBXBuildFile; fileRef = CE85DA281BEE5FD8000CC545 /* server.m */; };
+		CE85DA2B1BEE5FE7000CC545 /* Teeworlds_srv.icns in Resources */ = {isa = PBXBuildFile; fileRef = CE85DA2A1BEE5FE7000CC545 /* Teeworlds_srv.icns */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE85DA1F1BEE59A4000CC545 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE4945BB1BD563060031EFEC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE4945C21BD563060031EFEC;
+			remoteInfo = server;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		CE4945C11BD563060031EFEC /* CopyFiles */ = {
@@ -74,12 +89,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		CE85DA221BEE5BAE000CC545 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 6;
+			files = (
+				CE85DA231BEE5BC6000CC545 /* teeworlds_srv in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CE22ED7D1BEC11A8009F573A /* ptctf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ptctf.cpp; sourceTree = "<group>"; };
 		CE22ED7E1BEC11A8009F573A /* ptctf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ptctf.h; sourceTree = "<group>"; };
-		CE4945C31BD563060031EFEC /* server */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = server; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE4945C31BD563060031EFEC /* teeworlds_srv */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = teeworlds_srv; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4945E21BD5634B0031EFEC /* detect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detect.h; sourceTree = "<group>"; };
 		CE4945E31BD5634B0031EFEC /* math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = math.h; sourceTree = "<group>"; };
 		CE4945E41BD5634B0031EFEC /* system.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = system.c; sourceTree = "<group>"; };
@@ -216,6 +241,11 @@
 		CE83C6C91BD58BB800248396 /* actf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = actf.cpp; sourceTree = "<group>"; };
 		CE83C6CA1BD58BB800248396 /* actf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = actf.h; sourceTree = "<group>"; };
 		CE83C6CC1BD5901000248396 /* advanced_variables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = advanced_variables.h; sourceTree = "<group>"; };
+		CE85DA081BEE575D000CC545 /* server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = server.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE85DA1B1BEE57ED000CC545 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../../data; sourceTree = "<group>"; };
+		CE85DA261BEE5FB0000CC545 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE85DA281BEE5FD8000CC545 /* server.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = server.m; path = ../../../src/osxlaunch/server.m; sourceTree = "<group>"; };
+		CE85DA2A1BEE5FE7000CC545 /* Teeworlds_srv.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Teeworlds_srv.icns; path = ../../../other/icons/Teeworlds_srv.icns; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,13 +257,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CE85DA051BEE575D000CC545 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		CE4945BA1BD563060031EFEC = {
 			isa = PBXGroup;
 			children = (
+				CE85DA1B1BEE57ED000CC545 /* data */,
 				CE4945E01BD5634B0031EFEC /* src */,
+				CE85DA251BEE5FB0000CC545 /* server */,
 				CE4947AB1BD5673A0031EFEC /* Frameworks */,
 				CE4945C41BD563060031EFEC /* Products */,
 			);
@@ -242,7 +281,8 @@
 		CE4945C41BD563060031EFEC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE4945C31BD563060031EFEC /* server */,
+				CE4945C31BD563060031EFEC /* teeworlds_srv */,
+				CE85DA081BEE575D000CC545 /* server.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -480,12 +520,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CE85DA251BEE5FB0000CC545 /* server */ = {
+			isa = PBXGroup;
+			children = (
+				CE85DA2A1BEE5FE7000CC545 /* Teeworlds_srv.icns */,
+				CE85DA281BEE5FD8000CC545 /* server.m */,
+				CE85DA261BEE5FB0000CC545 /* Info.plist */,
+			);
+			path = server;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CE4945C21BD563060031EFEC /* server */ = {
+		CE4945C21BD563060031EFEC /* teeworlds_srv */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE4945CA1BD563060031EFEC /* Build configuration list for PBXNativeTarget "server" */;
+			buildConfigurationList = CE4945CA1BD563060031EFEC /* Build configuration list for PBXNativeTarget "teeworlds_srv" */;
 			buildPhases = (
 				CEF1B3D81BD6635F00B6E2A4 /* ShellScript */,
 				CE4945BF1BD563060031EFEC /* Sources */,
@@ -496,10 +546,29 @@
 			);
 			dependencies = (
 			);
-			name = server;
+			name = teeworlds_srv;
 			productName = server;
-			productReference = CE4945C31BD563060031EFEC /* server */;
+			productReference = CE4945C31BD563060031EFEC /* teeworlds_srv */;
 			productType = "com.apple.product-type.tool";
+		};
+		CE85DA071BEE575D000CC545 /* server */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE85DA161BEE575D000CC545 /* Build configuration list for PBXNativeTarget "server" */;
+			buildPhases = (
+				CE85DA041BEE575D000CC545 /* Sources */,
+				CE85DA051BEE575D000CC545 /* Frameworks */,
+				CE85DA061BEE575D000CC545 /* Resources */,
+				CE85DA221BEE5BAE000CC545 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE85DA201BEE59A4000CC545 /* PBXTargetDependency */,
+			);
+			name = server;
+			productName = serverApp;
+			productReference = CE85DA081BEE575D000CC545 /* server.app */;
+			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
@@ -513,6 +582,9 @@
 					CE4945C21BD563060031EFEC = {
 						CreatedOnToolsVersion = 7.0;
 					};
+					CE85DA071BEE575D000CC545 = {
+						CreatedOnToolsVersion = 7.1;
+					};
 				};
 			};
 			buildConfigurationList = CE4945BE1BD563060031EFEC /* Build configuration list for PBXProject "server" */;
@@ -520,17 +592,31 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
+				Base,
 			);
 			mainGroup = CE4945BA1BD563060031EFEC;
 			productRefGroup = CE4945C41BD563060031EFEC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CE4945C21BD563060031EFEC /* server */,
+				CE4945C21BD563060031EFEC /* teeworlds_srv */,
+				CE85DA071BEE575D000CC545 /* server */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE85DA061BEE575D000CC545 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE85DA271BEE5FB0000CC545 /* Info.plist in Resources */,
+				CE85DA1C1BEE57ED000CC545 /* data in Resources */,
+				CE85DA2B1BEE5FE7000CC545 /* Teeworlds_srv.icns in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		CEF1B3D81BD6635F00B6E2A4 /* ShellScript */ = {
@@ -610,7 +696,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CE85DA041BEE575D000CC545 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE85DA291BEE5FD8000CC545 /* server.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE85DA201BEE59A4000CC545 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE4945C21BD563060031EFEC /* teeworlds_srv */;
+			targetProxy = CE85DA1F1BEE59A4000CC545 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		CE4945C81BD563060031EFEC /* Debug */ = {
@@ -701,6 +803,33 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				MACH_O_TYPE = mh_execute;
+			};
+			name = Release;
+		};
+		CE85DA171BEE575D000CC545 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = server/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.peterkuts.server;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CE85DA181BEE575D000CC545 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = server/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				PRODUCT_BUNDLE_IDENTIFIER = com.peterkuts.server;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -717,11 +846,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE4945CA1BD563060031EFEC /* Build configuration list for PBXNativeTarget "server" */ = {
+		CE4945CA1BD563060031EFEC /* Build configuration list for PBXNativeTarget "teeworlds_srv" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE4945CB1BD563060031EFEC /* Debug */,
 				CE4945CC1BD563060031EFEC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE85DA161BEE575D000CC545 /* Build configuration list for PBXNativeTarget "server" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE85DA171BEE575D000CC545 /* Debug */,
+				CE85DA181BEE575D000CC545 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -454,8 +454,8 @@
 				CE85D9F51BEE521D000CC545 /* data */,
 				CE494B4F1BD581660031EFEC /* other */,
 				CE49497B1BD576C90031EFEC /* src */,
-				CE494B461BD578A70031EFEC /* Frameworks */,
 				CE85D9FF1BEE5619000CC545 /* client */,
+				CE494B461BD578A70031EFEC /* Frameworks */,
 				CE4945D71BD563360031EFEC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -1013,7 +1013,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = CE4945CD1BD563360031EFEC;
