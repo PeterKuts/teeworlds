@@ -692,6 +692,7 @@
 		CE4945CB1BD563060031EFEC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -699,6 +700,7 @@
 		CE4945CC1BD563060031EFEC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				MACH_O_TYPE = mh_execute;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
