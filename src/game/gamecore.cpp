@@ -168,6 +168,9 @@ void CCharacterCore::Tick(bool UseInput)
 	if(Grounded)
 		m_Jumped &= ~2;
 
+    float hookLength = m_Perk == PERKS_MACHO
+    ? (float)m_pWorld->m_Tuning.m_HookLength * 1.5f
+    : (float)m_pWorld->m_Tuning.m_HookLength;
 	// do hook
 	if(m_HookState == HOOK_IDLE)
 	{
@@ -188,10 +191,10 @@ void CCharacterCore::Tick(bool UseInput)
 	else if(m_HookState == HOOK_FLYING)
 	{
 		vec2 NewPos = m_HookPos+m_HookDir*m_pWorld->m_Tuning.m_HookFireSpeed;
-		if(distance(m_Pos, NewPos) > m_pWorld->m_Tuning.m_HookLength)
+		if(distance(m_Pos, NewPos) > hookLength)
 		{
 			m_HookState = HOOK_RETRACT_START;
-			NewPos = m_Pos + normalize(NewPos-m_Pos) * m_pWorld->m_Tuning.m_HookLength;
+			NewPos = m_Pos + normalize(NewPos-m_Pos) * hookLength;
 		}
 
 		// make sure that the hook doesn't go though the ground
@@ -336,7 +339,7 @@ void CCharacterCore::Tick(bool UseInput)
 			{
 				if(Distance > PhysSize*1.50f) // TODO: fix tweakable variable
 				{
-					float Accel = m_pWorld->m_Tuning.m_HookDragAccel * (Distance/m_pWorld->m_Tuning.m_HookLength);
+					float Accel = m_pWorld->m_Tuning.m_HookDragAccel * (Distance/hookLength);
 					float DragSpeed = m_pWorld->m_Tuning.m_HookDragSpeed;
 
 					// add force to the hooked player
@@ -416,6 +419,7 @@ void CCharacterCore::Write(CNetObj_CharacterCore *pObjCore)
 	pObjCore->m_Jumped = m_Jumped;
 	pObjCore->m_Direction = m_Direction;
 	pObjCore->m_Angle = m_Angle;
+    pObjCore->m_Perk = m_Perk;
 }
 
 void CCharacterCore::Read(const CNetObj_CharacterCore *pObjCore)
@@ -434,6 +438,7 @@ void CCharacterCore::Read(const CNetObj_CharacterCore *pObjCore)
 	m_Jumped = pObjCore->m_Jumped;
 	m_Direction = pObjCore->m_Direction;
 	m_Angle = pObjCore->m_Angle;
+    m_Perk = pObjCore->m_Perk;
 }
 
 void CCharacterCore::Quantize()

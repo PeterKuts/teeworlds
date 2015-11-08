@@ -907,7 +907,7 @@ void CGameContext::OnMessage(int MsgID, CUnpacker *pUnpacker, int ClientID)
         else if(MsgID == NETMSGTYPE_ACL_SETPERK)
         {
             CNetMsg_Acl_SetPerk *pMsg = (CNetMsg_Acl_SetPerk *)pRawMsg;
-            pPlayer->m_Perk = pMsg->m_Perk;
+            pPlayer->SetPerk(pMsg->m_Perk);
         }
 		else if (MsgID == NETMSGTYPE_CL_EMOTICON && !m_World.m_Paused)
 		{

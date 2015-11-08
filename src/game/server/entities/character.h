@@ -60,6 +60,7 @@ public:
 	void GiveNinja();
 
 	void SetEmote(int Emote, int Tick);
+    void SetPerk(int Perk);
 
 	bool IsAlive() const { return m_Alive; }
 	class CPlayer *GetPlayer() { return m_pPlayer; }

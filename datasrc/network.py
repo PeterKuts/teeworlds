@@ -141,6 +141,7 @@ Objects = [
 		NetIntAny("m_HookY"),
 		NetIntAny("m_HookDx"),
 		NetIntAny("m_HookDy"),
+		NetIntRange("m_Perk", 0, 'NUM_PERKS-1'),
 	]),
 
 	NetObject("Character:CharacterCore", [

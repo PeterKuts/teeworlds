@@ -292,7 +292,13 @@ void CPlayer::TryRespawn()
 	GameServer()->CreatePlayerSpawn(SpawnPos);
 }
 
-bool CPlayer::HasPerk(int perk)
+void CPlayer::SetPerk(int Perk)
 {
-    return m_Perk == perk;
+    m_Perk = Perk;
+    m_pCharacter->SetPerk(Perk);
+}
+
+bool CPlayer::HasPerk(int Perk)
+{
+    return m_Perk == Perk;
 }

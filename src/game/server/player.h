@@ -63,8 +63,8 @@ public:
 	int m_LastEmote;
 	int m_LastKill;
 
-    int m_Perk;
-    bool HasPerk(int perk);
+    void SetPerk(int Perk);
+    bool HasPerk(int Perk);
 	// TODO: clean this up
 	struct
 	{
@@ -99,6 +99,7 @@ public:
 	} m_Latency;
 
 private:
+    int m_Perk;
 	CCharacter *m_pCharacter;
 	CGameContext *m_pGameServer;
 
