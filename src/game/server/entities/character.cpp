@@ -250,9 +250,10 @@ void CCharacter::FireWeapon()
 	DoWeaponSwitch();
 	vec2 Direction = normalize(vec2(m_LatestInput.m_TargetX, m_LatestInput.m_TargetY));
 
-	bool FullAuto = false;
-	if(m_ActiveWeapon == WEAPON_GRENADE || m_ActiveWeapon == WEAPON_SHOTGUN || m_ActiveWeapon == WEAPON_RIFLE)
-		FullAuto = true;
+	bool FullAuto = m_ActiveWeapon == WEAPON_GRENADE
+    || m_ActiveWeapon == WEAPON_SHOTGUN
+    || m_ActiveWeapon == WEAPON_RIFLE
+    || (m_ActiveWeapon == WEAPON_GUN && m_pPlayer->HasPerk(PERKS_MACHINEGUN));
 
 
 	// check if we gonna fire
@@ -312,8 +313,10 @@ void CCharacter::FireWeapon()
 					Dir = normalize(pTarget->m_Pos - m_Pos);
 				else
 					Dir = vec2(0.f, -1.f);
-
-				pTarget->TakeDamage(vec2(0.f, -1.f) + normalize(Dir + vec2(0.f, -1.1f)) * 10.0f, g_pData->m_Weapons.m_Hammer.m_pBase->m_Damage,
+                int damage = m_pPlayer->HasPerk(PERKS_HUMMERTIME)
+                ? g_pData->m_Weapons.m_Hammer.m_pBase->m_Damage * 3
+                : g_pData->m_Weapons.m_Hammer.m_pBase->m_Damage;
+				pTarget->TakeDamage(vec2(0.f, -1.f) + normalize(Dir + vec2(0.f, -1.1f)) * 10.0f, damage,
 					m_pPlayer->GetCID(), m_ActiveWeapon);
 				Hits++;
 			}
@@ -338,13 +341,17 @@ void CCharacter::FireWeapon()
 
 		case WEAPON_SHOTGUN:
 		{
-			int ShotSpread = 2;
-
+            int ShotSpread = m_pPlayer->HasPerk(PERKS_DRAGON)? 3: 2;
+            float *Spreading = NULL;
+            if (m_pPlayer->HasPerk(PERKS_DRAGON)) {
+                Spreading = (float[]){-0.37f, -0.185f, -0.070f, 0, 0.070f, 0.185f, 0.37f};
+            } else {
+                Spreading = (float[]){-0.185f, -0.070f, 0, 0.070f, 0.185f};
+            }
 			for(int i = -ShotSpread; i <= ShotSpread; ++i)
 			{
-				float Spreading[] = {-0.185f, -0.070f, 0, 0.070f, 0.185f};
 				float a = GetAngle(Direction);
-				a += Spreading[i+2];
+				a += Spreading[i+ShotSpread];
 				float v = 1-(absolute(i)/(float)ShotSpread);
 				float Speed = mix((float)GameServer()->Tuning()->m_ShotgunSpeeddiff, 1.0f, v);
 				CProjectile *pProj = new CProjectile(GameWorld(), WEAPON_SHOTGUN,
@@ -372,7 +379,13 @@ void CCharacter::FireWeapon()
 
 		case WEAPON_RIFLE:
 		{
-			new CLaser(GameWorld(), m_Pos, Direction, GameServer()->Tuning()->m_LaserReach, m_pPlayer->GetCID());
+            float reach = m_pPlayer->HasPerk(PERKS_SHARPSHOOTER)
+            ? (float)GameServer()->Tuning()->m_LaserReach * 1.1f
+            : (float)GameServer()->Tuning()->m_LaserReach;
+            float bounces = m_pPlayer->HasPerk(PERKS_SHARPSHOOTER)
+            ? (float)GameServer()->Tuning()->m_LaserBounceNum * 2.0f
+            : (float)GameServer()->Tuning()->m_LaserBounceNum;
+			new CLaser(GameWorld(), m_Pos, Direction, reach, bounces, m_pPlayer->GetCID());
 			GameServer()->CreateSound(m_Pos, SOUND_RIFLE_FIRE);
 		} break;
 
@@ -415,7 +428,9 @@ void CCharacter::HandleWeapons()
 	FireWeapon();
 
 	// ammo regen
-	int AmmoRegenTime = g_pData->m_Weapons.m_aId[m_ActiveWeapon].m_Ammoregentime;
+	int AmmoRegenTime = m_pPlayer->HasPerk(PERKS_MACHINEGUN) && m_ActiveWeapon == WEAPON_GUN
+    ? (int)(g_pData->m_Weapons.m_aId[m_ActiveWeapon].m_Ammoregentime * 0.5f)
+    : g_pData->m_Weapons.m_aId[m_ActiveWeapon].m_Ammoregentime;
 	if(AmmoRegenTime)
 	{
 		// If equipped and not active, regen ammo?
@@ -699,8 +714,13 @@ bool CCharacter::TakeDamage(vec2 Force, int Dmg, int From, int Weapon)
 		return false;
 
 	// m_pPlayer only inflicts half damage on self
-	if(From == m_pPlayer->GetCID())
-		Dmg = max(1, Dmg/2);
+    if(From == m_pPlayer->GetCID()) {
+        if (m_pPlayer->HasPerk(PERKS_ROCKETJUMPER) && Weapon == WEAPON_GRENADE) {
+            return false;
+        } else {
+            Dmg = max(1, Dmg/2);
+        }
+    }
 
 	m_DamageTaken++;
 

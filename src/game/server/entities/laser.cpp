@@ -4,7 +4,7 @@
 #include <game/server/gamecontext.h>
 #include "laser.h"
 
-CLaser::CLaser(CGameWorld *pGameWorld, vec2 Pos, vec2 Direction, float StartEnergy, int Owner)
+CLaser::CLaser(CGameWorld *pGameWorld, vec2 Pos, vec2 Direction, float StartEnergy, float MaxBounces, int Owner)
 : CEntity(pGameWorld, CGameWorld::ENTTYPE_LASER)
 {
 	m_Pos = Pos;
@@ -12,6 +12,7 @@ CLaser::CLaser(CGameWorld *pGameWorld, vec2 Pos, vec2 Direction, float StartEner
 	m_Energy = StartEnergy;
 	m_Dir = Direction;
 	m_Bounces = 0;
+    m_MaxBounces = MaxBounces;
 	m_EvalTick = 0;
 	GameWorld()->InsertEntity(this);
 	DoBounce();
@@ -63,7 +64,7 @@ void CLaser::DoBounce()
 			m_Energy -= distance(m_From, m_Pos) + GameServer()->Tuning()->m_LaserBounceCost;
 			m_Bounces++;
 
-			if(m_Bounces > GameServer()->Tuning()->m_LaserBounceNum)
+			if(m_Bounces > m_MaxBounces)
 				m_Energy = -1;
 
 			GameServer()->CreateSound(m_Pos, SOUND_RIFLE_BOUNCE);
