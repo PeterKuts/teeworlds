@@ -63,6 +63,8 @@ public:
 	int m_LastEmote;
 	int m_LastKill;
 
+    int m_Perk;
+    bool HasPerk(int perk);
 	// TODO: clean this up
 	struct
 	{

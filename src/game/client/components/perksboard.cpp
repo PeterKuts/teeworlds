@@ -9,6 +9,8 @@
 #include <engine/shared/config.h>
 #include <engine/graphics.h>
 #include <game/client/components/scoreboard.h>
+#include <game/client/components/menus.h>
+#include <game/client/components/chat.h>
 #include <game/generated/client_data.h>
 #include "perksboard.h"
 
@@ -58,6 +60,23 @@ void CPerksboard::OnRender()
     
     UI()->Update(mx,my,mx*3.0f,my*3.0f,Buttons);
     
+    viewRect.Margin(5, &viewRect);
+    static int buttonIds[NUM_PERKS] = {0, 0, 0, 0, 0, 0, 0};
+    float buttonH = viewRect.h / NUM_PERKS;
+    CUIRect buttonRect;
+    for (int i=0; i<NUM_PERKS; ++i) {
+        viewRect.HSplitTop(buttonH, &buttonRect, &viewRect);
+        buttonRect.Margin(5, &buttonRect);
+        if (DoButton(&buttonIds[i], g_pData->m_aPerks[i].m_pName, i == m_pClient->m_Snap.m_pLocalInfo->m_Perk, &buttonRect)) {
+            CNetMsg_Acl_SetPerk Msg;
+            Msg.m_Perk = i;
+            Client()->SendPackMsg(&Msg, MSGFLAG_VITAL);
+            char aBuf[512];
+            str_format(aBuf, sizeof(aBuf), "Perk: %s", g_pData->m_aPerks[i].m_pName);
+            m_pClient->m_pChat->Say(0, aBuf);
+        }
+    }
+    
     Graphics()->TextureSet(g_pData->m_aImages[IMAGE_CURSOR].m_Id);
     Graphics()->QuadsBegin();
     Graphics()->SetColor(1,1,1,1);
@@ -96,9 +115,24 @@ bool CPerksboard::OnInput(IInput::CEvent e)
 {
     if (!Active())
         return false;
-//    if (e.m_Key == KEY_MOUSE_1) {
-//        
-//        return true;
-//    }
     return false;
 }
+
+int CPerksboard::DoButton(const void *pID, const char *pText, int Checked, const CUIRect *pRect)
+{
+    RenderTools()->DrawUIRect(pRect, vec4(1,1,1,0.5f)*ButtonColorMul(pID, Checked), CUI::CORNER_ALL, 5.0f);
+    CUIRect Temp;
+    pRect->HMargin(pRect->h>=20.0f?2.0f:1.0f, &Temp);
+    UI()->DoLabel(&Temp, pText, Temp.h*0.8, 0);
+    return UI()->DoButtonLogic(pID, pText, Checked, pRect);
+}
+
+vec4 CPerksboard::ButtonColorMul(const void *pID, int Checked)
+{
+    if(UI()->ActiveItem() == pID || Checked)
+        return vec4(1,1,1,0.5f);
+    else if(UI()->HotItem() == pID)
+        return vec4(1,1,1,1.5f);
+    return vec4(1,1,1,1);
+}
+

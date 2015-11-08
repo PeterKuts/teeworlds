@@ -160,6 +160,7 @@ Objects = [
 
 		NetIntAny("m_Score"),
 		NetIntAny("m_Latency"),
+		NetIntRange("m_Perk", 0, 'NUM_PERKS-1'),
 	]),
 
 	NetObject("ClientInfo", [
@@ -339,5 +340,9 @@ Messages = [
 		NetStringStrict("m_Type"),
 		NetStringStrict("m_Value"),
 		NetStringStrict("m_Reason"),
+	]),
+
+	NetMessage("Acl_SetPerk", [
+		NetIntRange("m_Perk", 0, 'NUM_PERKS-1'),
 	]),
 ]

@@ -904,6 +904,11 @@ void CGameContext::OnMessage(int MsgID, CUnpacker *pUnpacker, int ClientID)
 			pPlayer->m_TeeInfos.m_ColorFeet = pMsg->m_ColorFeet;
 			m_pController->OnPlayerInfoChange(pPlayer);
 		}
+        else if(MsgID == NETMSGTYPE_ACL_SETPERK)
+        {
+            CNetMsg_Acl_SetPerk *pMsg = (CNetMsg_Acl_SetPerk *)pRawMsg;
+            pPlayer->m_Perk = pMsg->m_Perk;
+        }
 		else if (MsgID == NETMSGTYPE_CL_EMOTICON && !m_World.m_Paused)
 		{
 			CNetMsg_Cl_Emoticon *pMsg = (CNetMsg_Cl_Emoticon *)pRawMsg;

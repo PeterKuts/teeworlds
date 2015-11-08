@@ -1,6 +1,11 @@
 import copy
 from datatypes import *
 
+class Perk(Struct):
+	def __init__(self, name=""):
+		Struct.__init__(self, "CDataPerk")
+		self.name = String(name)
+
 class Sound(Struct):
 	def __init__(self, filename=""):
 		Struct.__init__(self, "CDataSound")
@@ -167,6 +172,7 @@ class DataContainer(Struct):
 		self.sprites = Array(Sprite())
 		self.animations = Array(Animation())
 		self.weapons = Weapons()
+		self.perks = Array(Perk())
 
 def FileList(format, num):
 	return [format%(x+1) for x in range(0,num)]
@@ -514,3 +520,24 @@ weapon.muzzleoffsetx.Set(40)
 weapon.muzzleoffsety.Set(-4)
 container.weapons.ninja.base.Set(weapon)
 container.weapons.id.Add(weapon)
+
+perk = Perk("None")
+container.perks.Add(perk)
+
+perk = Perk("Macho")
+container.perks.Add(perk)
+
+perk = Perk("Hummertime")
+container.perks.Add(perk)
+
+perk = Perk("Machinegun")
+container.perks.Add(perk)
+
+perk = Perk("Dragon")
+container.perks.Add(perk)
+
+perk = Perk("RocketJumper")
+container.perks.Add(perk)
+
+perk = Perk("Sharpshooter")
+container.perks.Add(perk)

@@ -17,6 +17,8 @@ class CPerksboard : public CComponent
     
     bool m_Active;
     vec2 m_MousePos;
+    int DoButton(const void *pID, const char *pText, int Checked, const CUIRect *pRect);
+    vec4 ButtonColorMul(const void *pID, int Checked);
 public:
     CPerksboard();
     virtual void OnReset();
