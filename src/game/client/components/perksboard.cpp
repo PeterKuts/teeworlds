@@ -67,7 +67,7 @@ void CPerksboard::OnRender()
     for (int i=0; i<NUM_PERKS; ++i) {
         viewRect.HSplitTop(buttonH, &buttonRect, &viewRect);
         buttonRect.Margin(5, &buttonRect);
-        if (DoButton(&buttonIds[i], g_pData->m_aPerks[i].m_pName, i == m_pClient->m_Snap.m_pLocalInfo->m_Perk, &buttonRect)) {
+        if (DoButton(&buttonIds[i], g_pData->m_aPerks[i].m_pName, i == m_pClient->m_Snap.m_pLocalInfo->m_WantedPerk, &buttonRect)) {
             CNetMsg_Acl_SetPerk Msg;
             Msg.m_Perk = i;
             Client()->SendPackMsg(&Msg, MSGFLAG_VITAL);

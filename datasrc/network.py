@@ -162,6 +162,7 @@ Objects = [
 		NetIntAny("m_Score"),
 		NetIntAny("m_Latency"),
 		NetIntRange("m_Perk", 0, 'NUM_PERKS-1'),
+		NetIntRange("m_WantedPerk", 0, 'NUM_PERKS-1'),
 	]),
 
 	NetObject("ClientInfo", [

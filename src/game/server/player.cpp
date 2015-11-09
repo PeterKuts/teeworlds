@@ -140,6 +140,7 @@ void CPlayer::Snap(int SnappingClient)
 	pPlayerInfo->m_Score = m_Score;
 	pPlayerInfo->m_Team = m_Team;
     pPlayerInfo->m_Perk = m_Perk;
+    pPlayerInfo->m_WantedPerk = m_WantedPerk;
 
 	if(m_ClientID == SnappingClient)
 		pPlayerInfo->m_Local = 1;
@@ -289,16 +290,14 @@ void CPlayer::TryRespawn()
 	m_Spawning = false;
 	m_pCharacter = new(m_ClientID) CCharacter(&GameServer()->m_World);
 	m_pCharacter->Spawn(this, SpawnPos);
+    m_Perk = m_WantedPerk;
     m_pCharacter->SetPerk(m_Perk);
 	GameServer()->CreatePlayerSpawn(SpawnPos);
 }
 
 void CPlayer::SetPerk(int Perk)
 {
-    m_Perk = Perk;
-    if (m_pCharacter) {
-        m_pCharacter->SetPerk(Perk);
-    }
+    m_WantedPerk = Perk;
 }
 
 bool CPlayer::HasPerk(int Perk)

@@ -100,6 +100,7 @@ public:
 
 private:
     int m_Perk;
+    int m_WantedPerk;
 	CCharacter *m_pCharacter;
 	CGameContext *m_pGameServer;
 
