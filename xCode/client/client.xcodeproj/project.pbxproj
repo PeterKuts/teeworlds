@@ -111,7 +111,23 @@
 		CE85DA031BEE563B000CC545 /* Teeworlds.icns in Resources */ = {isa = PBXBuildFile; fileRef = CE85DA021BEE563B000CC545 /* Teeworlds.icns */; };
 		CE85DA2E1BEE65FA000CC545 /* perksboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE85DA2C1BEE65FA000CC545 /* perksboard.cpp */; };
 		CEACD23E1BF0B1C7003101B0 /* libfreetype.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEACD23D1BF0B1C7003101B0 /* libfreetype.6.dylib */; };
+		CEACD2481BF0BAED003101B0 /* libfreetype.6.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = CEACD23D1BF0B1C7003101B0 /* libfreetype.6.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		CEACD2491BF0BAED003101B0 /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CE494B491BD57DBF0031EFEC /* SDL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CEACD2471BF0BAE1003101B0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CEACD2481BF0BAED003101B0 /* libfreetype.6.dylib in CopyFiles */,
+				CEACD2491BF0BAED003101B0 /* SDL.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CE49497D1BD576C90031EFEC /* detect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detect.h; sourceTree = "<group>"; };
@@ -989,6 +1005,7 @@
 				CE85D71A1BEE4EA6000CC545 /* Sources */,
 				CE85D71B1BEE4EA6000CC545 /* Frameworks */,
 				CE85D71C1BEE4EA6000CC545 /* Resources */,
+				CEACD2471BF0BAE1003101B0 /* CopyFiles */,
 			);
 			buildRules = (
 			);
