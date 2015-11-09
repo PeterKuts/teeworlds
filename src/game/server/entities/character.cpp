@@ -341,9 +341,9 @@ void CCharacter::FireWeapon()
 
 		case WEAPON_SHOTGUN:
 		{
-            int ShotSpread = m_pPlayer->HasPerk(PERKS_DRAGON)? 3: 2;
+            int ShotSpread = m_pPlayer->HasPerk(PERKS_JACKHAMMER)? 3: 2;
             float *Spreading = NULL;
-            if (m_pPlayer->HasPerk(PERKS_DRAGON)) {
+            if (m_pPlayer->HasPerk(PERKS_JACKHAMMER)) {
                 Spreading = (float[]){-0.37f, -0.185f, -0.070f, 0, 0.070f, 0.185f, 0.37f};
             } else {
                 Spreading = (float[]){-0.185f, -0.070f, 0, 0.070f, 0.185f};

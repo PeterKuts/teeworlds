@@ -289,6 +289,7 @@ void CPlayer::TryRespawn()
 	m_Spawning = false;
 	m_pCharacter = new(m_ClientID) CCharacter(&GameServer()->m_World);
 	m_pCharacter->Spawn(this, SpawnPos);
+    m_pCharacter->SetPerk(m_Perk);
 	GameServer()->CreatePlayerSpawn(SpawnPos);
 }
 

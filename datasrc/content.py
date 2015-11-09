@@ -533,7 +533,7 @@ container.perks.Add(perk)
 perk = Perk("Machinegun")
 container.perks.Add(perk)
 
-perk = Perk("Dragon")
+perk = Perk("Jackhammer")
 container.perks.Add(perk)
 
 perk = Perk("RocketJumper")
