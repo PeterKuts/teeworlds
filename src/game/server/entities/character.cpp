@@ -379,13 +379,8 @@ void CCharacter::FireWeapon()
 
 		case WEAPON_RIFLE:
 		{
-            float reach = m_pPlayer->HasPerk(PERKS_SHARPSHOOTER)
-            ? (float)GameServer()->Tuning()->m_LaserReach * 1.1f
-            : (float)GameServer()->Tuning()->m_LaserReach;
-            float bounces = m_pPlayer->HasPerk(PERKS_SHARPSHOOTER)
-            ? (float)GameServer()->Tuning()->m_LaserBounceNum * 2.0f
-            : (float)GameServer()->Tuning()->m_LaserBounceNum;
-			new CLaser(GameWorld(), m_Pos, Direction, reach, bounces, m_pPlayer->GetCID());
+            bool noBounce = m_pPlayer->HasPerk(PERKS_SHARPSHOOTER);
+			new CLaser(GameWorld(), m_Pos, Direction, GameServer()->Tuning()->m_LaserReach, noBounce, m_pPlayer->GetCID());
 			GameServer()->CreateSound(m_Pos, SOUND_RIFLE_FIRE);
 		} break;
 
