@@ -296,7 +296,9 @@ void CPlayer::TryRespawn()
 void CPlayer::SetPerk(int Perk)
 {
     m_Perk = Perk;
-    m_pCharacter->SetPerk(Perk);
+    if (m_pCharacter) {
+        m_pCharacter->SetPerk(Perk);
+    }
 }
 
 bool CPlayer::HasPerk(int Perk)
