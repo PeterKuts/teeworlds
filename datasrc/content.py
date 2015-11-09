@@ -541,3 +541,6 @@ container.perks.Add(perk)
 
 perk = Perk("Sharpshooter")
 container.perks.Add(perk)
+
+perk = Perk("Ephemeral")
+container.perks.Add(perk)
