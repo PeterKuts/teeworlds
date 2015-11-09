@@ -106,11 +106,11 @@
 		CE85D7FF1BEE50C4000CC545 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE494C041BD584550031EFEC /* libz.tbd */; };
 		CE85D8001BEE50C6000CC545 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE494C021BD583120031EFEC /* Cocoa.framework */; };
 		CE85D8011BEE50C7000CC545 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE494C001BD582EA0031EFEC /* OpenGL.framework */; };
-		CE85D8021BEE50C9000CC545 /* libfreetype.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CE494BFE1BD582290031EFEC /* libfreetype.dylib */; };
 		CE85D8031BEE50CB000CC545 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE494B491BD57DBF0031EFEC /* SDL.framework */; };
 		CE85D9F61BEE521D000CC545 /* data in Resources */ = {isa = PBXBuildFile; fileRef = CE85D9F51BEE521D000CC545 /* data */; };
 		CE85DA031BEE563B000CC545 /* Teeworlds.icns in Resources */ = {isa = PBXBuildFile; fileRef = CE85DA021BEE563B000CC545 /* Teeworlds.icns */; };
 		CE85DA2E1BEE65FA000CC545 /* perksboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE85DA2C1BEE65FA000CC545 /* perksboard.cpp */; };
+		CEACD23E1BF0B1C7003101B0 /* libfreetype.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEACD23D1BF0B1C7003101B0 /* libfreetype.6.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -421,7 +421,6 @@
 		CE494BBC1BD581660031EFEC /* Teeworlds_srv.ico */ = {isa = PBXFileReference; lastKnownFileType = image.ico; path = Teeworlds_srv.ico; sourceTree = "<group>"; };
 		CE494BBD1BD581660031EFEC /* teeworlds_srv_cl.rc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = teeworlds_srv_cl.rc; sourceTree = "<group>"; };
 		CE494BBE1BD581660031EFEC /* teeworlds_srv_gcc.rc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = teeworlds_srv_gcc.rc; sourceTree = "<group>"; };
-		CE494BFE1BD582290031EFEC /* libfreetype.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libfreetype.dylib; sourceTree = "<group>"; };
 		CE494C001BD582EA0031EFEC /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		CE494C021BD583120031EFEC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CE494C041BD584550031EFEC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
@@ -433,6 +432,7 @@
 		CE85DA021BEE563B000CC545 /* Teeworlds.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Teeworlds.icns; path = ../../../other/icons/Teeworlds.icns; sourceTree = "<group>"; };
 		CE85DA2C1BEE65FA000CC545 /* perksboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = perksboard.cpp; sourceTree = "<group>"; };
 		CE85DA2D1BEE65FA000CC545 /* perksboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = perksboard.h; sourceTree = "<group>"; };
+		CEACD23D1BF0B1C7003101B0 /* libfreetype.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libfreetype.6.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -442,8 +442,8 @@
 			files = (
 				CE85D7FF1BEE50C4000CC545 /* libz.tbd in Frameworks */,
 				CE85D8001BEE50C6000CC545 /* Cocoa.framework in Frameworks */,
+				CEACD23E1BF0B1C7003101B0 /* libfreetype.6.dylib in Frameworks */,
 				CE85D8011BEE50C7000CC545 /* OpenGL.framework in Frameworks */,
-				CE85D8021BEE50C9000CC545 /* libfreetype.dylib in Frameworks */,
 				CE85D8031BEE50CB000CC545 /* SDL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -799,10 +799,10 @@
 		CE494B461BD578A70031EFEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CEACD23D1BF0B1C7003101B0 /* libfreetype.6.dylib */,
 				CE494C041BD584550031EFEC /* libz.tbd */,
 				CE494C021BD583120031EFEC /* Cocoa.framework */,
 				CE494C001BD582EA0031EFEC /* OpenGL.framework */,
-				CE494BFE1BD582290031EFEC /* libfreetype.dylib */,
 				CE494B491BD57DBF0031EFEC /* SDL.framework */,
 			);
 			path = Frameworks;
