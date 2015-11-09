@@ -110,7 +110,9 @@
 		CE85D9F61BEE521D000CC545 /* data in Resources */ = {isa = PBXBuildFile; fileRef = CE85D9F51BEE521D000CC545 /* data */; };
 		CE85DA031BEE563B000CC545 /* Teeworlds.icns in Resources */ = {isa = PBXBuildFile; fileRef = CE85DA021BEE563B000CC545 /* Teeworlds.icns */; };
 		CE85DA2E1BEE65FA000CC545 /* perksboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE85DA2C1BEE65FA000CC545 /* perksboard.cpp */; };
-		CEACD23E1BF0B1C7003101B0 /* libfreetype.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEACD23D1BF0B1C7003101B0 /* libfreetype.6.dylib */; };
+		CEACD2431BF0B55E003101B0 /* libfreetype.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEACD2411BF0B55E003101B0 /* libfreetype.a */; };
+		CEACD2441BF0B55E003101B0 /* libpng16.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEACD2421BF0B55E003101B0 /* libpng16.a */; };
+		CEACD2461BF0B5E5003101B0 /* libbz2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CEACD2451BF0B5E5003101B0 /* libbz2.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -432,7 +434,9 @@
 		CE85DA021BEE563B000CC545 /* Teeworlds.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Teeworlds.icns; path = ../../../other/icons/Teeworlds.icns; sourceTree = "<group>"; };
 		CE85DA2C1BEE65FA000CC545 /* perksboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = perksboard.cpp; sourceTree = "<group>"; };
 		CE85DA2D1BEE65FA000CC545 /* perksboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = perksboard.h; sourceTree = "<group>"; };
-		CEACD23D1BF0B1C7003101B0 /* libfreetype.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libfreetype.6.dylib; sourceTree = "<group>"; };
+		CEACD2411BF0B55E003101B0 /* libfreetype.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfreetype.a; sourceTree = "<group>"; };
+		CEACD2421BF0B55E003101B0 /* libpng16.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libpng16.a; sourceTree = "<group>"; };
+		CEACD2451BF0B5E5003101B0 /* libbz2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbz2.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -442,9 +446,11 @@
 			files = (
 				CE85D7FF1BEE50C4000CC545 /* libz.tbd in Frameworks */,
 				CE85D8001BEE50C6000CC545 /* Cocoa.framework in Frameworks */,
-				CEACD23E1BF0B1C7003101B0 /* libfreetype.6.dylib in Frameworks */,
+				CEACD2441BF0B55E003101B0 /* libpng16.a in Frameworks */,
+				CEACD2431BF0B55E003101B0 /* libfreetype.a in Frameworks */,
 				CE85D8011BEE50C7000CC545 /* OpenGL.framework in Frameworks */,
 				CE85D8031BEE50CB000CC545 /* SDL.framework in Frameworks */,
+				CEACD2461BF0B5E5003101B0 /* libbz2.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -799,7 +805,9 @@
 		CE494B461BD578A70031EFEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CEACD23D1BF0B1C7003101B0 /* libfreetype.6.dylib */,
+				CEACD2451BF0B5E5003101B0 /* libbz2.a */,
+				CEACD2411BF0B55E003101B0 /* libfreetype.a */,
+				CEACD2421BF0B55E003101B0 /* libpng16.a */,
 				CE494C041BD584550031EFEC /* libz.tbd */,
 				CE494C021BD583120031EFEC /* Cocoa.framework */,
 				CE494C001BD582EA0031EFEC /* OpenGL.framework */,
