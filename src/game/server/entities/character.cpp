@@ -403,8 +403,12 @@ void CCharacter::FireWeapon()
 	if(m_aWeapons[m_ActiveWeapon].m_Ammo > 0) // -1 == unlimited
 		m_aWeapons[m_ActiveWeapon].m_Ammo--;
 
-	if(!m_ReloadTimer)
-		m_ReloadTimer = g_pData->m_Weapons.m_aId[m_ActiveWeapon].m_Firedelay * Server()->TickSpeed() / 1000;
+    if(!m_ReloadTimer) {
+        m_ReloadTimer = g_pData->m_Weapons.m_aId[m_ActiveWeapon].m_Firedelay * Server()->TickSpeed() / 1000;
+        if (m_ActiveWeapon == WEAPON_RIFLE && m_pPlayer->HasPerk(PERKS_SHARPSHOOTER)) {
+            m_ReloadTimer *= 1.5;
+        }
+    }
 }
 
 void CCharacter::HandleWeapons()
