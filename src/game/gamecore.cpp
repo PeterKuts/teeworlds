@@ -112,26 +112,40 @@ void CCharacterCore::Tick(bool UseInput)
 		m_Angle = (int)(a*256.0f);
 
 		// handle jump
-		if(m_Input.m_Jump)
-		{
-			if(!(m_Jumped&1))
-			{
-				if(Grounded)
-				{
-					m_TriggeredEvents |= COREEVENT_GROUND_JUMP;
-					m_Vel.y = -m_pWorld->m_Tuning.m_GroundJumpImpulse;
-					m_Jumped |= 1;
-				}
-				else if(!(m_Jumped&2))
-				{
-					m_TriggeredEvents |= COREEVENT_AIR_JUMP;
-					m_Vel.y = -m_pWorld->m_Tuning.m_AirJumpImpulse;
-					m_Jumped |= 3;
-				}
-			}
-		}
-		else
-			m_Jumped &= ~1;
+        if (m_Perk == PERKS_MACHO) {
+            if(m_Input.m_Jump) {
+                if(!m_Jumped) {
+                    if(Grounded) {
+                        m_TriggeredEvents |= COREEVENT_AIR_JUMP;
+                        m_Vel.y = -m_pWorld->m_Tuning.m_GroundJumpImpulse;
+                    } else {
+                        m_TriggeredEvents |= COREEVENT_AIR_JUMP;
+                        m_Vel.y = -m_pWorld->m_Tuning.m_AirJumpImpulse;
+                    }
+                    m_Jumped = 3;
+                }
+            } else {
+                if (Grounded) {
+                    m_Jumped = 0;
+                }
+            }
+        } else {
+            if(m_Input.m_Jump) {
+                if(!(m_Jumped&1)) {
+                    if(Grounded) {
+                        m_TriggeredEvents |= COREEVENT_GROUND_JUMP;
+                        m_Vel.y = -m_pWorld->m_Tuning.m_GroundJumpImpulse;
+                        m_Jumped |= 1;
+                    } else if(!(m_Jumped&2)) {
+                        m_TriggeredEvents |= COREEVENT_AIR_JUMP;
+                        m_Vel.y = -m_pWorld->m_Tuning.m_AirJumpImpulse;
+                        m_Jumped |= 3;
+                    }
+                }
+            } else {
+                m_Jumped &= ~1;
+            }
+        }
 
 		// handle hook
 		if(m_Input.m_Hook)
@@ -165,8 +179,10 @@ void CCharacterCore::Tick(bool UseInput)
 	// handle jumping
 	// 1 bit = to keep track if a jump has been made on this input
 	// 2 bit = to keep track if a air-jump has been made
-	if(Grounded)
-		m_Jumped &= ~2;
+    if (m_Perk != PERKS_MACHO) {
+        if(Grounded)
+            m_Jumped &= ~2;
+    }
 
     float hookLength = m_Perk == PERKS_MACHO
     ? (float)m_pWorld->m_Tuning.m_HookLength * 1.5f

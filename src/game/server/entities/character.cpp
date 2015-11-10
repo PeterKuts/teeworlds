@@ -668,7 +668,7 @@ bool CCharacter::IncreaseHealth(int Amount)
 
 bool CCharacter::IncreaseArmor(int Amount)
 {
-	if(m_Armor >= 10)
+	if(m_Armor >= 10 || m_pPlayer->HasPerk(PERKS_EPHEMERAL))
 		return false;
 	m_Armor = clamp(m_Armor+Amount, 0, 10);
 	return true;
