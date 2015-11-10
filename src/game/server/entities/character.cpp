@@ -264,6 +264,10 @@ void CCharacter::FireWeapon()
 	if(FullAuto && (m_LatestInput.m_Fire&1) && m_aWeapons[m_ActiveWeapon].m_Ammo)
 		WillFire = true;
 
+    bool hookInUse = m_Core.m_HookState != HOOK_IDLE && m_Core.m_HookState != HOOK_RETRACTED;
+    if (m_ActiveWeapon == WEAPON_GUN && m_pPlayer->HasPerk(PERKS_MACHINEGUN) && hookInUse)
+        WillFire = false;
+    
 	if(!WillFire)
 		return;
 
