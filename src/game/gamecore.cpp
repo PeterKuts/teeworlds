@@ -184,9 +184,15 @@ void CCharacterCore::Tick(bool UseInput)
             m_Jumped &= ~2;
     }
 
-    float hookLength = m_Perk == PERKS_MACHO
-    ? (float)m_pWorld->m_Tuning.m_HookLength * 1.5f
-    : (float)m_pWorld->m_Tuning.m_HookLength;
+    float hookLength = (float)m_pWorld->m_Tuning.m_HookLength;
+    switch (m_Perk) {
+        case PERKS_MACHO:
+            hookLength *= 1.5f;
+            break;
+        case PERKS_JACKHAMMER:
+            hookLength *= 0.75f;
+            break;
+    }
 	// do hook
 	if(m_HookState == HOOK_IDLE)
 	{

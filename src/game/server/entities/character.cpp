@@ -294,7 +294,8 @@ void CCharacter::FireWeapon()
 			int Hits = 0;
 			int Num = GameServer()->m_World.FindEntities(ProjStartPos, m_ProximityRadius*0.5f, (CEntity**)apEnts,
 														MAX_CLIENTS, CGameWorld::ENTTYPE_CHARACTER);
-
+            int damageMultiplier = m_pPlayer->HasPerk(PERKS_HUMMERTIME)? 3: 1;
+            int damage = g_pData->m_Weapons.m_Hammer.m_pBase->m_Damage * damageMultiplier;
 			for (int i = 0; i < Num; ++i)
 			{
 				CCharacter *pTarget = apEnts[i];
@@ -313,17 +314,19 @@ void CCharacter::FireWeapon()
 					Dir = normalize(pTarget->m_Pos - m_Pos);
 				else
 					Dir = vec2(0.f, -1.f);
-                int damage = m_pPlayer->HasPerk(PERKS_HUMMERTIME)
-                ? g_pData->m_Weapons.m_Hammer.m_pBase->m_Damage * 3
-                : g_pData->m_Weapons.m_Hammer.m_pBase->m_Damage;
+                
 				pTarget->TakeDamage(vec2(0.f, -1.f) + normalize(Dir + vec2(0.f, -1.1f)) * 10.0f, damage,
 					m_pPlayer->GetCID(), m_ActiveWeapon);
 				Hits++;
 			}
 
 			// if we Hit anything, we have to wait for the reload
-			if(Hits)
+            if(Hits) {
 				m_ReloadTimer = Server()->TickSpeed()/3;
+                if (m_pPlayer->HasPerk(PERKS_HUMMERTIME)) {
+                    TakeDamage(vec2(0.f, 0.f), damage, m_pPlayer->GetCID(), m_ActiveWeapon);
+                }
+            }
 
 		} break;
 
@@ -456,10 +459,12 @@ void CCharacter::HandleWeapons()
 
 bool CCharacter::GiveWeapon(int Weapon, int Ammo)
 {
-	if(m_aWeapons[Weapon].m_Ammo < g_pData->m_Weapons.m_aId[Weapon].m_Maxammo || !m_aWeapons[Weapon].m_Got)
+    float maxAmmoKoef = Weapon == WEAPON_GRENADE && m_pPlayer->HasPerk(PERKS_ROCKETJUMPER)? 0.5f: 1.0f;
+    int maxAmmo = g_pData->m_Weapons.m_aId[Weapon].m_Maxammo * maxAmmoKoef;
+	if(m_aWeapons[Weapon].m_Ammo < maxAmmo || !m_aWeapons[Weapon].m_Got)
 	{
 		m_aWeapons[Weapon].m_Got = true;
-		m_aWeapons[Weapon].m_Ammo = min(g_pData->m_Weapons.m_aId[Weapon].m_Maxammo, Ammo);
+		m_aWeapons[Weapon].m_Ammo = min(maxAmmo, Ammo);
 		return true;
 	}
 	return false;
