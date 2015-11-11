@@ -8,15 +8,49 @@
 
 #include <engine/shared/config.h>
 #include <engine/graphics.h>
+#include <engine/textrender.h>
 #include <game/client/components/scoreboard.h>
 #include <game/client/components/menus.h>
 #include <game/client/components/chat.h>
 #include <game/generated/client_data.h>
 #include "statistics.h"
 
+struct StatFieldDef
+{
+    float x;
+    float width;
+    char *header;
+};
+
+enum {
+    StatFieldName,
+    StatFieldName2,
+    StatFieldsCount
+};
+
+static StatFieldDef FieldDefs[StatFieldsCount] =
+{
+    {
+        0,
+        100,
+        (char*)"Text1"
+    },
+    {
+        0,
+        100,
+        (char*)"Text2"
+    }
+};
+
 CStatistics::CStatistics()
 {
     OnReset();
+    float x = 0;
+    for (int i = 0; i < StatFieldsCount; ++i) {
+        FieldDefs[i].x = x;
+        x += FieldDefs[i].width;
+    }
+    width = x + 20;
 }
 
 void CStatistics::ConKeyStatistics(IConsole::IResult *pResult, void *pUserData)
@@ -41,7 +75,10 @@ void CStatistics::OnRender()
     
     CUIRect *pScreen = UI()->Screen();
     CUIRect viewRect;
-    pScreen->Margin(100, &viewRect);
+    pScreen->VMargin((pScreen->w-width) * 0.5f, &viewRect);
+    viewRect.HMargin(100, &viewRect);
+    CUIRect dataRect;
+    viewRect.Margin(10, &dataRect);
     Graphics()->MapScreen(pScreen->x, pScreen->y, pScreen->w, pScreen->h);
     Graphics()->BlendNormal();
     Graphics()->TextureSet(-1);
@@ -49,6 +86,19 @@ void CStatistics::OnRender()
     Graphics()->SetColor(0.0f, 0.0f, 0.0f, 0.5f);
     RenderTools()->DrawRoundRect(viewRect.x, viewRect.y, viewRect.w, viewRect.h, 17.0f);
     Graphics()->QuadsEnd();
+    
+    DrawHeader(&dataRect);
+}
+
+void CStatistics::DrawHeader(CUIRect *viewRect)
+{
+    CUIRect fieldRect;
+    CUIRect headerRect;
+    viewRect->HSplitTop(20, &headerRect, 0);
+    for (int i = 0; i < StatFieldsCount; ++i) {
+        headerRect.VSplitLeft(FieldDefs[i].width, &fieldRect, &headerRect);
+        TextRender()->Text(0, fieldRect.x, fieldRect.y, 20, FieldDefs[i].header, -1);
+    }
 }
 
 void CStatistics::OnRelease()

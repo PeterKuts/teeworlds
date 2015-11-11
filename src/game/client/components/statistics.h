@@ -17,6 +17,8 @@ class CStatistics : public CComponent
     
     bool m_Active;
     int DoButton(const void *pID, const char *pText, int Checked, const CUIRect *pRect);
+    float width;
+    void DrawHeader(CUIRect *viewRect);
 public:
     CStatistics();
     virtual void OnReset();
