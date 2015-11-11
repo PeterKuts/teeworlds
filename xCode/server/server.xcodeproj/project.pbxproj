@@ -803,6 +803,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				MACH_O_TYPE = mh_execute;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
