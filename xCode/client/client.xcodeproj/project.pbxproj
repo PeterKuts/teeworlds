@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE39C42A1BF39BAE00E87893 /* statistics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE39C4281BF39BAE00E87893 /* statistics.cpp */; };
 		CE85D79E1BEE5020000CC545 /* system.c in Sources */ = {isa = PBXBuildFile; fileRef = CE49497F1BD576C90031EFEC /* system.c */; };
 		CE85D79F1BEE5020000CC545 /* backend_sdl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49498D1BD576C90031EFEC /* backend_sdl.cpp */; };
 		CE85D7A01BEE5020000CC545 /* client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49498F1BD576C90031EFEC /* client.cpp */; };
@@ -130,6 +131,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CE39C4281BF39BAE00E87893 /* statistics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = statistics.cpp; sourceTree = "<group>"; };
+		CE39C4291BF39BAE00E87893 /* statistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = statistics.h; sourceTree = "<group>"; };
 		CE49497D1BD576C90031EFEC /* detect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detect.h; sourceTree = "<group>"; };
 		CE49497E1BD576C90031EFEC /* math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = math.h; sourceTree = "<group>"; };
 		CE49497F1BD576C90031EFEC /* system.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = system.c; sourceTree = "<group>"; };
@@ -719,6 +722,8 @@
 		CE494A1E1BD576C90031EFEC /* components */ = {
 			isa = PBXGroup;
 			children = (
+				CE39C4281BF39BAE00E87893 /* statistics.cpp */,
+				CE39C4291BF39BAE00E87893 /* statistics.h */,
 				CE85DA2C1BEE65FA000CC545 /* perksboard.cpp */,
 				CE85DA2D1BEE65FA000CC545 /* perksboard.h */,
 				CE494A1F1BD576C90031EFEC /* binds.cpp */,
@@ -1080,6 +1085,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE39C42A1BF39BAE00E87893 /* statistics.cpp in Sources */,
 				CE85D7FD1BEE507A000CC545 /* client.m in Sources */,
 				CE85D79E1BEE5020000CC545 /* system.c in Sources */,
 				CE85D79F1BEE5020000CC545 /* backend_sdl.cpp in Sources */,

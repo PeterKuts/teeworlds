@@ -46,6 +46,7 @@
 #include "components/nameplates.h"
 #include "components/scoreboard.h"
 #include "components/perksboard.h"
+#include "components/statistics.h"
 #include "components/skins.h"
 #include "components/sounds.h"
 #include "components/spectator.h"
@@ -72,6 +73,7 @@ static CControls gs_Controls;
 static CEffects gs_Effects;
 static CScoreboard gs_Scoreboard;
 static CPerksboard gs_Perksboard;
+static CStatistics gs_Statistics;
 static CSounds gs_Sounds;
 static CEmoticon gs_Emoticon;
 static CDamageInd gsDamageInd;
@@ -161,6 +163,7 @@ void CGameClient::OnConsoleInit()
 	m_All.Add(&gs_Broadcast);
 	m_All.Add(&gs_DebugHud);
     m_All.Add(&gs_Perksboard);
+    m_All.Add(&gs_Statistics);
 	m_All.Add(&gs_Scoreboard);
 	m_All.Add(m_pMotd);
 	m_All.Add(m_pMenus);

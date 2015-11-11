@@ -450,6 +450,7 @@ static CKeyInfo gs_aKeys[] =
 	{ "Screenshot", "screenshot", 0 },
 	{ "Scoreboard", "+scoreboard", 0 },
     { "Perksboard", "+perksboard", 0 },
+    { "Statistics", "+statistics", 0 },
 	{ "Respawn", "kill", 0 },
 };
 
@@ -462,13 +463,13 @@ static CKeyInfo gs_aKeys[] =
 
 const int g_KeyCount = sizeof(gs_aKeys) / sizeof(CKeyInfo);
 
-void CMenus::UiDoGetButtons(int Start, int Stop, CUIRect View)
+void CMenus::UiDoGetButtons(int Start, int Stop, CUIRect View, float buttonHeight)
 {
 	for (int i = Start; i < Stop; i++)
 	{
 		CKeyInfo &Key = gs_aKeys[i];
 		CUIRect Button, Label;
-		View.HSplitTop(20.0f, &Button, &View);
+		View.HSplitTop(buttonHeight, &Button, &View);
 		Button.VSplitLeft(135.0f, &Label, &Button);
 
 		char aBuf[64];
@@ -596,8 +597,8 @@ void CMenus::RenderSettingsControls(CUIRect MainView)
 //
 //		TextRender()->Text(0, MiscSettings.x, MiscSettings.y, 14.0f*UI()->Scale(), Localize("Miscellaneous"), -1);
 
-		MiscSettings.HSplitTop(5.0f, 0, &MiscSettings);
-		UiDoGetButtons(17, 27, MiscSettings);
+        //MiscSettings.HSplitTop(5.0f, 0, &MiscSettings);
+		UiDoGetButtons(17, 28, MiscSettings, 18);
 	}
 
 }
