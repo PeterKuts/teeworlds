@@ -95,7 +95,7 @@ void CGameContext::CreateHealInd(vec2 Pos, float Angle, int Amount)
     for(int i = 0; i < Amount; i++)
     {
         float f = mix(s, e, float(i+1)/float(Amount+2));
-        CNetEvent_DamageInd *pEvent = (CNetEvent_DamageInd *)m_Events.Create(NETEVENTTYPE_DAMAGEIND, sizeof(CNetEvent_DamageInd));
+        CNetEvent_HealInd *pEvent = (CNetEvent_HealInd *)m_Events.Create(NETEVENTTYPE_HEALIND, sizeof(CNetEvent_HealInd));
         if(pEvent)
         {
             pEvent->m_X = (int)Pos.x;

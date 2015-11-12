@@ -218,6 +218,10 @@ Objects = [
 	NetEvent("DamageInd:Common", [
 		NetIntAny("m_Angle"),
 	]),
+
+    NetEvent("HealInd:Common", [
+        NetIntAny("m_Angle"),
+    ]),
 ]
 
 Messages = [

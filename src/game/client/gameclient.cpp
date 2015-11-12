@@ -30,6 +30,7 @@
 #include "components/controls.h"
 #include "components/countryflags.h"
 #include "components/damageind.h"
+#include "components/healind.h"
 #include "components/debughud.h"
 #include "components/effects.h"
 #include "components/emoticon.h"
@@ -77,6 +78,7 @@ static CStatistics gs_Statistics;
 static CSounds gs_Sounds;
 static CEmoticon gs_Emoticon;
 static CDamageInd gsDamageInd;
+static CHealInd gsHealInd;
 static CVoting gs_Voting;
 static CSpectator gs_Spectator;
 
@@ -125,6 +127,7 @@ void CGameClient::OnConsoleInit()
 	m_pSounds = &::gs_Sounds;
 	m_pMotd = &::gs_Motd;
 	m_pDamageind = &::gsDamageInd;
+    m_pHealind = &::gsHealInd;
 	m_pMapimages = &::gs_MapImages;
 	m_pVoting = &::gs_Voting;
 	m_pScoreboard = &::gs_Scoreboard;
@@ -155,6 +158,7 @@ void CGameClient::OnConsoleInit()
 	m_All.Add(&gs_NamePlates);
 	m_All.Add(&m_pParticles->m_RenderGeneral);
 	m_All.Add(m_pDamageind);
+    m_All.Add(m_pHealind);
 	m_All.Add(&gs_Hud);
 	m_All.Add(&gs_Spectator);
 	m_All.Add(&gs_Emoticon);
@@ -588,7 +592,12 @@ void CGameClient::ProcessEvents()
 		IClient::CSnapItem Item;
 		const void *pData = Client()->SnapGetItem(SnapType, Index, &Item);
 
-		if(Item.m_Type == NETEVENTTYPE_DAMAGEIND)
+        if(Item.m_Type == NETEVENTTYPE_HEALIND)
+        {
+            CNetEvent_HealInd *ev = (CNetEvent_HealInd *)pData;
+            g_GameClient.m_pEffects->HealIndicator(vec2(ev->m_X, ev->m_Y), GetDirection(ev->m_Angle));
+        }
+		else if(Item.m_Type == NETEVENTTYPE_DAMAGEIND)
 		{
 			CNetEvent_DamageInd *ev = (CNetEvent_DamageInd *)pData;
 			g_GameClient.m_pEffects->DamageIndicator(vec2(ev->m_X, ev->m_Y), GetDirection(ev->m_Angle));

@@ -11,6 +11,7 @@
 #include <game/client/components/skins.h>
 #include <game/client/components/flow.h>
 #include <game/client/components/damageind.h>
+#include <game/client/components/healind.h>
 #include <game/client/components/sounds.h>
 #include <game/client/gameclient.h>
 
@@ -45,6 +46,11 @@ void CEffects::AirJump(vec2 Pos)
 	m_pClient->m_pParticles->Add(CParticles::GROUP_GENERAL, &p);
 
 	m_pClient->m_pSounds->PlayAt(CSounds::CHN_WORLD, SOUND_PLAYER_AIRJUMP, 1.0f, Pos);
+}
+
+void CEffects::HealIndicator(vec2 Pos, vec2 Dir)
+{
+    m_pClient->m_pHealind->Create(Pos, Dir);
 }
 
 void CEffects::DamageIndicator(vec2 Pos, vec2 Dir)
