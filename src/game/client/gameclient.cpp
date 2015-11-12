@@ -163,7 +163,7 @@ void CGameClient::OnConsoleInit()
 	m_All.Add(&gs_Broadcast);
 	m_All.Add(&gs_DebugHud);
     m_All.Add(&gs_Perksboard);
-    m_All.Add(&gs_Statistics);
+    //    m_All.Add(&gs_Statistics);
 	m_All.Add(&gs_Scoreboard);
 	m_All.Add(m_pMotd);
 	m_All.Add(m_pMenus);
