@@ -31,7 +31,7 @@ bool CLaser::HitCharacter(vec2 From, vec2 To)
 	m_Pos = At;
 	m_Energy = -1;
     if (pOwnerChar && pOwnerChar->GetPlayer()->HasPerk(PERKS_DOCTOR)) {
-        pHit->Heal(GameServer()->Tuning()->m_LaserDamage);
+        pHit->Heal(vec2(0.f, 0.f), GameServer()->Tuning()->m_LaserDamage, m_Owner, WEAPON_RIFLE);
     } else {
         pHit->TakeDamage(vec2(0.f, 0.f), GameServer()->Tuning()->m_LaserDamage, m_Owner, WEAPON_RIFLE);
     }

@@ -319,7 +319,8 @@ void CCharacter::FireWeapon()
 				else
 					Dir = vec2(0.f, -1.f);
                 if (m_pPlayer->HasPerk(PERKS_DOCTOR)) {
-                    pTarget->Heal(damage);
+                    pTarget->Heal(vec2(0.f, -1.f) + normalize(Dir + vec2(0.f, -1.1f)) * 10.0f, damage,
+                                  m_pPlayer->GetCID(), m_ActiveWeapon);
                 } else {
                     pTarget->TakeDamage(vec2(0.f, -1.f) + normalize(Dir + vec2(0.f, -1.1f)) * 10.0f, damage,
                                         m_pPlayer->GetCID(), m_ActiveWeapon);
@@ -690,20 +691,6 @@ bool CCharacter::IncreaseArmor(int Amount)
 	return true;
 }
 
-bool CCharacter::Heal(int Amount)
-{
-    bool result = false;
-    if(Amount && m_Health)
-    {
-        if (Amount > 1) {
-            result |= IncreaseArmor(1);
-            Amount--;
-        }
-        result |= IncreaseHealth(Amount);
-    }
-    return result;
-}
-
 void CCharacter::Die(int Killer, int Weapon)
 {
 	// we got to wait 0.5 secs before respawning
@@ -834,6 +821,71 @@ bool CCharacter::TakeDamage(vec2 Force, int Dmg, int From, int Weapon)
 
 	return true;
 }
+
+bool CCharacter::Heal(vec2 Force, int Amount, int From, int Weapon)
+{
+    m_Core.m_Vel += Force;
+    
+    if (!GameServer()->m_pController->IsFriendlyFire(m_pPlayer->GetCID(), From) && !g_Config.m_SvTeamdamage) {
+        return false;
+    }
+
+    m_DamageTaken++;
+    
+    int realHeal = 0;
+    bool result = false;
+    if(Amount && m_Health)
+    {
+        int temp = 0;
+        if (Amount > 1) {
+            temp = m_Armor;
+            result |= IncreaseArmor(1);
+            realHeal += m_Armor - temp;
+            Amount--;
+        }
+        temp = m_Health;
+        result |= IncreaseHealth(Amount);
+        realHeal += m_Health - temp;
+    }
+    if (realHeal < 0) {
+        realHeal = 0;
+    }
+    
+    // do damage Hit sound
+    if(From >= 0 && From != m_pPlayer->GetCID() && GameServer()->m_apPlayers[From])
+    {
+        int Mask = CmaskOne(From);
+        for(int i = 0; i < MAX_CLIENTS; i++)
+        {
+            if(GameServer()->m_apPlayers[i] && GameServer()->m_apPlayers[i]->GetTeam() == TEAM_SPECTATORS && GameServer()->m_apPlayers[i]->m_SpectatorID == From)
+                Mask |= CmaskOne(i);
+        }
+        GameServer()->CreateSound(GameServer()->m_apPlayers[From]->m_ViewPos, SOUND_HIT, Mask);
+    }
+    
+    if (!result) {
+        return result;
+    }
+    
+    // create healthmod indicator
+    if(Server()->Tick() < m_DamageTakenTick+25)
+    {
+        // make sure that the damage indicators doesn't group together
+        GameServer()->CreateHealInd(m_Pos, m_DamageTaken*0.25f, realHeal);
+    }
+    else
+    {
+        m_DamageTaken = 0;
+        GameServer()->CreateHealInd(m_Pos, 0, realHeal);
+    }
+
+    GameServer()->CreateSound(m_Pos, SOUND_PLAYER_SPAWN);
+    m_EmoteType = EMOTE_HAPPY;
+    m_EmoteStop = Server()->Tick() + Server()->TickSpeed();
+
+    return result;
+}
+
 
 void CCharacter::Snap(int SnappingClient)
 {
