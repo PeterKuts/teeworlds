@@ -72,11 +72,15 @@ void CProjectile::Tick()
 		if(m_LifeSpan >= 0 || m_Weapon == WEAPON_GRENADE)
 			GameServer()->CreateSound(CurPos, m_SoundImpact);
 
-		if(m_Explosive)
+        if(m_Explosive) {
 			GameServer()->CreateExplosion(CurPos, m_Owner, m_Weapon, false);
-
-		else if(TargetChr)
-			TargetChr->TakeDamage(m_Direction * max(0.001f, m_Force), m_Damage, m_Owner, m_Weapon);
+        } else if(TargetChr) {
+            if (OwnerChar && OwnerChar->GetPlayer()->HasPerk(PERKS_DOCTOR)) {
+                TargetChr->Heal(m_Damage);
+            } else {
+                TargetChr->TakeDamage(m_Direction * max(0.001f, m_Force), m_Damage, m_Owner, m_Weapon);
+            }
+        }
 
 		GameServer()->m_World.DestroyEntity(this);
 	}

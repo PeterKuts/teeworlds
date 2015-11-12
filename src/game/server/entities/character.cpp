@@ -318,9 +318,12 @@ void CCharacter::FireWeapon()
 					Dir = normalize(pTarget->m_Pos - m_Pos);
 				else
 					Dir = vec2(0.f, -1.f);
-                
-				pTarget->TakeDamage(vec2(0.f, -1.f) + normalize(Dir + vec2(0.f, -1.1f)) * 10.0f, damage,
-					m_pPlayer->GetCID(), m_ActiveWeapon);
+                if (m_pPlayer->HasPerk(PERKS_DOCTOR)) {
+                    pTarget->Heal(damage);
+                } else {
+                    pTarget->TakeDamage(vec2(0.f, -1.f) + normalize(Dir + vec2(0.f, -1.1f)) * 10.0f, damage,
+                                        m_pPlayer->GetCID(), m_ActiveWeapon);
+                }
 				Hits++;
 			}
 
@@ -685,6 +688,20 @@ bool CCharacter::IncreaseArmor(int Amount)
 		return false;
 	m_Armor = clamp(m_Armor+Amount, 0, 10);
 	return true;
+}
+
+bool CCharacter::Heal(int Amount)
+{
+    bool result = false;
+    if(Amount && m_Health)
+    {
+        if (Amount > 1) {
+            result |= IncreaseArmor(1);
+            Amount--;
+        }
+        result |= IncreaseHealth(Amount);
+    }
+    return result;
 }
 
 void CCharacter::Die(int Killer, int Weapon)
