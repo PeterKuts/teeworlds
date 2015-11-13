@@ -290,9 +290,26 @@ void CPlayer::TryRespawn()
 	m_Spawning = false;
 	m_pCharacter = new(m_ClientID) CCharacter(&GameServer()->m_World);
 	m_pCharacter->Spawn(this, SpawnPos);
+    if (g_Config.m_SvAutoPerks) {
+        m_WantedPerk = (int)((float)rand() / ((float)RAND_MAX + 1) * NUM_PERKS);
+    }
     m_Perk = m_WantedPerk;
     m_pCharacter->SetPerk(m_Perk);
 	GameServer()->CreatePlayerSpawn(SpawnPos);
+
+    char aBuf[512];
+    str_format(aBuf, sizeof(aBuf), "Active perk: %s", g_pData->m_aPerks[m_WantedPerk].m_pName);
+    switch (g_Config.m_SvShowPerks) {
+        case 1:
+            GameServer()->SendChat(m_ClientID, m_Team, aBuf);
+            break;
+        case 2:
+            GameServer()->SendChat(m_ClientID, -2, aBuf);
+            break;
+        default:
+            GameServer()->SendChatTarget(m_ClientID, aBuf);
+            break;
+    }
 }
 
 void CPlayer::SetPerk(int Perk)

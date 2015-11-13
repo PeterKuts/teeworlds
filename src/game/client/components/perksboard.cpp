@@ -71,9 +71,6 @@ void CPerksboard::OnRender()
             CNetMsg_Acl_SetPerk Msg;
             Msg.m_Perk = i;
             Client()->SendPackMsg(&Msg, MSGFLAG_VITAL);
-            char aBuf[512];
-            str_format(aBuf, sizeof(aBuf), "Perk: %s", g_pData->m_aPerks[i].m_pName);
-            m_pClient->m_pChat->Say(0, aBuf);
         }
     }
     
