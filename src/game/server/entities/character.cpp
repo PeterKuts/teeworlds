@@ -332,7 +332,7 @@ void CCharacter::FireWeapon()
             if(Hits) {
 				m_ReloadTimer = Server()->TickSpeed()/3;
                 if (m_pPlayer->HasPerk(PERKS_HUMMERTIME)) {
-                    TakeDamage(vec2(0.f, 0.f), damage, m_pPlayer->GetCID(), m_ActiveWeapon);
+                    TakeDamage(vec2(0.f, 0.f), damage * 2/3, m_pPlayer->GetCID(), m_ActiveWeapon);
                 }
             }
 
@@ -417,7 +417,7 @@ void CCharacter::FireWeapon()
     if(!m_ReloadTimer) {
         m_ReloadTimer = g_pData->m_Weapons.m_aId[m_ActiveWeapon].m_Firedelay * Server()->TickSpeed() / 1000;
         if (m_ActiveWeapon == WEAPON_RIFLE && m_pPlayer->HasPerk(PERKS_SHARPSHOOTER)) {
-            m_ReloadTimer *= 1.5;
+            m_ReloadTimer *= 1.25;
         }
     }
 }
@@ -438,9 +438,13 @@ void CCharacter::HandleWeapons()
 	FireWeapon();
 
 	// ammo regen
-	int AmmoRegenTime = m_pPlayer->HasPerk(PERKS_MACHINEGUN) && m_ActiveWeapon == WEAPON_GUN
-    ? (int)(g_pData->m_Weapons.m_aId[m_ActiveWeapon].m_Ammoregentime * 0.5f)
-    : g_pData->m_Weapons.m_aId[m_ActiveWeapon].m_Ammoregentime;
+    int AmmoRegenTime = g_pData->m_Weapons.m_aId[m_ActiveWeapon].m_Ammoregentime;
+    int MaxAmmo = g_pData->m_Weapons.m_aId[m_ActiveWeapon].m_Maxammo;
+    if (m_pPlayer->HasPerk(PERKS_MACHINEGUN) && m_ActiveWeapon == WEAPON_GUN) {
+        AmmoRegenTime *= 0.33;
+        MaxAmmo *= 2;
+    }
+    
 	if(AmmoRegenTime)
 	{
 		// If equipped and not active, regen ammo?
@@ -452,7 +456,7 @@ void CCharacter::HandleWeapons()
 			if ((Server()->Tick() - m_aWeapons[m_ActiveWeapon].m_AmmoRegenStart) >= AmmoRegenTime * Server()->TickSpeed() / 1000)
 			{
 				// Add some ammo
-				m_aWeapons[m_ActiveWeapon].m_Ammo = min(m_aWeapons[m_ActiveWeapon].m_Ammo + 1, 10);
+				m_aWeapons[m_ActiveWeapon].m_Ammo = min(m_aWeapons[m_ActiveWeapon].m_Ammo + 1, MaxAmmo);
 				m_aWeapons[m_ActiveWeapon].m_AmmoRegenStart = -1;
 			}
 		}
@@ -467,8 +471,12 @@ void CCharacter::HandleWeapons()
 
 bool CCharacter::GiveWeapon(int Weapon, int Ammo)
 {
-    float maxAmmoKoef = Weapon == WEAPON_GRENADE && m_pPlayer->HasPerk(PERKS_ROCKETJUMPER)? 0.5f: 1.0f;
-    int maxAmmo = g_pData->m_Weapons.m_aId[Weapon].m_Maxammo * maxAmmoKoef;
+    int maxAmmo = g_pData->m_Weapons.m_aId[Weapon].m_Maxammo;
+    if (Weapon == WEAPON_GRENADE && m_pPlayer->HasPerk(PERKS_ROCKETJUMPER)) {
+        maxAmmo = 5;
+    } else if (Weapon == WEAPON_GUN && m_pPlayer->HasPerk(PERKS_MACHINEGUN)) {
+        maxAmmo = 20;
+    }
 	if(m_aWeapons[Weapon].m_Ammo < maxAmmo || !m_aWeapons[Weapon].m_Got)
 	{
 		m_aWeapons[Weapon].m_Got = true;

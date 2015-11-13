@@ -289,12 +289,14 @@ void CPlayer::TryRespawn()
 
 	m_Spawning = false;
 	m_pCharacter = new(m_ClientID) CCharacter(&GameServer()->m_World);
-	m_pCharacter->Spawn(this, SpawnPos);
+    
     if (g_Config.m_SvAutoPerks) {
         m_WantedPerk = (int)((float)rand() / ((float)RAND_MAX + 1) * (NUM_PERKS - 1)) + 1;
     }
     m_Perk = m_WantedPerk;
     m_pCharacter->SetPerk(m_Perk);
+
+    m_pCharacter->Spawn(this, SpawnPos);
 	GameServer()->CreatePlayerSpawn(SpawnPos);
 
     char aBuf[512];

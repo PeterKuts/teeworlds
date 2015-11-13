@@ -400,9 +400,9 @@ void CHud::RenderHealthAndAmmo(const CNetObj_Character *pCharacter)
 
 	// if weaponstage is active, put a "glow" around the stage ammo
 	RenderTools()->SelectSprite(g_pData->m_Weapons.m_aId[pCharacter->m_Weapon%NUM_WEAPONS].m_pSpriteProj);
-	IGraphics::CQuadItem Array[10];
+	IGraphics::CQuadItem Array[20];
 	int i;
-	for (i = 0; i < min(pCharacter->m_AmmoCount, 10); i++)
+	for (i = 0; i < pCharacter->m_AmmoCount; i++)
 		Array[i] = IGraphics::CQuadItem(x+i*12,y+24,10,10);
 	Graphics()->QuadsDrawTL(Array, i);
 	Graphics()->QuadsEnd();
