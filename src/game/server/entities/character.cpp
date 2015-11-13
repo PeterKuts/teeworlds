@@ -440,11 +440,9 @@ void CCharacter::HandleWeapons()
 	// ammo regen
     int AmmoRegenTime = g_pData->m_Weapons.m_aId[m_ActiveWeapon].m_Ammoregentime;
     int MaxAmmo = g_pData->m_Weapons.m_aId[m_ActiveWeapon].m_Maxammo;
-    if (m_pPlayer->HasPerk(PERKS_MACHINEGUN) && m_ActiveWeapon == WEAPON_GUN) {
-        AmmoRegenTime *= 0.33;
-        MaxAmmo *= 2;
+    if (m_ActiveWeapon == WEAPON_GUN && m_pPlayer->HasPerk(PERKS_MACHINEGUN)) {
+        AmmoRegenTime = 0;
     }
-    
 	if(AmmoRegenTime)
 	{
 		// If equipped and not active, regen ammo?
@@ -475,7 +473,7 @@ bool CCharacter::GiveWeapon(int Weapon, int Ammo)
     if (Weapon == WEAPON_GRENADE && m_pPlayer->HasPerk(PERKS_ROCKETJUMPER)) {
         maxAmmo = 5;
     } else if (Weapon == WEAPON_GUN && m_pPlayer->HasPerk(PERKS_MACHINEGUN)) {
-        maxAmmo = 20;
+        maxAmmo = -1;
     }
 	if(m_aWeapons[Weapon].m_Ammo < maxAmmo || !m_aWeapons[Weapon].m_Got)
 	{

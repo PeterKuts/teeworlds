@@ -367,7 +367,7 @@ void IGameController::OnCharacterSpawn(class CCharacter *pChr)
 	// give default weapons
 	pChr->GiveWeapon(WEAPON_HAMMER, -1);
     if (pChr->GetPlayer()->HasPerk(PERKS_MACHINEGUN)) {
-        pChr->GiveWeapon(WEAPON_GUN, 20);
+        pChr->GiveWeapon(WEAPON_GUN, -1);
     } else {
         pChr->GiveWeapon(WEAPON_GUN, 10);
     }
