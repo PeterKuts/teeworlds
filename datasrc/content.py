@@ -547,3 +547,6 @@ container.perks.Add(perk)
 
 perk = Perk("Doctor")
 container.perks.Add(perk)
+
+perk = Perk("Vampire")
+container.perks.Add(perk)

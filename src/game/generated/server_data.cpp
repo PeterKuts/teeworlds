@@ -497,6 +497,7 @@ static CDataPerk x1890[] = {
 	/* x1890[6] */ {  "Sharpshooter", },
 	/* x1890[7] */ {  "Ephemeral", },
 	/* x1890[8] */ {  "Doctor", },
+	/* x1890[9] */ {  "Vampire", },
 };
 CDataContainer datacontainer = 
 /* datacontainer */ {
@@ -507,7 +508,7 @@ CDataContainer datacontainer =
 	107,x44,
 	6,x75,
 	/* datacontainer.weapons */ { 	/* datacontainer.weapons.hammer */ { 	&x1887[0], }, 	/* datacontainer.weapons.gun */ { 	&x1887[1], 	1.250000, 	2200.000000, 	2.000000, }, 	/* datacontainer.weapons.shotgun */ { 	&x1887[2], 	1.250000, 	2200.000000, 	0.800000, 	0.250000, }, 	/* datacontainer.weapons.grenade */ { 	&x1887[3], 	7.000000, 	1000.000000, 	2.000000, }, 	/* datacontainer.weapons.rifle */ { 	&x1887[4], 	800.000000, 	150, 	1, 	0.000000, }, 	/* datacontainer.weapons.ninja */ { 	&x1887[5], 	15000, 	200, 	50, }, 	6,x1887, },
-	9,x1890,
+	10,x1890,
 }
 ;
 CDataContainer *g_pData = &datacontainer;
