@@ -291,7 +291,16 @@ void CPlayer::TryRespawn()
 	m_pCharacter = new(m_ClientID) CCharacter(&GameServer()->m_World);
     
     if (g_Config.m_SvAutoPerks) {
-        m_WantedPerk = (int)((float)rand() / ((float)RAND_MAX + 1) * (NUM_PERKS - 1)) + 1;
+        int activePerks[NUM_PERKS];
+        int maxPerks = 0;
+        for (int i = 0; i < NUM_PERKS; ++i) {
+            if (i == PERKS_NONE || i == m_WantedPerk) {
+                continue;
+            }
+            activePerks[maxPerks] = i;
+            maxPerks++;
+        }
+        m_WantedPerk = activePerks[(int)((float)rand() / ((float)RAND_MAX) * maxPerks)];
     }
     m_Perk = m_WantedPerk;
     m_pCharacter->SetPerk(m_Perk);
