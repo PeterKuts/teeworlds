@@ -744,7 +744,7 @@ bool CCharacter::TakeDamage(vec2 Force, int Dmg, int From, int Weapon)
             Dmg = max(1, Dmg/2);
         }
     } else if (m_pPlayer->HasPerk(PERKS_VAMPIRE)) {
-        Dmg *= 1.5f;
+        Dmg = round_to_int(Dmg * 1.5f);
     }
     
 	m_DamageTaken++;
@@ -800,6 +800,11 @@ bool CCharacter::TakeDamage(vec2 Force, int Dmg, int From, int Weapon)
 		GameServer()->CreateSound(GameServer()->m_apPlayers[From]->m_ViewPos, SOUND_HIT, Mask);
 	}
 
+    CCharacter *fromCharacter = GameServer()->GetPlayerChar(From);
+    if (From != m_pPlayer->GetCID() && fromCharacter && fromCharacter->GetPlayer()->HasPerk(PERKS_VAMPIRE)) {
+        fromCharacter->Heal(vec2(0, 0), Dmg, m_pPlayer->GetCID(), Weapon);
+    }
+    
 	// check for death
 	if(m_Health <= 0)
 	{
@@ -826,12 +831,6 @@ bool CCharacter::TakeDamage(vec2 Force, int Dmg, int From, int Weapon)
 
 	m_EmoteType = EMOTE_PAIN;
 	m_EmoteStop = Server()->Tick() + 500 * Server()->TickSpeed() / 1000;
-
-    
-    CCharacter *fromCharacter = GameServer()->GetPlayerChar(From);
-    if (From != m_pPlayer->GetCID() && fromCharacter && fromCharacter->GetPlayer()->HasPerk(PERKS_VAMPIRE)) {
-        fromCharacter->Heal(vec2(0, 0), Dmg, m_pPlayer->GetCID(), Weapon);
-    }
 
 	return true;
 }
