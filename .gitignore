@@ -4,7 +4,7 @@ config.lua
 datasrc/__pycache__
 datasrc/*.pyc
 objs
-src/game/generated
+#src/game/generated
 SDL.dll
 freetype.dll
 autoexec.cfg
