@@ -1,244 +1,244 @@
 #include "server_data.h"
-static CDataSound x1896[] = {
-	/* x1896[0] */ {  0,  "audio/wp_gun_fire-01.wv", },
-	/* x1896[1] */ {  0,  "audio/wp_gun_fire-02.wv", },
-	/* x1896[2] */ {  0,  "audio/wp_gun_fire-03.wv", },
+static CDataSound x1897[] = {
+	/* x1897[0] */ {  0,  "audio/wp_gun_fire-01.wv", },
+	/* x1897[1] */ {  0,  "audio/wp_gun_fire-02.wv", },
+	/* x1897[2] */ {  0,  "audio/wp_gun_fire-03.wv", },
 };
-static CDataSound x1912[] = {
-	/* x1912[0] */ {  0,  "audio/wp_shotty_fire-01.wv", },
-	/* x1912[1] */ {  0,  "audio/wp_shotty_fire-02.wv", },
-	/* x1912[2] */ {  0,  "audio/wp_shotty_fire-03.wv", },
+static CDataSound x1913[] = {
+	/* x1913[0] */ {  0,  "audio/wp_shotty_fire-01.wv", },
+	/* x1913[1] */ {  0,  "audio/wp_shotty_fire-02.wv", },
+	/* x1913[2] */ {  0,  "audio/wp_shotty_fire-03.wv", },
 };
-static CDataSound x1928[] = {
-	/* x1928[0] */ {  0,  "audio/wp_flump_launch-01.wv", },
-	/* x1928[1] */ {  0,  "audio/wp_flump_launch-02.wv", },
-	/* x1928[2] */ {  0,  "audio/wp_flump_launch-03.wv", },
+static CDataSound x1929[] = {
+	/* x1929[0] */ {  0,  "audio/wp_flump_launch-01.wv", },
+	/* x1929[1] */ {  0,  "audio/wp_flump_launch-02.wv", },
+	/* x1929[2] */ {  0,  "audio/wp_flump_launch-03.wv", },
 };
-static CDataSound x1944[] = {
-	/* x1944[0] */ {  0,  "audio/wp_hammer_swing-01.wv", },
-	/* x1944[1] */ {  0,  "audio/wp_hammer_swing-02.wv", },
-	/* x1944[2] */ {  0,  "audio/wp_hammer_swing-03.wv", },
+static CDataSound x1945[] = {
+	/* x1945[0] */ {  0,  "audio/wp_hammer_swing-01.wv", },
+	/* x1945[1] */ {  0,  "audio/wp_hammer_swing-02.wv", },
+	/* x1945[2] */ {  0,  "audio/wp_hammer_swing-03.wv", },
 };
-static CDataSound x1960[] = {
-	/* x1960[0] */ {  0,  "audio/wp_hammer_hit-01.wv", },
-	/* x1960[1] */ {  0,  "audio/wp_hammer_hit-02.wv", },
-	/* x1960[2] */ {  0,  "audio/wp_hammer_hit-03.wv", },
+static CDataSound x1961[] = {
+	/* x1961[0] */ {  0,  "audio/wp_hammer_hit-01.wv", },
+	/* x1961[1] */ {  0,  "audio/wp_hammer_hit-02.wv", },
+	/* x1961[2] */ {  0,  "audio/wp_hammer_hit-03.wv", },
 };
-static CDataSound x1976[] = {
-	/* x1976[0] */ {  0,  "audio/wp_ninja_attack-01.wv", },
-	/* x1976[1] */ {  0,  "audio/wp_ninja_attack-02.wv", },
-	/* x1976[2] */ {  0,  "audio/wp_ninja_attack-03.wv", },
+static CDataSound x1977[] = {
+	/* x1977[0] */ {  0,  "audio/wp_ninja_attack-01.wv", },
+	/* x1977[1] */ {  0,  "audio/wp_ninja_attack-02.wv", },
+	/* x1977[2] */ {  0,  "audio/wp_ninja_attack-03.wv", },
 };
-static CDataSound x1992[] = {
-	/* x1992[0] */ {  0,  "audio/wp_flump_explo-01.wv", },
-	/* x1992[1] */ {  0,  "audio/wp_flump_explo-02.wv", },
-	/* x1992[2] */ {  0,  "audio/wp_flump_explo-03.wv", },
+static CDataSound x1993[] = {
+	/* x1993[0] */ {  0,  "audio/wp_flump_explo-01.wv", },
+	/* x1993[1] */ {  0,  "audio/wp_flump_explo-02.wv", },
+	/* x1993[2] */ {  0,  "audio/wp_flump_explo-03.wv", },
 };
-static CDataSound x2008[] = {
-	/* x2008[0] */ {  0,  "audio/wp_ninja_hit-01.wv", },
-	/* x2008[1] */ {  0,  "audio/wp_ninja_hit-02.wv", },
-	/* x2008[2] */ {  0,  "audio/wp_ninja_hit-03.wv", },
+static CDataSound x2009[] = {
+	/* x2009[0] */ {  0,  "audio/wp_ninja_hit-01.wv", },
+	/* x2009[1] */ {  0,  "audio/wp_ninja_hit-02.wv", },
+	/* x2009[2] */ {  0,  "audio/wp_ninja_hit-03.wv", },
 };
-static CDataSound x2024[] = {
-	/* x2024[0] */ {  0,  "audio/wp_rifle_fire-01.wv", },
-	/* x2024[1] */ {  0,  "audio/wp_rifle_fire-02.wv", },
-	/* x2024[2] */ {  0,  "audio/wp_rifle_fire-03.wv", },
+static CDataSound x2025[] = {
+	/* x2025[0] */ {  0,  "audio/wp_rifle_fire-01.wv", },
+	/* x2025[1] */ {  0,  "audio/wp_rifle_fire-02.wv", },
+	/* x2025[2] */ {  0,  "audio/wp_rifle_fire-03.wv", },
 };
-static CDataSound x2040[] = {
-	/* x2040[0] */ {  0,  "audio/wp_rifle_bnce-01.wv", },
-	/* x2040[1] */ {  0,  "audio/wp_rifle_bnce-02.wv", },
-	/* x2040[2] */ {  0,  "audio/wp_rifle_bnce-03.wv", },
+static CDataSound x2041[] = {
+	/* x2041[0] */ {  0,  "audio/wp_rifle_bnce-01.wv", },
+	/* x2041[1] */ {  0,  "audio/wp_rifle_bnce-02.wv", },
+	/* x2041[2] */ {  0,  "audio/wp_rifle_bnce-03.wv", },
 };
-static CDataSound x2056[] = {
-	/* x2056[0] */ {  0,  "audio/wp_switch-01.wv", },
-	/* x2056[1] */ {  0,  "audio/wp_switch-02.wv", },
-	/* x2056[2] */ {  0,  "audio/wp_switch-03.wv", },
+static CDataSound x2057[] = {
+	/* x2057[0] */ {  0,  "audio/wp_switch-01.wv", },
+	/* x2057[1] */ {  0,  "audio/wp_switch-02.wv", },
+	/* x2057[2] */ {  0,  "audio/wp_switch-03.wv", },
 };
-static CDataSound x2072[] = {
-	/* x2072[0] */ {  0,  "audio/vo_teefault_pain_short-01.wv", },
-	/* x2072[1] */ {  0,  "audio/vo_teefault_pain_short-02.wv", },
-	/* x2072[2] */ {  0,  "audio/vo_teefault_pain_short-03.wv", },
-	/* x2072[3] */ {  0,  "audio/vo_teefault_pain_short-04.wv", },
-	/* x2072[4] */ {  0,  "audio/vo_teefault_pain_short-05.wv", },
-	/* x2072[5] */ {  0,  "audio/vo_teefault_pain_short-06.wv", },
-	/* x2072[6] */ {  0,  "audio/vo_teefault_pain_short-07.wv", },
-	/* x2072[7] */ {  0,  "audio/vo_teefault_pain_short-08.wv", },
-	/* x2072[8] */ {  0,  "audio/vo_teefault_pain_short-09.wv", },
-	/* x2072[9] */ {  0,  "audio/vo_teefault_pain_short-10.wv", },
-	/* x2072[10] */ {  0,  "audio/vo_teefault_pain_short-11.wv", },
-	/* x2072[11] */ {  0,  "audio/vo_teefault_pain_short-12.wv", },
+static CDataSound x2073[] = {
+	/* x2073[0] */ {  0,  "audio/vo_teefault_pain_short-01.wv", },
+	/* x2073[1] */ {  0,  "audio/vo_teefault_pain_short-02.wv", },
+	/* x2073[2] */ {  0,  "audio/vo_teefault_pain_short-03.wv", },
+	/* x2073[3] */ {  0,  "audio/vo_teefault_pain_short-04.wv", },
+	/* x2073[4] */ {  0,  "audio/vo_teefault_pain_short-05.wv", },
+	/* x2073[5] */ {  0,  "audio/vo_teefault_pain_short-06.wv", },
+	/* x2073[6] */ {  0,  "audio/vo_teefault_pain_short-07.wv", },
+	/* x2073[7] */ {  0,  "audio/vo_teefault_pain_short-08.wv", },
+	/* x2073[8] */ {  0,  "audio/vo_teefault_pain_short-09.wv", },
+	/* x2073[9] */ {  0,  "audio/vo_teefault_pain_short-10.wv", },
+	/* x2073[10] */ {  0,  "audio/vo_teefault_pain_short-11.wv", },
+	/* x2073[11] */ {  0,  "audio/vo_teefault_pain_short-12.wv", },
 };
-static CDataSound x2115[] = {
-	/* x2115[0] */ {  0,  "audio/vo_teefault_pain_long-01.wv", },
-	/* x2115[1] */ {  0,  "audio/vo_teefault_pain_long-02.wv", },
+static CDataSound x2116[] = {
+	/* x2116[0] */ {  0,  "audio/vo_teefault_pain_long-01.wv", },
+	/* x2116[1] */ {  0,  "audio/vo_teefault_pain_long-02.wv", },
 };
-static CDataSound x2128[] = {
-	/* x2128[0] */ {  0,  "audio/foley_land-01.wv", },
-	/* x2128[1] */ {  0,  "audio/foley_land-02.wv", },
-	/* x2128[2] */ {  0,  "audio/foley_land-03.wv", },
-	/* x2128[3] */ {  0,  "audio/foley_land-04.wv", },
+static CDataSound x2129[] = {
+	/* x2129[0] */ {  0,  "audio/foley_land-01.wv", },
+	/* x2129[1] */ {  0,  "audio/foley_land-02.wv", },
+	/* x2129[2] */ {  0,  "audio/foley_land-03.wv", },
+	/* x2129[3] */ {  0,  "audio/foley_land-04.wv", },
 };
-static CDataSound x2147[] = {
-	/* x2147[0] */ {  0,  "audio/foley_dbljump-01.wv", },
-	/* x2147[1] */ {  0,  "audio/foley_dbljump-02.wv", },
-	/* x2147[2] */ {  0,  "audio/foley_dbljump-03.wv", },
+static CDataSound x2148[] = {
+	/* x2148[0] */ {  0,  "audio/foley_dbljump-01.wv", },
+	/* x2148[1] */ {  0,  "audio/foley_dbljump-02.wv", },
+	/* x2148[2] */ {  0,  "audio/foley_dbljump-03.wv", },
 };
-static CDataSound x2163[] = {
-	/* x2163[0] */ {  0,  "audio/foley_foot_left-01.wv", },
-	/* x2163[1] */ {  0,  "audio/foley_foot_left-02.wv", },
-	/* x2163[2] */ {  0,  "audio/foley_foot_left-03.wv", },
-	/* x2163[3] */ {  0,  "audio/foley_foot_left-04.wv", },
-	/* x2163[4] */ {  0,  "audio/foley_foot_right-01.wv", },
-	/* x2163[5] */ {  0,  "audio/foley_foot_right-02.wv", },
-	/* x2163[6] */ {  0,  "audio/foley_foot_right-03.wv", },
-	/* x2163[7] */ {  0,  "audio/foley_foot_right-04.wv", },
+static CDataSound x2164[] = {
+	/* x2164[0] */ {  0,  "audio/foley_foot_left-01.wv", },
+	/* x2164[1] */ {  0,  "audio/foley_foot_left-02.wv", },
+	/* x2164[2] */ {  0,  "audio/foley_foot_left-03.wv", },
+	/* x2164[3] */ {  0,  "audio/foley_foot_left-04.wv", },
+	/* x2164[4] */ {  0,  "audio/foley_foot_right-01.wv", },
+	/* x2164[5] */ {  0,  "audio/foley_foot_right-02.wv", },
+	/* x2164[6] */ {  0,  "audio/foley_foot_right-03.wv", },
+	/* x2164[7] */ {  0,  "audio/foley_foot_right-04.wv", },
 };
-static CDataSound x2194[] = {
-	/* x2194[0] */ {  0,  "audio/foley_body_splat-01.wv", },
-	/* x2194[1] */ {  0,  "audio/foley_body_splat-02.wv", },
-	/* x2194[2] */ {  0,  "audio/foley_body_splat-03.wv", },
+static CDataSound x2195[] = {
+	/* x2195[0] */ {  0,  "audio/foley_body_splat-01.wv", },
+	/* x2195[1] */ {  0,  "audio/foley_body_splat-02.wv", },
+	/* x2195[2] */ {  0,  "audio/foley_body_splat-03.wv", },
 };
-static CDataSound x2210[] = {
-	/* x2210[0] */ {  0,  "audio/vo_teefault_spawn-01.wv", },
-	/* x2210[1] */ {  0,  "audio/vo_teefault_spawn-02.wv", },
-	/* x2210[2] */ {  0,  "audio/vo_teefault_spawn-03.wv", },
-	/* x2210[3] */ {  0,  "audio/vo_teefault_spawn-04.wv", },
-	/* x2210[4] */ {  0,  "audio/vo_teefault_spawn-05.wv", },
-	/* x2210[5] */ {  0,  "audio/vo_teefault_spawn-06.wv", },
-	/* x2210[6] */ {  0,  "audio/vo_teefault_spawn-07.wv", },
+static CDataSound x2211[] = {
+	/* x2211[0] */ {  0,  "audio/vo_teefault_spawn-01.wv", },
+	/* x2211[1] */ {  0,  "audio/vo_teefault_spawn-02.wv", },
+	/* x2211[2] */ {  0,  "audio/vo_teefault_spawn-03.wv", },
+	/* x2211[3] */ {  0,  "audio/vo_teefault_spawn-04.wv", },
+	/* x2211[4] */ {  0,  "audio/vo_teefault_spawn-05.wv", },
+	/* x2211[5] */ {  0,  "audio/vo_teefault_spawn-06.wv", },
+	/* x2211[6] */ {  0,  "audio/vo_teefault_spawn-07.wv", },
 };
-static CDataSound x2238[] = {
-	/* x2238[0] */ {  0,  "audio/sfx_skid-01.wv", },
-	/* x2238[1] */ {  0,  "audio/sfx_skid-02.wv", },
-	/* x2238[2] */ {  0,  "audio/sfx_skid-03.wv", },
-	/* x2238[3] */ {  0,  "audio/sfx_skid-04.wv", },
+static CDataSound x2239[] = {
+	/* x2239[0] */ {  0,  "audio/sfx_skid-01.wv", },
+	/* x2239[1] */ {  0,  "audio/sfx_skid-02.wv", },
+	/* x2239[2] */ {  0,  "audio/sfx_skid-03.wv", },
+	/* x2239[3] */ {  0,  "audio/sfx_skid-04.wv", },
 };
-static CDataSound x2257[] = {
-	/* x2257[0] */ {  0,  "audio/vo_teefault_cry-01.wv", },
-	/* x2257[1] */ {  0,  "audio/vo_teefault_cry-02.wv", },
+static CDataSound x2258[] = {
+	/* x2258[0] */ {  0,  "audio/vo_teefault_cry-01.wv", },
+	/* x2258[1] */ {  0,  "audio/vo_teefault_cry-02.wv", },
 };
-static CDataSound x2270[] = {
-	/* x2270[0] */ {  0,  "audio/hook_loop-01.wv", },
-	/* x2270[1] */ {  0,  "audio/hook_loop-02.wv", },
+static CDataSound x2271[] = {
+	/* x2271[0] */ {  0,  "audio/hook_loop-01.wv", },
+	/* x2271[1] */ {  0,  "audio/hook_loop-02.wv", },
 };
-static CDataSound x2283[] = {
-	/* x2283[0] */ {  0,  "audio/hook_attach-01.wv", },
-	/* x2283[1] */ {  0,  "audio/hook_attach-02.wv", },
-	/* x2283[2] */ {  0,  "audio/hook_attach-03.wv", },
+static CDataSound x2284[] = {
+	/* x2284[0] */ {  0,  "audio/hook_attach-01.wv", },
+	/* x2284[1] */ {  0,  "audio/hook_attach-02.wv", },
+	/* x2284[2] */ {  0,  "audio/hook_attach-03.wv", },
 };
-static CDataSound x2299[] = {
-	/* x2299[0] */ {  0,  "audio/foley_body_impact-01.wv", },
-	/* x2299[1] */ {  0,  "audio/foley_body_impact-02.wv", },
-	/* x2299[2] */ {  0,  "audio/foley_body_impact-03.wv", },
+static CDataSound x2300[] = {
+	/* x2300[0] */ {  0,  "audio/foley_body_impact-01.wv", },
+	/* x2300[1] */ {  0,  "audio/foley_body_impact-02.wv", },
+	/* x2300[2] */ {  0,  "audio/foley_body_impact-03.wv", },
 };
-static CDataSound x2315[] = {
-	/* x2315[0] */ {  0,  "audio/hook_noattach-01.wv", },
-	/* x2315[1] */ {  0,  "audio/hook_noattach-02.wv", },
+static CDataSound x2316[] = {
+	/* x2316[0] */ {  0,  "audio/hook_noattach-01.wv", },
+	/* x2316[1] */ {  0,  "audio/hook_noattach-02.wv", },
 };
-static CDataSound x2328[] = {
-	/* x2328[0] */ {  0,  "audio/sfx_pickup_hrt-01.wv", },
-	/* x2328[1] */ {  0,  "audio/sfx_pickup_hrt-02.wv", },
+static CDataSound x2329[] = {
+	/* x2329[0] */ {  0,  "audio/sfx_pickup_hrt-01.wv", },
+	/* x2329[1] */ {  0,  "audio/sfx_pickup_hrt-02.wv", },
 };
-static CDataSound x2341[] = {
-	/* x2341[0] */ {  0,  "audio/sfx_pickup_arm-01.wv", },
-	/* x2341[1] */ {  0,  "audio/sfx_pickup_arm-02.wv", },
-	/* x2341[2] */ {  0,  "audio/sfx_pickup_arm-03.wv", },
-	/* x2341[3] */ {  0,  "audio/sfx_pickup_arm-04.wv", },
+static CDataSound x2342[] = {
+	/* x2342[0] */ {  0,  "audio/sfx_pickup_arm-01.wv", },
+	/* x2342[1] */ {  0,  "audio/sfx_pickup_arm-02.wv", },
+	/* x2342[2] */ {  0,  "audio/sfx_pickup_arm-03.wv", },
+	/* x2342[3] */ {  0,  "audio/sfx_pickup_arm-04.wv", },
 };
-static CDataSound x2360[] = {
-	/* x2360[0] */ {  0,  "audio/sfx_pickup_launcher.wv", },
+static CDataSound x2361[] = {
+	/* x2361[0] */ {  0,  "audio/sfx_pickup_launcher.wv", },
 };
-static CDataSound x2370[] = {
-	/* x2370[0] */ {  0,  "audio/sfx_pickup_sg.wv", },
+static CDataSound x2371[] = {
+	/* x2371[0] */ {  0,  "audio/sfx_pickup_sg.wv", },
 };
-static CDataSound x2380[] = {
-	/* x2380[0] */ {  0,  "audio/sfx_pickup_ninja.wv", },
+static CDataSound x2381[] = {
+	/* x2381[0] */ {  0,  "audio/sfx_pickup_ninja.wv", },
 };
-static CDataSound x2390[] = {
-	/* x2390[0] */ {  0,  "audio/sfx_spawn_wpn-01.wv", },
-	/* x2390[1] */ {  0,  "audio/sfx_spawn_wpn-02.wv", },
-	/* x2390[2] */ {  0,  "audio/sfx_spawn_wpn-03.wv", },
+static CDataSound x2391[] = {
+	/* x2391[0] */ {  0,  "audio/sfx_spawn_wpn-01.wv", },
+	/* x2391[1] */ {  0,  "audio/sfx_spawn_wpn-02.wv", },
+	/* x2391[2] */ {  0,  "audio/sfx_spawn_wpn-03.wv", },
 };
-static CDataSound x2406[] = {
-	/* x2406[0] */ {  0,  "audio/wp_noammo-01.wv", },
-	/* x2406[1] */ {  0,  "audio/wp_noammo-02.wv", },
-	/* x2406[2] */ {  0,  "audio/wp_noammo-03.wv", },
-	/* x2406[3] */ {  0,  "audio/wp_noammo-04.wv", },
-	/* x2406[4] */ {  0,  "audio/wp_noammo-05.wv", },
+static CDataSound x2407[] = {
+	/* x2407[0] */ {  0,  "audio/wp_noammo-01.wv", },
+	/* x2407[1] */ {  0,  "audio/wp_noammo-02.wv", },
+	/* x2407[2] */ {  0,  "audio/wp_noammo-03.wv", },
+	/* x2407[3] */ {  0,  "audio/wp_noammo-04.wv", },
+	/* x2407[4] */ {  0,  "audio/wp_noammo-05.wv", },
 };
-static CDataSound x2428[] = {
-	/* x2428[0] */ {  0,  "audio/sfx_hit_weak-01.wv", },
-	/* x2428[1] */ {  0,  "audio/sfx_hit_weak-02.wv", },
+static CDataSound x2429[] = {
+	/* x2429[0] */ {  0,  "audio/sfx_hit_weak-01.wv", },
+	/* x2429[1] */ {  0,  "audio/sfx_hit_weak-02.wv", },
 };
-static CDataSound x2441[] = {
-	/* x2441[0] */ {  0,  "audio/sfx_msg-server.wv", },
+static CDataSound x2442[] = {
+	/* x2442[0] */ {  0,  "audio/sfx_msg-server.wv", },
 };
-static CDataSound x2451[] = {
-	/* x2451[0] */ {  0,  "audio/sfx_msg-client.wv", },
+static CDataSound x2452[] = {
+	/* x2452[0] */ {  0,  "audio/sfx_msg-client.wv", },
 };
-static CDataSound x2461[] = {
-	/* x2461[0] */ {  0,  "audio/sfx_msg-highlight.wv", },
+static CDataSound x2462[] = {
+	/* x2462[0] */ {  0,  "audio/sfx_msg-highlight.wv", },
 };
-static CDataSound x2471[] = {
-	/* x2471[0] */ {  0,  "audio/sfx_ctf_drop.wv", },
+static CDataSound x2472[] = {
+	/* x2472[0] */ {  0,  "audio/sfx_ctf_drop.wv", },
 };
-static CDataSound x2481[] = {
-	/* x2481[0] */ {  0,  "audio/sfx_ctf_rtn.wv", },
+static CDataSound x2482[] = {
+	/* x2482[0] */ {  0,  "audio/sfx_ctf_rtn.wv", },
 };
-static CDataSound x2491[] = {
-	/* x2491[0] */ {  0,  "audio/sfx_ctf_grab_pl.wv", },
+static CDataSound x2492[] = {
+	/* x2492[0] */ {  0,  "audio/sfx_ctf_grab_pl.wv", },
 };
-static CDataSound x2501[] = {
-	/* x2501[0] */ {  0,  "audio/sfx_ctf_grab_en.wv", },
+static CDataSound x2502[] = {
+	/* x2502[0] */ {  0,  "audio/sfx_ctf_grab_en.wv", },
 };
-static CDataSound x2511[] = {
-	/* x2511[0] */ {  0,  "audio/sfx_ctf_cap_pl.wv", },
+static CDataSound x2512[] = {
+	/* x2512[0] */ {  0,  "audio/sfx_ctf_cap_pl.wv", },
 };
-static CDataSound x2521[] = {
-	/* x2521[0] */ {  0,  "audio/music_menu.wv", },
+static CDataSound x2522[] = {
+	/* x2522[0] */ {  0,  "audio/music_menu.wv", },
 };
 static CDataSoundset x9[] = {
-	/* x9[0] */ {  "gun_fire",  3,x1896,  -1, },
-	/* x9[1] */ {  "shotgun_fire",  3,x1912,  -1, },
-	/* x9[2] */ {  "grenade_fire",  3,x1928,  -1, },
-	/* x9[3] */ {  "hammer_fire",  3,x1944,  -1, },
-	/* x9[4] */ {  "hammer_hit",  3,x1960,  -1, },
-	/* x9[5] */ {  "ninja_fire",  3,x1976,  -1, },
-	/* x9[6] */ {  "grenade_explode",  3,x1992,  -1, },
-	/* x9[7] */ {  "ninja_hit",  3,x2008,  -1, },
-	/* x9[8] */ {  "rifle_fire",  3,x2024,  -1, },
-	/* x9[9] */ {  "rifle_bounce",  3,x2040,  -1, },
-	/* x9[10] */ {  "weapon_switch",  3,x2056,  -1, },
-	/* x9[11] */ {  "player_pain_short",  12,x2072,  -1, },
-	/* x9[12] */ {  "player_pain_long",  2,x2115,  -1, },
-	/* x9[13] */ {  "body_land",  4,x2128,  -1, },
-	/* x9[14] */ {  "player_airjump",  3,x2147,  -1, },
-	/* x9[15] */ {  "player_jump",  8,x2163,  -1, },
-	/* x9[16] */ {  "player_die",  3,x2194,  -1, },
-	/* x9[17] */ {  "player_spawn",  7,x2210,  -1, },
-	/* x9[18] */ {  "player_skid",  4,x2238,  -1, },
-	/* x9[19] */ {  "tee_cry",  2,x2257,  -1, },
-	/* x9[20] */ {  "hook_loop",  2,x2270,  -1, },
-	/* x9[21] */ {  "hook_attach_ground",  3,x2283,  -1, },
-	/* x9[22] */ {  "hook_attach_player",  3,x2299,  -1, },
-	/* x9[23] */ {  "hook_noattach",  2,x2315,  -1, },
-	/* x9[24] */ {  "pickup_health",  2,x2328,  -1, },
-	/* x9[25] */ {  "pickup_armor",  4,x2341,  -1, },
-	/* x9[26] */ {  "pickup_grenade",  1,x2360,  -1, },
-	/* x9[27] */ {  "pickup_shotgun",  1,x2370,  -1, },
-	/* x9[28] */ {  "pickup_ninja",  1,x2380,  -1, },
-	/* x9[29] */ {  "weapon_spawn",  3,x2390,  -1, },
-	/* x9[30] */ {  "weapon_noammo",  5,x2406,  -1, },
-	/* x9[31] */ {  "hit",  2,x2428,  -1, },
-	/* x9[32] */ {  "chat_server",  1,x2441,  -1, },
-	/* x9[33] */ {  "chat_client",  1,x2451,  -1, },
-	/* x9[34] */ {  "chat_highlight",  1,x2461,  -1, },
-	/* x9[35] */ {  "ctf_drop",  1,x2471,  -1, },
-	/* x9[36] */ {  "ctf_return",  1,x2481,  -1, },
-	/* x9[37] */ {  "ctf_grab_pl",  1,x2491,  -1, },
-	/* x9[38] */ {  "ctf_grab_en",  1,x2501,  -1, },
-	/* x9[39] */ {  "ctf_capture",  1,x2511,  -1, },
-	/* x9[40] */ {  "menu",  1,x2521,  -1, },
+	/* x9[0] */ {  "gun_fire",  3,x1897,  -1, },
+	/* x9[1] */ {  "shotgun_fire",  3,x1913,  -1, },
+	/* x9[2] */ {  "grenade_fire",  3,x1929,  -1, },
+	/* x9[3] */ {  "hammer_fire",  3,x1945,  -1, },
+	/* x9[4] */ {  "hammer_hit",  3,x1961,  -1, },
+	/* x9[5] */ {  "ninja_fire",  3,x1977,  -1, },
+	/* x9[6] */ {  "grenade_explode",  3,x1993,  -1, },
+	/* x9[7] */ {  "ninja_hit",  3,x2009,  -1, },
+	/* x9[8] */ {  "rifle_fire",  3,x2025,  -1, },
+	/* x9[9] */ {  "rifle_bounce",  3,x2041,  -1, },
+	/* x9[10] */ {  "weapon_switch",  3,x2057,  -1, },
+	/* x9[11] */ {  "player_pain_short",  12,x2073,  -1, },
+	/* x9[12] */ {  "player_pain_long",  2,x2116,  -1, },
+	/* x9[13] */ {  "body_land",  4,x2129,  -1, },
+	/* x9[14] */ {  "player_airjump",  3,x2148,  -1, },
+	/* x9[15] */ {  "player_jump",  8,x2164,  -1, },
+	/* x9[16] */ {  "player_die",  3,x2195,  -1, },
+	/* x9[17] */ {  "player_spawn",  7,x2211,  -1, },
+	/* x9[18] */ {  "player_skid",  4,x2239,  -1, },
+	/* x9[19] */ {  "tee_cry",  2,x2258,  -1, },
+	/* x9[20] */ {  "hook_loop",  2,x2271,  -1, },
+	/* x9[21] */ {  "hook_attach_ground",  3,x2284,  -1, },
+	/* x9[22] */ {  "hook_attach_player",  3,x2300,  -1, },
+	/* x9[23] */ {  "hook_noattach",  2,x2316,  -1, },
+	/* x9[24] */ {  "pickup_health",  2,x2329,  -1, },
+	/* x9[25] */ {  "pickup_armor",  4,x2342,  -1, },
+	/* x9[26] */ {  "pickup_grenade",  1,x2361,  -1, },
+	/* x9[27] */ {  "pickup_shotgun",  1,x2371,  -1, },
+	/* x9[28] */ {  "pickup_ninja",  1,x2381,  -1, },
+	/* x9[29] */ {  "weapon_spawn",  3,x2391,  -1, },
+	/* x9[30] */ {  "weapon_noammo",  5,x2407,  -1, },
+	/* x9[31] */ {  "hit",  2,x2429,  -1, },
+	/* x9[32] */ {  "chat_server",  1,x2442,  -1, },
+	/* x9[33] */ {  "chat_client",  1,x2452,  -1, },
+	/* x9[34] */ {  "chat_highlight",  1,x2462,  -1, },
+	/* x9[35] */ {  "ctf_drop",  1,x2472,  -1, },
+	/* x9[36] */ {  "ctf_return",  1,x2482,  -1, },
+	/* x9[37] */ {  "ctf_grab_pl",  1,x2492,  -1, },
+	/* x9[38] */ {  "ctf_grab_en",  1,x2502,  -1, },
+	/* x9[39] */ {  "ctf_capture",  1,x2512,  -1, },
+	/* x9[40] */ {  "menu",  1,x2522,  -1, },
 };
 static CDataImage x14[] = {
 	/* x14[0] */ {  "null",  "",  -1, },
@@ -381,123 +381,123 @@ static CDataSprite x44[] = {
 	/* x44[105] */ {  "guiicon_mute",  &x28[8],  0,  0,  4,  2, },
 	/* x44[106] */ {  "guiicon_friend",  &x28[8],  4,  0,  4,  2, },
 };
-static CAnimKeyframe x4279[] = {
-	/* x4279[0] */ {  0.000000,  0.000000,  -4.000000,  0.000000, },
+static CAnimKeyframe x4280[] = {
+	/* x4280[0] */ {  0.000000,  0.000000,  -4.000000,  0.000000, },
 };
-static CAnimKeyframe x4286[] = {
-	/* x4286[0] */ {  0.000000,  0.000000,  10.000000,  0.000000, },
+static CAnimKeyframe x4287[] = {
+	/* x4287[0] */ {  0.000000,  0.000000,  10.000000,  0.000000, },
 };
-static CAnimKeyframe x4293[] = {
-	/* x4293[0] */ {  0.000000,  0.000000,  10.000000,  0.000000, },
+static CAnimKeyframe x4294[] = {
+	/* x4294[0] */ {  0.000000,  0.000000,  10.000000,  0.000000, },
 };
-static CAnimKeyframe *x4300 = 0;
-static CAnimKeyframe *x4324 = 0;
-static CAnimKeyframe x4331[] = {
-	/* x4331[0] */ {  0.000000,  -7.000000,  0.000000,  0.000000, },
+static CAnimKeyframe *x4301 = 0;
+static CAnimKeyframe *x4325 = 0;
+static CAnimKeyframe x4332[] = {
+	/* x4332[0] */ {  0.000000,  -7.000000,  0.000000,  0.000000, },
 };
-static CAnimKeyframe x4338[] = {
-	/* x4338[0] */ {  0.000000,  7.000000,  0.000000,  0.000000, },
+static CAnimKeyframe x4339[] = {
+	/* x4339[0] */ {  0.000000,  7.000000,  0.000000,  0.000000, },
 };
-static CAnimKeyframe *x4345 = 0;
-static CAnimKeyframe *x4364 = 0;
-static CAnimKeyframe x4371[] = {
-	/* x4371[0] */ {  0.000000,  -3.000000,  0.000000,  -0.100000, },
+static CAnimKeyframe *x4346 = 0;
+static CAnimKeyframe *x4365 = 0;
+static CAnimKeyframe x4372[] = {
+	/* x4372[0] */ {  0.000000,  -3.000000,  0.000000,  -0.100000, },
 };
-static CAnimKeyframe x4378[] = {
-	/* x4378[0] */ {  0.000000,  3.000000,  0.000000,  -0.100000, },
+static CAnimKeyframe x4379[] = {
+	/* x4379[0] */ {  0.000000,  3.000000,  0.000000,  -0.100000, },
 };
-static CAnimKeyframe *x4385 = 0;
-static CAnimKeyframe x4404[] = {
-	/* x4404[0] */ {  0.000000,  0.000000,  0.000000,  0.000000, },
-	/* x4404[1] */ {  0.200000,  0.000000,  -1.000000,  0.000000, },
-	/* x4404[2] */ {  0.400000,  0.000000,  0.000000,  0.000000, },
-	/* x4404[3] */ {  0.600000,  0.000000,  0.000000,  0.000000, },
-	/* x4404[4] */ {  0.800000,  0.000000,  -1.000000,  0.000000, },
-	/* x4404[5] */ {  1.000000,  0.000000,  0.000000,  0.000000, },
+static CAnimKeyframe *x4386 = 0;
+static CAnimKeyframe x4405[] = {
+	/* x4405[0] */ {  0.000000,  0.000000,  0.000000,  0.000000, },
+	/* x4405[1] */ {  0.200000,  0.000000,  -1.000000,  0.000000, },
+	/* x4405[2] */ {  0.400000,  0.000000,  0.000000,  0.000000, },
+	/* x4405[3] */ {  0.600000,  0.000000,  0.000000,  0.000000, },
+	/* x4405[4] */ {  0.800000,  0.000000,  -1.000000,  0.000000, },
+	/* x4405[5] */ {  1.000000,  0.000000,  0.000000,  0.000000, },
 };
-static CAnimKeyframe x4411[] = {
-	/* x4411[0] */ {  0.000000,  8.000000,  0.000000,  0.000000, },
-	/* x4411[1] */ {  0.200000,  -8.000000,  0.000000,  0.000000, },
-	/* x4411[2] */ {  0.400000,  -10.000000,  -4.000000,  0.200000, },
-	/* x4411[3] */ {  0.600000,  -8.000000,  -8.000000,  0.300000, },
-	/* x4411[4] */ {  0.800000,  4.000000,  -4.000000,  -0.200000, },
-	/* x4411[5] */ {  1.000000,  8.000000,  0.000000,  0.000000, },
+static CAnimKeyframe x4412[] = {
+	/* x4412[0] */ {  0.000000,  8.000000,  0.000000,  0.000000, },
+	/* x4412[1] */ {  0.200000,  -8.000000,  0.000000,  0.000000, },
+	/* x4412[2] */ {  0.400000,  -10.000000,  -4.000000,  0.200000, },
+	/* x4412[3] */ {  0.600000,  -8.000000,  -8.000000,  0.300000, },
+	/* x4412[4] */ {  0.800000,  4.000000,  -4.000000,  -0.200000, },
+	/* x4412[5] */ {  1.000000,  8.000000,  0.000000,  0.000000, },
 };
-static CAnimKeyframe x4418[] = {
-	/* x4418[0] */ {  0.000000,  -10.000000,  -4.000000,  0.200000, },
-	/* x4418[1] */ {  0.200000,  -8.000000,  -8.000000,  0.300000, },
-	/* x4418[2] */ {  0.400000,  4.000000,  -4.000000,  -0.200000, },
-	/* x4418[3] */ {  0.600000,  8.000000,  0.000000,  0.000000, },
-	/* x4418[4] */ {  0.800000,  8.000000,  0.000000,  0.000000, },
-	/* x4418[5] */ {  1.000000,  -10.000000,  -4.000000,  0.200000, },
+static CAnimKeyframe x4419[] = {
+	/* x4419[0] */ {  0.000000,  -10.000000,  -4.000000,  0.200000, },
+	/* x4419[1] */ {  0.200000,  -8.000000,  -8.000000,  0.300000, },
+	/* x4419[2] */ {  0.400000,  4.000000,  -4.000000,  -0.200000, },
+	/* x4419[3] */ {  0.600000,  8.000000,  0.000000,  0.000000, },
+	/* x4419[4] */ {  0.800000,  8.000000,  0.000000,  0.000000, },
+	/* x4419[5] */ {  1.000000,  -10.000000,  -4.000000,  0.200000, },
 };
-static CAnimKeyframe *x4425 = 0;
-static CAnimKeyframe *x4524 = 0;
-static CAnimKeyframe *x4531 = 0;
-static CAnimKeyframe *x4538 = 0;
-static CAnimKeyframe x4545[] = {
-	/* x4545[0] */ {  0.000000,  0.000000,  0.000000,  -0.100000, },
-	/* x4545[1] */ {  0.300000,  0.000000,  0.000000,  0.250000, },
-	/* x4545[2] */ {  0.400000,  0.000000,  0.000000,  0.300000, },
-	/* x4545[3] */ {  0.500000,  0.000000,  0.000000,  0.250000, },
-	/* x4545[4] */ {  1.000000,  0.000000,  0.000000,  -0.100000, },
+static CAnimKeyframe *x4426 = 0;
+static CAnimKeyframe *x4525 = 0;
+static CAnimKeyframe *x4532 = 0;
+static CAnimKeyframe *x4539 = 0;
+static CAnimKeyframe x4546[] = {
+	/* x4546[0] */ {  0.000000,  0.000000,  0.000000,  -0.100000, },
+	/* x4546[1] */ {  0.300000,  0.000000,  0.000000,  0.250000, },
+	/* x4546[2] */ {  0.400000,  0.000000,  0.000000,  0.300000, },
+	/* x4546[3] */ {  0.500000,  0.000000,  0.000000,  0.250000, },
+	/* x4546[4] */ {  1.000000,  0.000000,  0.000000,  -0.100000, },
 };
-static CAnimKeyframe *x4579 = 0;
-static CAnimKeyframe *x4586 = 0;
-static CAnimKeyframe *x4593 = 0;
-static CAnimKeyframe x4600[] = {
-	/* x4600[0] */ {  0.000000,  0.000000,  0.000000,  -0.250000, },
-	/* x4600[1] */ {  0.100000,  0.000000,  0.000000,  -0.050000, },
-	/* x4600[2] */ {  0.150000,  0.000000,  0.000000,  0.350000, },
-	/* x4600[3] */ {  0.420000,  0.000000,  0.000000,  0.400000, },
-	/* x4600[4] */ {  0.500000,  0.000000,  0.000000,  0.350000, },
-	/* x4600[5] */ {  1.000000,  0.000000,  0.000000,  -0.250000, },
+static CAnimKeyframe *x4580 = 0;
+static CAnimKeyframe *x4587 = 0;
+static CAnimKeyframe *x4594 = 0;
+static CAnimKeyframe x4601[] = {
+	/* x4601[0] */ {  0.000000,  0.000000,  0.000000,  -0.250000, },
+	/* x4601[1] */ {  0.100000,  0.000000,  0.000000,  -0.050000, },
+	/* x4601[2] */ {  0.150000,  0.000000,  0.000000,  0.350000, },
+	/* x4601[3] */ {  0.420000,  0.000000,  0.000000,  0.400000, },
+	/* x4601[4] */ {  0.500000,  0.000000,  0.000000,  0.350000, },
+	/* x4601[5] */ {  1.000000,  0.000000,  0.000000,  -0.250000, },
 };
 static CAnimation x75[] = {
-	/* x75[0] */ {  "base",  /* x75[0].body */ {  1,x4279, },  /* x75[0].back_foot */ {  1,x4286, },  /* x75[0].front_foot */ {  1,x4293, },  /* x75[0].attach */ {  0,x4300, }, },
-	/* x75[1] */ {  "idle",  /* x75[1].body */ {  0,x4324, },  /* x75[1].back_foot */ {  1,x4331, },  /* x75[1].front_foot */ {  1,x4338, },  /* x75[1].attach */ {  0,x4345, }, },
-	/* x75[2] */ {  "inair",  /* x75[2].body */ {  0,x4364, },  /* x75[2].back_foot */ {  1,x4371, },  /* x75[2].front_foot */ {  1,x4378, },  /* x75[2].attach */ {  0,x4385, }, },
-	/* x75[3] */ {  "walk",  /* x75[3].body */ {  6,x4404, },  /* x75[3].back_foot */ {  6,x4411, },  /* x75[3].front_foot */ {  6,x4418, },  /* x75[3].attach */ {  0,x4425, }, },
-	/* x75[4] */ {  "hammer_swing",  /* x75[4].body */ {  0,x4524, },  /* x75[4].back_foot */ {  0,x4531, },  /* x75[4].front_foot */ {  0,x4538, },  /* x75[4].attach */ {  5,x4545, }, },
-	/* x75[5] */ {  "ninja_swing",  /* x75[5].body */ {  0,x4579, },  /* x75[5].back_foot */ {  0,x4586, },  /* x75[5].front_foot */ {  0,x4593, },  /* x75[5].attach */ {  6,x4600, }, },
+	/* x75[0] */ {  "base",  /* x75[0].body */ {  1,x4280, },  /* x75[0].back_foot */ {  1,x4287, },  /* x75[0].front_foot */ {  1,x4294, },  /* x75[0].attach */ {  0,x4301, }, },
+	/* x75[1] */ {  "idle",  /* x75[1].body */ {  0,x4325, },  /* x75[1].back_foot */ {  1,x4332, },  /* x75[1].front_foot */ {  1,x4339, },  /* x75[1].attach */ {  0,x4346, }, },
+	/* x75[2] */ {  "inair",  /* x75[2].body */ {  0,x4365, },  /* x75[2].back_foot */ {  1,x4372, },  /* x75[2].front_foot */ {  1,x4379, },  /* x75[2].attach */ {  0,x4386, }, },
+	/* x75[3] */ {  "walk",  /* x75[3].body */ {  6,x4405, },  /* x75[3].back_foot */ {  6,x4412, },  /* x75[3].front_foot */ {  6,x4419, },  /* x75[3].attach */ {  0,x4426, }, },
+	/* x75[4] */ {  "hammer_swing",  /* x75[4].body */ {  0,x4525, },  /* x75[4].back_foot */ {  0,x4532, },  /* x75[4].front_foot */ {  0,x4539, },  /* x75[4].attach */ {  5,x4546, }, },
+	/* x75[5] */ {  "ninja_swing",  /* x75[5].body */ {  0,x4580, },  /* x75[5].back_foot */ {  0,x4587, },  /* x75[5].front_foot */ {  0,x4594, },  /* x75[5].attach */ {  6,x4601, }, },
 };
-static CDataSprite* *x4757 = 0;
-static CDataSprite* x4894[] = {
+static CDataSprite* *x4758 = 0;
+static CDataSprite* x4895[] = {
 	&x44[29],
 	&x44[30],
 	&x44[31],
 };
-static CDataSprite* x5079[] = {
+static CDataSprite* x5080[] = {
 	&x44[35],
 	&x44[36],
 	&x44[37],
 };
-static CDataSprite* *x5264 = 0;
-static CDataSprite* *x5401 = 0;
-static CDataSprite* x5538[] = {
+static CDataSprite* *x5265 = 0;
+static CDataSprite* *x5402 = 0;
+static CDataSprite* x5539[] = {
 	&x44[52],
 	&x44[53],
 	&x44[54],
 };
 static CDataWeaponspec x1887[] = {
-	/* x1887[0] */ {  "hammer",  &x44[41],  &x44[42],  &x44[43],  0,x4757,  96,  125,  10,  0,  3,  4.000000,  -20.000000,  0.000000,  0.000000,  5.000000, },
-	/* x1887[1] */ {  "gun",  &x44[26],  &x44[27],  &x44[28],  3,x4894,  64,  125,  10,  500,  1,  32.000000,  4.000000,  50.000000,  6.000000,  5.000000, },
-	/* x1887[2] */ {  "shotgun",  &x44[32],  &x44[33],  &x44[34],  3,x5079,  96,  500,  10,  0,  1,  24.000000,  -2.000000,  70.000000,  6.000000,  5.000000, },
-	/* x1887[3] */ {  "grenade",  &x44[38],  &x44[39],  &x44[40],  0,x5264,  96,  500,  10,  0,  1,  24.000000,  -2.000000,  0.000000,  0.000000,  5.000000, },
-	/* x1887[4] */ {  "rifle",  &x44[47],  &x44[48],  &x44[49],  0,x5401,  92,  800,  10,  0,  5,  24.000000,  -2.000000,  0.000000,  0.000000,  5.000000, },
-	/* x1887[5] */ {  "ninja",  &x44[44],  &x44[45],  &x44[46],  3,x5538,  96,  800,  10,  0,  9,  0.000000,  0.000000,  40.000000,  -4.000000,  5.000000, },
+	/* x1887[0] */ {  "hammer",  &x44[41],  &x44[42],  &x44[43],  0,x4758,  96,  125,  10,  0,  3,  4.000000,  -20.000000,  0.000000,  0.000000,  5.000000, },
+	/* x1887[1] */ {  "gun",  &x44[26],  &x44[27],  &x44[28],  3,x4895,  64,  125,  10,  500,  1,  32.000000,  4.000000,  50.000000,  6.000000,  5.000000, },
+	/* x1887[2] */ {  "shotgun",  &x44[32],  &x44[33],  &x44[34],  3,x5080,  96,  500,  10,  0,  1,  24.000000,  -2.000000,  70.000000,  6.000000,  5.000000, },
+	/* x1887[3] */ {  "grenade",  &x44[38],  &x44[39],  &x44[40],  0,x5265,  96,  500,  10,  0,  1,  24.000000,  -2.000000,  0.000000,  0.000000,  5.000000, },
+	/* x1887[4] */ {  "rifle",  &x44[47],  &x44[48],  &x44[49],  0,x5402,  92,  800,  10,  0,  5,  24.000000,  -2.000000,  0.000000,  0.000000,  5.000000, },
+	/* x1887[5] */ {  "ninja",  &x44[44],  &x44[45],  &x44[46],  3,x5539,  96,  800,  10,  0,  9,  0.000000,  0.000000,  40.000000,  -4.000000,  5.000000, },
 };
-static CDataPerk x1890[] = {
-	/* x1890[0] */ {  "None", },
-	/* x1890[1] */ {  "Macho", },
-	/* x1890[2] */ {  "Hummertime", },
-	/* x1890[3] */ {  "Machinegun", },
-	/* x1890[4] */ {  "Jackhammer", },
-	/* x1890[5] */ {  "RocketJumper", },
-	/* x1890[6] */ {  "Sharpshooter", },
-	/* x1890[7] */ {  "Ephemeral", },
-	/* x1890[8] */ {  "Doctor", },
-	/* x1890[9] */ {  "Vampire", },
+static CDataPerk x1891[] = {
+	/* x1891[0] */ {  "None",  "default", },
+	/* x1891[1] */ {  "Macho",  "p-macho", },
+	/* x1891[2] */ {  "Hummertime",  "p-hammertime", },
+	/* x1891[3] */ {  "Machinegun",  "p-machinegun", },
+	/* x1891[4] */ {  "Jackhammer",  "p-jackhammer", },
+	/* x1891[5] */ {  "RocketJumper",  "p-rocketjumper", },
+	/* x1891[6] */ {  "Sharpshooter",  "p-sharpshooter", },
+	/* x1891[7] */ {  "Ephemeral",  "p-ephemeral", },
+	/* x1891[8] */ {  "Doctor",  "p-doctor", },
+	/* x1891[9] */ {  "Vampire",  "p-vampire", },
 };
 CDataContainer datacontainer = 
 /* datacontainer */ {
@@ -508,7 +508,7 @@ CDataContainer datacontainer =
 	107,x44,
 	6,x75,
 	/* datacontainer.weapons */ { 	/* datacontainer.weapons.hammer */ { 	&x1887[0], }, 	/* datacontainer.weapons.gun */ { 	&x1887[1], 	1.250000, 	2200.000000, 	2.000000, }, 	/* datacontainer.weapons.shotgun */ { 	&x1887[2], 	1.250000, 	2200.000000, 	0.800000, 	0.250000, }, 	/* datacontainer.weapons.grenade */ { 	&x1887[3], 	7.000000, 	1000.000000, 	2.000000, }, 	/* datacontainer.weapons.rifle */ { 	&x1887[4], 	800.000000, 	150, 	1, 	0.000000, }, 	/* datacontainer.weapons.ninja */ { 	&x1887[5], 	15000, 	200, 	50, }, 	6,x1887, },
-	10,x1890,
+	10,x1891,
 }
 ;
 CDataContainer *g_pData = &datacontainer;

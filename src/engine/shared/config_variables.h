@@ -97,6 +97,7 @@ MACRO_CONFIG_INT(SvAutoDemoMax, sv_auto_demo_max, 10, 0, 1000, CFGFLAG_SERVER, "
 
 MACRO_CONFIG_INT(SvAutoPerks, sv_auto_perks, 0, 0, 1, CFGFLAG_SERVER, "Random perks")
 MACRO_CONFIG_INT(SvShowPerks, sv_show_perks, 0, 0, 2, CFGFLAG_SERVER, "0 - you, 1 - team, 2 - all")
+MACRO_CONFIG_INT(SvForcePerkSkin, sv_perks_skin, 1, 0, 1, CFGFLAG_SERVER, "0 - user skin, 1 - server skin")
 
 MACRO_CONFIG_STR(EcBindaddr, ec_bindaddr, 128, "localhost", CFGFLAG_ECON, "Address to bind the external console to. Anything but 'localhost' is dangerous")
 MACRO_CONFIG_INT(EcPort, ec_port, 0, 0, 0, CFGFLAG_ECON, "Port to use for the external console")

@@ -2,9 +2,10 @@ import copy
 from datatypes import *
 
 class Perk(Struct):
-	def __init__(self, name=""):
+	def __init__(self, name="", skinfile=""):
 		Struct.__init__(self, "CDataPerk")
 		self.name = String(name)
+		self.skinfile = String(skinfile)
 
 class Sound(Struct):
 	def __init__(self, filename=""):
@@ -521,32 +522,32 @@ weapon.muzzleoffsety.Set(-4)
 container.weapons.ninja.base.Set(weapon)
 container.weapons.id.Add(weapon)
 
-perk = Perk("None")
+perk = Perk("None", "default")
 container.perks.Add(perk)
 
-perk = Perk("Macho")
+perk = Perk("Macho", "p-macho")
 container.perks.Add(perk)
 
-perk = Perk("Hummertime")
+perk = Perk("Hummertime", "p-hammertime")
 container.perks.Add(perk)
 
-perk = Perk("Machinegun")
+perk = Perk("Machinegun", "p-machinegun")
 container.perks.Add(perk)
 
-perk = Perk("Jackhammer")
+perk = Perk("Jackhammer", "p-jackhammer")
 container.perks.Add(perk)
 
-perk = Perk("RocketJumper")
+perk = Perk("RocketJumper", "p-rocketjumper")
 container.perks.Add(perk)
 
-perk = Perk("Sharpshooter")
+perk = Perk("Sharpshooter", "p-sharpshooter")
 container.perks.Add(perk)
 
-perk = Perk("Ephemeral")
+perk = Perk("Ephemeral", "p-ephemeral")
 container.perks.Add(perk)
 
-perk = Perk("Doctor")
+perk = Perk("Doctor", "p-doctor")
 container.perks.Add(perk)
 
-perk = Perk("Vampire")
+perk = Perk("Vampire", "p-vampire")
 container.perks.Add(perk)

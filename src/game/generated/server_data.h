@@ -3,6 +3,7 @@
 struct CDataPerk
 {
 	const char* m_pName;
+	const char* m_pSkinfile;
 };
 struct CDataSound
 {
