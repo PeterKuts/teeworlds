@@ -373,6 +373,11 @@ void IGameController::OnCharacterSpawn(class CCharacter *pChr)
     }
     if (pChr->GetPlayer()->HasPerk(PERKS_SHARPSHOOTER)) {
         pChr->GiveWeapon(WEAPON_RIFLE, 10);
+        pChr->SetWeapon(WEAPON_RIFLE);
+    }
+    if (pChr->GetPlayer()->HasPerk(PERKS_JACKHAMMER)) {
+        pChr->GiveWeapon(WEAPON_SHOTGUN, 10);
+        pChr->SetWeapon(WEAPON_SHOTGUN);
     }
 }
 

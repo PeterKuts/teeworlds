@@ -481,7 +481,7 @@ void CPlayers::RenderPlayer(
 	}
 
 	RenderInfo.m_Size = 64.0f; // force some settings
-    RenderInfo.m_ColorBody.a = 1.0f * (pPlayerChar->m_Perk == PERKS_EPHEMERAL? 0.6f: 1.0f);
+    RenderInfo.m_ColorBody.a = 1.0f;
 	RenderInfo.m_ColorFeet.a = 1.0f;
 	RenderTools()->RenderTee(&State, &RenderInfo, Player.m_Emote, Direction, Position);
 
