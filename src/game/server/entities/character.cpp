@@ -761,30 +761,30 @@ bool CCharacter::TakeDamage(vec2 Force, int Dmg, int From, int Weapon)
 		GameServer()->CreateDamageInd(m_Pos, 0, Dmg);
 	}
 
-	if(Dmg)
-	{
-		if(m_Armor)
-		{
-			if(Dmg > 1)
-			{
-				m_Health--;
-				Dmg--;
-			}
+    CCharacter *fromCharacter = GameServer()->GetPlayerChar(From);
 
-			if(Dmg > m_Armor)
-			{
-				Dmg -= m_Armor;
-				m_Armor = 0;
-			}
-			else
-			{
-				m_Armor -= Dmg;
-				Dmg = 0;
-			}
-		}
-
-		m_Health -= Dmg;
-	}
+    if (fromCharacter && fromCharacter->GetPlayer()->HasPerk(PERKS_SHARPSHOOTER) && Weapon == WEAPON_RIFLE) {
+        if (Dmg) {
+            m_Health -= Dmg;
+        }
+    } else {
+        if(Dmg) {
+            if(m_Armor) {
+                if(Dmg > 1) {
+                    m_Health--;
+                    Dmg--;
+                }
+                if(Dmg > m_Armor) {
+                    Dmg -= m_Armor;
+                    m_Armor = 0;
+                } else {
+                    m_Armor -= Dmg;
+                    Dmg = 0;
+                }
+            }
+            m_Health -= Dmg;
+        }
+    }
 
 	m_DamageTakenTick = Server()->Tick();
 
@@ -800,7 +800,6 @@ bool CCharacter::TakeDamage(vec2 Force, int Dmg, int From, int Weapon)
 		GameServer()->CreateSound(GameServer()->m_apPlayers[From]->m_ViewPos, SOUND_HIT, Mask);
 	}
 
-    CCharacter *fromCharacter = GameServer()->GetPlayerChar(From);
     if (From != m_pPlayer->GetCID() && fromCharacter && fromCharacter->GetPlayer()->HasPerk(PERKS_VAMPIRE)) {
         fromCharacter->Heal(vec2(0, 0), Dmg, m_pPlayer->GetCID(), Weapon);
     }

@@ -379,6 +379,10 @@ void IGameController::OnCharacterSpawn(class CCharacter *pChr)
         pChr->GiveWeapon(WEAPON_SHOTGUN, 10);
         pChr->SetWeapon(WEAPON_SHOTGUN);
     }
+    if (pChr->GetPlayer()->HasPerk(PERKS_ROCKETJUMPER)) {
+        pChr->GiveWeapon(WEAPON_GRENADE, 5);
+        pChr->SetWeapon(WEAPON_GRENADE);
+    }
 }
 
 void IGameController::DoWarmup(int Seconds)
