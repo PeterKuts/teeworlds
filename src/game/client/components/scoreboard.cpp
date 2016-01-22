@@ -104,7 +104,7 @@ void CScoreboard::RenderSpectators(float x, float y, float w)
 	for(int i = 0; i < MAX_CLIENTS; ++i)
 	{
 		const CNetObj_PlayerInfo *pInfo = m_pClient->m_Snap.m_paPlayerInfos[i];
-		if(!pInfo || pInfo->m_Team != TEAM_SPECTATORS)
+		if(!pInfo || pInfo->m_Team != OLDTEAM_SPECTATORS)
 			continue;
 
 		if(Multiple)
@@ -121,7 +121,7 @@ void CScoreboard::RenderSpectators(float x, float y, float w)
 
 void CScoreboard::RenderScoreboard(float x, float y, float w, int Team, const char *pTitle)
 {
-	if(Team == TEAM_SPECTATORS)
+	if(Team == OLDTEAM_SPECTATORS)
 		return;
 
 	float h = 760.0f;
@@ -150,7 +150,7 @@ void CScoreboard::RenderScoreboard(float x, float y, float w, int Team, const ch
 	{
 		if(m_pClient->m_Snap.m_pGameDataObj)
 		{
-			int Score = Team == TEAM_RED ? m_pClient->m_Snap.m_pGameDataObj->m_TeamscoreRed : m_pClient->m_Snap.m_pGameDataObj->m_TeamscoreBlue;
+			int Score = Team == OLDTEAM_RED ? m_pClient->m_Snap.m_pGameDataObj->m_TeamscoreRed : m_pClient->m_Snap.m_pGameDataObj->m_TeamscoreBlue;
 			str_format(aBuf, sizeof(aBuf), "%d", Score);
 		}
 	}
@@ -248,7 +248,7 @@ void CScoreboard::RenderScoreboard(float x, float y, float w, int Team, const ch
 			Graphics()->TextureSet(g_pData->m_aImages[IMAGE_GAME].m_Id);
 			Graphics()->QuadsBegin();
 
-			RenderTools()->SelectSprite(pInfo->m_Team==TEAM_RED ? SPRITE_FLAG_BLUE : SPRITE_FLAG_RED, SPRITE_FLAG_FLIP_X);
+			RenderTools()->SelectSprite(pInfo->m_Team==OLDTEAM_RED ? SPRITE_FLAG_BLUE : SPRITE_FLAG_RED, SPRITE_FLAG_FLIP_X);
 
 			float Size = LineHeight;
 			IGraphics::CQuadItem QuadItem(TeeOffset+0.0f, y-5.0f-Spacing/2.0f, Size/2.0f, Size);
@@ -337,8 +337,8 @@ void CScoreboard::OnRender()
 			RenderScoreboard(Width/2-w/2, 150.0f, w, 0, 0);
 		else
 		{
-			const char *pRedClanName = GetClanName(TEAM_RED);
-			const char *pBlueClanName = GetClanName(TEAM_BLUE);
+			const char *pRedClanName = GetClanName(OLDTEAM_RED);
+			const char *pBlueClanName = GetClanName(OLDTEAM_BLUE);
 
 			if(m_pClient->m_Snap.m_pGameInfoObj->m_GameStateFlags&GAMESTATEFLAG_GAMEOVER && m_pClient->m_Snap.m_pGameDataObj)
 			{
@@ -364,8 +364,8 @@ void CScoreboard::OnRender()
 				TextRender()->Text(0, Width/2-w/2, 39, 86.0f, aText, -1);
 			}
 
-			RenderScoreboard(Width/2-w-5.0f, 150.0f, w, TEAM_RED, pRedClanName ? pRedClanName : Localize("Red team"));
-			RenderScoreboard(Width/2+5.0f, 150.0f, w, TEAM_BLUE, pBlueClanName ? pBlueClanName : Localize("Blue team"));
+			RenderScoreboard(Width/2-w-5.0f, 150.0f, w, OLDTEAM_RED, pRedClanName ? pRedClanName : Localize("Red team"));
+			RenderScoreboard(Width/2+5.0f, 150.0f, w, OLDTEAM_BLUE, pBlueClanName ? pBlueClanName : Localize("Blue team"));
 		}
 	}
 
@@ -380,7 +380,7 @@ bool CScoreboard::Active()
 	if(m_Active)
 		return true;
 
-	if(m_pClient->m_Snap.m_pLocalInfo && m_pClient->m_Snap.m_pLocalInfo->m_Team != TEAM_SPECTATORS)
+	if(m_pClient->m_Snap.m_pLocalInfo && m_pClient->m_Snap.m_pLocalInfo->m_Team != OLDTEAM_SPECTATORS)
 	{
 		// we are not a spectator, check if we are dead
 		if(!m_pClient->m_Snap.m_pLocalCharacter)

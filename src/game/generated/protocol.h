@@ -14,6 +14,8 @@ enum
 	TEAM_SPECTATORS=-1,
 	TEAM_RED,
 	TEAM_BLUE,
+    TEAM_YELLOW,
+    TEAMS_COUNT,
 
 	FLAG_MISSING=-3,
 	FLAG_ATSTAND,
@@ -205,8 +207,10 @@ struct CNetObj_GameData
 {
 	int m_TeamscoreRed;
 	int m_TeamscoreBlue;
+	int m_TeamscoreYellow;
 	int m_FlagCarrierRed;
 	int m_FlagCarrierBlue;
+	int m_FlagCarrierYellow;
 };
 
 struct CNetObj_CharacterCore

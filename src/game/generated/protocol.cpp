@@ -163,7 +163,7 @@ int CNetObjHandler::ValidateObj(int Type, void *pData, int Size)
 	{
 		CNetObj_Flag *pObj = (CNetObj_Flag *)pData;
 		if(sizeof(*pObj) != Size) return -1;
-		ClampInt("m_Team", pObj->m_Team, TEAM_RED, TEAM_BLUE);
+		ClampInt("m_Team", pObj->m_Team, TEAM_SPECTATORS, TEAMS_COUNT-1);
 		return 0;
 	}
 	
@@ -188,6 +188,7 @@ int CNetObjHandler::ValidateObj(int Type, void *pData, int Size)
 		if(sizeof(*pObj) != Size) return -1;
 		ClampInt("m_FlagCarrierRed", pObj->m_FlagCarrierRed, FLAG_MISSING, MAX_CLIENTS-1);
 		ClampInt("m_FlagCarrierBlue", pObj->m_FlagCarrierBlue, FLAG_MISSING, MAX_CLIENTS-1);
+		ClampInt("m_FlagCarrierYellow", pObj->m_FlagCarrierYellow, FLAG_MISSING, MAX_CLIENTS-1);
 		return 0;
 	}
 	
@@ -223,7 +224,7 @@ int CNetObjHandler::ValidateObj(int Type, void *pData, int Size)
 		if(sizeof(*pObj) != Size) return -1;
 		ClampInt("m_Local", pObj->m_Local, 0, 1);
 		ClampInt("m_ClientID", pObj->m_ClientID, 0, MAX_CLIENTS-1);
-		ClampInt("m_Team", pObj->m_Team, TEAM_SPECTATORS, TEAM_BLUE);
+		ClampInt("m_Team", pObj->m_Team, TEAM_SPECTATORS, TEAMS_COUNT-1);
 		return 0;
 	}
 	
@@ -332,7 +333,7 @@ void *CNetObjHandler::SecureUnpackMsg(int Type, CUnpacker *pUnpacker)
 		pMsg->m_Team = pUnpacker->GetInt();
 		pMsg->m_ClientID = pUnpacker->GetInt();
 		pMsg->m_pMessage = pUnpacker->GetString(CUnpacker::SANITIZE_CC|CUnpacker::SKIP_START_WHITESPACES);
-		if(pMsg->m_Team < TEAM_SPECTATORS || pMsg->m_Team > TEAM_BLUE) { m_pMsgFailedOn = "m_Team"; break; }
+		if(pMsg->m_Team < TEAM_SPECTATORS || pMsg->m_Team > TEAMS_COUNT-1) { m_pMsgFailedOn = "m_Team"; break; }
 		if(pMsg->m_ClientID < -1 || pMsg->m_ClientID > MAX_CLIENTS-1) { m_pMsgFailedOn = "m_ClientID"; break; }
 	} break;
 	
@@ -474,7 +475,7 @@ void *CNetObjHandler::SecureUnpackMsg(int Type, CUnpacker *pUnpacker)
 		CNetMsg_Cl_SetTeam *pMsg = (CNetMsg_Cl_SetTeam *)m_aMsgData;
 		(void)pMsg;
 		pMsg->m_Team = pUnpacker->GetInt();
-		if(pMsg->m_Team < TEAM_SPECTATORS || pMsg->m_Team > TEAM_BLUE) { m_pMsgFailedOn = "m_Team"; break; }
+		if(pMsg->m_Team < TEAM_SPECTATORS || pMsg->m_Team > TEAMS_COUNT-1) { m_pMsgFailedOn = "m_Team"; break; }
 	} break;
 	
 	case NETMSGTYPE_CL_SETSPECTATORMODE:

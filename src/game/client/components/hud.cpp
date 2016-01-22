@@ -107,11 +107,11 @@ void CHud::RenderScoreHud()
 		if(GameFlags&GAMEFLAG_TEAMS && m_pClient->m_Snap.m_pGameDataObj)
 		{
 			char aScoreTeam[2][32];
-			str_format(aScoreTeam[TEAM_RED], sizeof(aScoreTeam)/2, "%d", m_pClient->m_Snap.m_pGameDataObj->m_TeamscoreRed);
-			str_format(aScoreTeam[TEAM_BLUE], sizeof(aScoreTeam)/2, "%d", m_pClient->m_Snap.m_pGameDataObj->m_TeamscoreBlue);
-			float aScoreTeamWidth[2] = { TextRender()->TextWidth(0, 14.0f, aScoreTeam[TEAM_RED], -1), TextRender()->TextWidth(0, 14.0f, aScoreTeam[TEAM_BLUE], -1) };
+			str_format(aScoreTeam[OLDTEAM_RED], sizeof(aScoreTeam)/2, "%d", m_pClient->m_Snap.m_pGameDataObj->m_TeamscoreRed);
+			str_format(aScoreTeam[OLDTEAM_BLUE], sizeof(aScoreTeam)/2, "%d", m_pClient->m_Snap.m_pGameDataObj->m_TeamscoreBlue);
+			float aScoreTeamWidth[2] = { TextRender()->TextWidth(0, 14.0f, aScoreTeam[OLDTEAM_RED], -1), TextRender()->TextWidth(0, 14.0f, aScoreTeam[OLDTEAM_BLUE], -1) };
 			int FlagCarrier[2] = { m_pClient->m_Snap.m_pGameDataObj->m_FlagCarrierRed, m_pClient->m_Snap.m_pGameDataObj->m_FlagCarrierBlue };
-			float ScoreWidthMax = max(max(aScoreTeamWidth[TEAM_RED], aScoreTeamWidth[TEAM_BLUE]), TextRender()->TextWidth(0, 14.0f, "100", -1));
+			float ScoreWidthMax = max(max(aScoreTeamWidth[OLDTEAM_RED], aScoreTeamWidth[OLDTEAM_BLUE]), TextRender()->TextWidth(0, 14.0f, "100", -1));
 			float Split = 3.0f;
 			float ImageSize = GameFlags&GAMEFLAG_FLAGS ? 16.0f : Split;
 
@@ -172,7 +172,7 @@ void CHud::RenderScoreHud()
 			int i = 0;
 			for(int t = 0; t < 2 && i < MAX_CLIENTS && m_pClient->m_Snap.m_paInfoByScore[i]; ++i)
 			{
-				if(m_pClient->m_Snap.m_paInfoByScore[i]->m_Team != TEAM_SPECTATORS)
+				if(m_pClient->m_Snap.m_paInfoByScore[i]->m_Team != OLDTEAM_SPECTATORS)
 				{
 					apPlayerInfo[t] = m_pClient->m_Snap.m_paInfoByScore[i];
 					if(apPlayerInfo[t]->m_ClientID == m_pClient->m_Snap.m_LocalClientID)
@@ -181,11 +181,11 @@ void CHud::RenderScoreHud()
 				}
 			}
 			// search local player info if not a spectator, nor within top2 scores
-			if(Local == -1 && m_pClient->m_Snap.m_pLocalInfo && m_pClient->m_Snap.m_pLocalInfo->m_Team != TEAM_SPECTATORS)
+			if(Local == -1 && m_pClient->m_Snap.m_pLocalInfo && m_pClient->m_Snap.m_pLocalInfo->m_Team != OLDTEAM_SPECTATORS)
 			{
 				for(; i < MAX_CLIENTS && m_pClient->m_Snap.m_paInfoByScore[i]; ++i)
 				{
-					if(m_pClient->m_Snap.m_paInfoByScore[i]->m_Team != TEAM_SPECTATORS)
+					if(m_pClient->m_Snap.m_paInfoByScore[i]->m_Team != OLDTEAM_SPECTATORS)
 						++aPos[1];
 					if(m_pClient->m_Snap.m_paInfoByScore[i]->m_ClientID == m_pClient->m_Snap.m_LocalClientID)
 					{
@@ -306,7 +306,7 @@ void CHud::RenderTeambalanceWarning()
 	bool Flash = time_get()/(time_freq()/2)%2 == 0;
 	if(m_pClient->m_Snap.m_pGameInfoObj->m_GameFlags&GAMEFLAG_TEAMS)
 	{
-		int TeamDiff = m_pClient->m_Snap.m_aTeamSize[TEAM_RED]-m_pClient->m_Snap.m_aTeamSize[TEAM_BLUE];
+		int TeamDiff = m_pClient->m_Snap.m_aTeamSize[OLDTEAM_RED]-m_pClient->m_Snap.m_aTeamSize[OLDTEAM_BLUE];
 		if (g_Config.m_ClWarningTeambalance && (TeamDiff >= 2 || TeamDiff <= -2))
 		{
 			const char *pText = Localize("Please balance teams!");

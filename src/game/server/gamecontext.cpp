@@ -1143,13 +1143,13 @@ void CGameContext::ConShuffleTeams(IConsole::IResult *pResult, void *pUserData)
 	if(!pSelf->m_pController->IsTeamplay())
 		return;
 
-	int CounterRed = 0;
-	int CounterBlue = 0;
-	int PlayerTeam = 0;
+    int CounterTeam[TEAMS_COUNT];
+    mem_zero(CounterTeam, sizeof(int)*TEAMS_COUNT);
+	int MaxPlayersInTeam = 0;
 	for(int i = 0; i < MAX_CLIENTS; ++i)
 		if(pSelf->m_apPlayers[i] && pSelf->m_apPlayers[i]->GetTeam() != TEAM_SPECTATORS)
-			++PlayerTeam;
-	PlayerTeam = (PlayerTeam+1)/2;
+			++MaxPlayersInTeam;
+	MaxPlayersInTeam = (MaxPlayersInTeam+TEAMS_COUNT-1)/TEAMS_COUNT;
 	
 	pSelf->SendChat(-1, CGameContext::CHAT_ALL, "Teams were shuffled");
 
@@ -1157,23 +1157,20 @@ void CGameContext::ConShuffleTeams(IConsole::IResult *pResult, void *pUserData)
 	{
 		if(pSelf->m_apPlayers[i] && pSelf->m_apPlayers[i]->GetTeam() != TEAM_SPECTATORS)
 		{
-			if(CounterRed == PlayerTeam)
-				pSelf->m_apPlayers[i]->SetTeam(TEAM_BLUE, false);
-			else if(CounterBlue == PlayerTeam)
-				pSelf->m_apPlayers[i]->SetTeam(TEAM_RED, false);
-			else
-			{	
-				if(rand() % 2)
-				{
-					pSelf->m_apPlayers[i]->SetTeam(TEAM_BLUE, false);
-					++CounterBlue;
-				}
-				else
-				{
-					pSelf->m_apPlayers[i]->SetTeam(TEAM_RED, false);
-					++CounterRed;
-				}
-			}
+            int allowedTeams[TEAMS_COUNT];
+            int allowedTeamsCount = 0;
+            for (int i = 0; i < TEAMS_COUNT; ++i) {
+                if (CounterTeam[i] < MaxPlayersInTeam) {
+                    allowedTeams[allowedTeamsCount] = i;
+                    allowedTeamsCount++;
+                }
+            }
+            if (allowedTeamsCount == 0) {
+                break;
+            }
+            int team = allowedTeams[rand() % allowedTeamsCount];
+            pSelf->m_apPlayers[i]->SetTeam(team, false);
+            CounterTeam[team]++;
 		}
 	}
 

@@ -160,7 +160,7 @@ void CItems::RenderFlag(const CNetObj_Flag *pPrev, const CNetObj_Flag *pCurrent,
 	Graphics()->TextureSet(g_pData->m_aImages[IMAGE_GAME].m_Id);
 	Graphics()->QuadsBegin();
 
-	if(pCurrent->m_Team == TEAM_RED)
+	if(pCurrent->m_Team == OLDTEAM_RED)
 		RenderTools()->SelectSprite(SPRITE_FLAG_RED);
 	else
 		RenderTools()->SelectSprite(SPRITE_FLAG_BLUE);
@@ -173,14 +173,14 @@ void CItems::RenderFlag(const CNetObj_Flag *pPrev, const CNetObj_Flag *pCurrent,
 	{
 		// make sure that the flag isn't interpolated between capture and return
 		if(pPrevGameData &&
-			((pCurrent->m_Team == TEAM_RED && pPrevGameData->m_FlagCarrierRed != pCurGameData->m_FlagCarrierRed) ||
-			(pCurrent->m_Team == TEAM_BLUE && pPrevGameData->m_FlagCarrierBlue != pCurGameData->m_FlagCarrierBlue)))
+			((pCurrent->m_Team == OLDTEAM_RED && pPrevGameData->m_FlagCarrierRed != pCurGameData->m_FlagCarrierRed) ||
+			(pCurrent->m_Team == OLDTEAM_BLUE && pPrevGameData->m_FlagCarrierBlue != pCurGameData->m_FlagCarrierBlue)))
 			Pos = vec2(pCurrent->m_X, pCurrent->m_Y);
 
 		// make sure to use predicted position if we are the carrier
 		if(m_pClient->m_Snap.m_pLocalInfo &&
-			((pCurrent->m_Team == TEAM_RED && pCurGameData->m_FlagCarrierRed == m_pClient->m_Snap.m_LocalClientID) ||
-			(pCurrent->m_Team == TEAM_BLUE && pCurGameData->m_FlagCarrierBlue == m_pClient->m_Snap.m_LocalClientID)))
+			((pCurrent->m_Team == OLDTEAM_RED && pCurGameData->m_FlagCarrierRed == m_pClient->m_Snap.m_LocalClientID) ||
+			(pCurrent->m_Team == OLDTEAM_BLUE && pCurGameData->m_FlagCarrierBlue == m_pClient->m_Snap.m_LocalClientID)))
 			Pos = m_pClient->m_LocalCharacterPos;
 	}
 

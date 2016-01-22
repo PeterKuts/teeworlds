@@ -4,6 +4,7 @@
 #define GAME_SERVER_GAMECONTROLLER_H
 
 #include <base/vmath.h>
+#include "../generated/protocol.h"
 
 /*
 	Class: Game Controller
@@ -40,7 +41,8 @@ protected:
 	float EvaluateSpawnPos(CSpawnEval *pEval, vec2 Pos);
 	void EvaluateSpawnType(CSpawnEval *pEval, int Type);
 	bool EvaluateSpawn(class CPlayer *pP, vec2 *pPos);
-
+    void DoTeamBalance();
+    
 	void CycleMap();
 	void ResetGame();
 
@@ -51,7 +53,7 @@ protected:
 	int m_GameOverTick;
 	int m_SuddenDeath;
 
-	int m_aTeamscore[2];
+	int m_aTeamscore[TEAMS_COUNT];
 
 	int m_Warmup;
 	int m_UnpauseTimer;
