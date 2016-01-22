@@ -108,7 +108,18 @@ if use_bundle:
 	copydir("data", clientbundle_resource_dir)
 	shutil.copy("other/icons/Teeworlds.icns", clientbundle_resource_dir)
 	shutil.copy(name+exe_ext, clientbundle_bin_dir)
+	
+	# path to binary within the bundle
+	binary_path = clientbundle_bin_dir + "/" + name+exe_ext
+
+	# corrects the paths to search for dependencies
+	os.system("install_name_tool -change /opt/X11/lib/libfreetype.6.dylib @executable_path/../Frameworks/libfreetype.6.dylib " + binary_path)
+	os.system("install_name_tool -change @rpath/SDL.framework/Versions/A/SDL @executable_path/../Frameworks/SDL.framework/Versions/A/SDL  " + binary_path)
+
+	# copies dependencies into .app folder
 	os.system("cp -R /Library/Frameworks/SDL.framework " + clientbundle_framework_dir)
+	os.system("cp /opt/X11/lib/libfreetype.6.dylib " + clientbundle_framework_dir)
+	
 	file(os.path.join(clientbundle_content_dir, "Info.plist"), "w").write("""
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
