@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE22ED7F1BEC11A8009F573A /* ptctf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE22ED7D1BEC11A8009F573A /* ptctf.cpp */; };
 		CE49471E1BD5634B0031EFEC /* system.c in Sources */ = {isa = PBXBuildFile; fileRef = CE4945E41BD5634B0031EFEC /* system.c */; };
 		CE49473D1BD5634B0031EFEC /* register.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946451BD5634B0031EFEC /* register.cpp */; };
 		CE49473E1BD5634B0031EFEC /* server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4946471BD5634B0031EFEC /* server.cpp */; };
@@ -61,7 +60,6 @@
 		CE49479B1BD5634B0031EFEC /* gameworld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4947001BD5634B0031EFEC /* gameworld.cpp */; };
 		CE49479C1BD5634B0031EFEC /* player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE4947021BD5634B0031EFEC /* player.cpp */; };
 		CE4947AF1BD5697B0031EFEC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4947AE1BD5697B0031EFEC /* libz.tbd */; };
-		CE83C6CB1BD58BB800248396 /* actf.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE83C6C91BD58BB800248396 /* actf.cpp */; };
 		CE85DA1C1BEE57ED000CC545 /* data in Resources */ = {isa = PBXBuildFile; fileRef = CE85DA1B1BEE57ED000CC545 /* data */; };
 		CE85DA231BEE5BC6000CC545 /* teeworlds_srv in CopyFiles */ = {isa = PBXBuildFile; fileRef = CE4945C31BD563060031EFEC /* teeworlds_srv */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CE85DA271BEE5FB0000CC545 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE85DA261BEE5FB0000CC545 /* Info.plist */; };
@@ -102,8 +100,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CE22ED7D1BEC11A8009F573A /* ptctf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ptctf.cpp; sourceTree = "<group>"; };
-		CE22ED7E1BEC11A8009F573A /* ptctf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ptctf.h; sourceTree = "<group>"; };
 		CE4945C31BD563060031EFEC /* teeworlds_srv */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = teeworlds_srv; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE4945E21BD5634B0031EFEC /* detect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detect.h; sourceTree = "<group>"; };
 		CE4945E31BD5634B0031EFEC /* math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = math.h; sourceTree = "<group>"; };
@@ -293,9 +289,6 @@
 		CE7FFF061BF4B42800D44BE6 /* sur1.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = sur1.map; sourceTree = "<group>"; };
 		CE7FFF071BF4B42800D44BE6 /* network.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = network.py; sourceTree = "<group>"; };
 		CE7FFF081BF4B42800D44BE6 /* network.pyc */ = {isa = PBXFileReference; lastKnownFileType = file; path = network.pyc; sourceTree = "<group>"; };
-		CE83C6C91BD58BB800248396 /* actf.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = actf.cpp; sourceTree = "<group>"; };
-		CE83C6CA1BD58BB800248396 /* actf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = actf.h; sourceTree = "<group>"; };
-		CE83C6CC1BD5901000248396 /* advanced_variables.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = advanced_variables.h; sourceTree = "<group>"; };
 		CE85DA081BEE575D000CC545 /* server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = server.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE85DA1B1BEE57ED000CC545 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../../data; sourceTree = "<group>"; };
 		CE85DA261BEE5FB0000CC545 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -491,7 +484,6 @@
 				CE4946E31BD5634B0031EFEC /* server */,
 				CE4947041BD5634B0031EFEC /* tuning.h */,
 				CE4947051BD5634B0031EFEC /* variables.h */,
-				CE83C6CC1BD5901000248396 /* advanced_variables.h */,
 				CE4947061BD5634B0031EFEC /* version.h */,
 				CE4947071BD5634B0031EFEC /* voting.h */,
 			);
@@ -552,10 +544,6 @@
 		CE4946F71BD5634B0031EFEC /* gamemodes */ = {
 			isa = PBXGroup;
 			children = (
-				CE22ED7D1BEC11A8009F573A /* ptctf.cpp */,
-				CE22ED7E1BEC11A8009F573A /* ptctf.h */,
-				CE83C6C91BD58BB800248396 /* actf.cpp */,
-				CE83C6CA1BD58BB800248396 /* actf.h */,
 				CE4946F81BD5634B0031EFEC /* ctf.cpp */,
 				CE4946F91BD5634B0031EFEC /* ctf.h */,
 				CE4946FA1BD5634B0031EFEC /* dm.cpp */,
@@ -799,7 +787,6 @@
 				CE4947551BD5634B0031EFEC /* network_server.cpp in Sources */,
 				CE49471E1BD5634B0031EFEC /* system.c in Sources */,
 				CE4947471BD5634B0031EFEC /* huffman.cpp in Sources */,
-				CE22ED7F1BEC11A8009F573A /* ptctf.cpp in Sources */,
 				CE4947461BD5634B0031EFEC /* filecollection.cpp in Sources */,
 				CE49479B1BD5634B0031EFEC /* gameworld.cpp in Sources */,
 				CE49478C1BD5634B0031EFEC /* layers.cpp in Sources */,
@@ -814,7 +801,6 @@
 				CE4947481BD5634B0031EFEC /* jobs.cpp in Sources */,
 				CE4947541BD5634B0031EFEC /* network_console_conn.cpp in Sources */,
 				CE4947411BD5634B0031EFEC /* console.cpp in Sources */,
-				CE83C6CB1BD58BB800248396 /* actf.cpp in Sources */,
 				CE49478F1BD5634B0031EFEC /* flag.cpp in Sources */,
 				CE4947501BD5634B0031EFEC /* network.cpp in Sources */,
 				CE4947581BD5634B0031EFEC /* snapshot.cpp in Sources */,

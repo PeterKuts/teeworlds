@@ -45,7 +45,6 @@ const char *CNetObjHandler::ms_apObjNames[] = {
 	"SoundGlobal",
 	"SoundWorld",
 	"DamageInd",
-	"HealInd",
 	""
 };
 
@@ -71,7 +70,6 @@ int CNetObjHandler::ms_aObjSizes[] = {
 	sizeof(CNetEvent_SoundGlobal),
 	sizeof(CNetEvent_SoundWorld),
 	sizeof(CNetEvent_DamageInd),
-	sizeof(CNetEvent_HealInd),
 	0
 };
 
@@ -102,7 +100,6 @@ const char *CNetObjHandler::ms_apMsgNames[] = {
 	"Cl_Emoticon",
 	"Cl_Vote",
 	"Cl_CallVote",
-	"Acl_SetPerk",
 	""
 };
 
@@ -203,7 +200,6 @@ int CNetObjHandler::ValidateObj(int Type, void *pData, int Size)
 		ClampInt("m_HookedPlayer", pObj->m_HookedPlayer, 0, MAX_CLIENTS-1);
 		ClampInt("m_HookState", pObj->m_HookState, -1, 5);
 		ClampInt("m_HookTick", pObj->m_HookTick, 0, max_int);
-		ClampInt("m_Perk", pObj->m_Perk, 0, NUM_PERKS-1);
 		return 0;
 	}
 	
@@ -228,8 +224,6 @@ int CNetObjHandler::ValidateObj(int Type, void *pData, int Size)
 		ClampInt("m_Local", pObj->m_Local, 0, 1);
 		ClampInt("m_ClientID", pObj->m_ClientID, 0, MAX_CLIENTS-1);
 		ClampInt("m_Team", pObj->m_Team, TEAM_SPECTATORS, TEAM_BLUE);
-		ClampInt("m_Perk", pObj->m_Perk, 0, NUM_PERKS-1);
-		ClampInt("m_WantedPerk", pObj->m_WantedPerk, 0, NUM_PERKS-1);
 		return 0;
 	}
 	
@@ -304,13 +298,6 @@ int CNetObjHandler::ValidateObj(int Type, void *pData, int Size)
 	case NETEVENTTYPE_DAMAGEIND:
 	{
 		CNetEvent_DamageInd *pObj = (CNetEvent_DamageInd *)pData;
-		if(sizeof(*pObj) != Size) return -1;
-		return 0;
-	}
-	
-	case NETEVENTTYPE_HEALIND:
-	{
-		CNetEvent_HealInd *pObj = (CNetEvent_HealInd *)pData;
 		if(sizeof(*pObj) != Size) return -1;
 		return 0;
 	}
@@ -555,14 +542,6 @@ void *CNetObjHandler::SecureUnpackMsg(int Type, CUnpacker *pUnpacker)
 		pMsg->m_Type = pUnpacker->GetString(CUnpacker::SANITIZE_CC|CUnpacker::SKIP_START_WHITESPACES);
 		pMsg->m_Value = pUnpacker->GetString(CUnpacker::SANITIZE_CC|CUnpacker::SKIP_START_WHITESPACES);
 		pMsg->m_Reason = pUnpacker->GetString(CUnpacker::SANITIZE_CC|CUnpacker::SKIP_START_WHITESPACES);
-	} break;
-	
-	case NETMSGTYPE_ACL_SETPERK:
-	{
-		CNetMsg_Acl_SetPerk *pMsg = (CNetMsg_Acl_SetPerk *)m_aMsgData;
-		(void)pMsg;
-		pMsg->m_Perk = pUnpacker->GetInt();
-		if(pMsg->m_Perk < 0 || pMsg->m_Perk > NUM_PERKS-1) { m_pMsgFailedOn = "m_Perk"; break; }
 	} break;
 	
 	default:

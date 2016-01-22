@@ -1,10 +1,5 @@
 #ifndef CLIENT_CONTENT_HEADER
 #define CLIENT_CONTENT_HEADER
-struct CDataPerk
-{
-	const char* m_pName;
-	const char* m_pSkinfile;
-};
 struct CDataSound
 {
 	int m_Id;
@@ -150,8 +145,6 @@ struct CDataContainer
 	int m_NumAnimations;
 	CAnimation *m_aAnimations;
 	CDataWeaponspecs m_Weapons;
-	int m_NumPerks;
-	CDataPerk *m_aPerks;
 };
 extern CDataContainer *g_pData;
 enum

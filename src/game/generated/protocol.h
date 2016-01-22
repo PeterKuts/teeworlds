@@ -107,7 +107,6 @@ enum
 	NETEVENTTYPE_SOUNDGLOBAL,
 	NETEVENTTYPE_SOUNDWORLD,
 	NETEVENTTYPE_DAMAGEIND,
-	NETEVENTTYPE_HEALIND,
 	NUM_NETOBJTYPES
 };
 
@@ -139,7 +138,6 @@ enum
 	NETMSGTYPE_CL_EMOTICON,
 	NETMSGTYPE_CL_VOTE,
 	NETMSGTYPE_CL_CALLVOTE,
-	NETMSGTYPE_ACL_SETPERK,
 	NUM_NETMSGTYPES
 };
 
@@ -228,7 +226,6 @@ struct CNetObj_CharacterCore
 	int m_HookY;
 	int m_HookDx;
 	int m_HookDy;
-	int m_Perk;
 };
 
 struct CNetObj_Character : public CNetObj_CharacterCore
@@ -249,8 +246,6 @@ struct CNetObj_PlayerInfo
 	int m_Team;
 	int m_Score;
 	int m_Latency;
-	int m_Perk;
-	int m_WantedPerk;
 };
 
 struct CNetObj_ClientInfo
@@ -315,11 +310,6 @@ struct CNetEvent_SoundWorld : public CNetEvent_Common
 };
 
 struct CNetEvent_DamageInd : public CNetEvent_Common
-{
-	int m_Angle;
-};
-
-struct CNetEvent_HealInd : public CNetEvent_Common
 {
 	int m_Angle;
 };
@@ -696,18 +686,6 @@ struct CNetMsg_Cl_CallVote
 	}
 };
 
-struct CNetMsg_Acl_SetPerk
-{
-	int m_Perk;
-	int MsgID() const { return NETMSGTYPE_ACL_SETPERK; }
-	
-	bool Pack(CMsgPacker *pPacker)
-	{
-		pPacker->AddInt(m_Perk);
-		return pPacker->Error() != 0;
-	}
-};
-
 enum
 {
 	SOUND_GUN_FIRE=0,
@@ -762,20 +740,6 @@ enum
 	WEAPON_RIFLE,
 	WEAPON_NINJA,
 	NUM_WEAPONS
-};
-enum
-{
-	PERKS_NONE=0,
-	PERKS_MACHO,
-	PERKS_HUMMERTIME,
-	PERKS_MACHINEGUN,
-	PERKS_JACKHAMMER,
-	PERKS_ROCKETJUMPER,
-	PERKS_SHARPSHOOTER,
-	PERKS_EPHEMERAL,
-	PERKS_DOCTOR,
-	PERKS_VAMPIRE,
-	NUM_PERKS
 };
 
 

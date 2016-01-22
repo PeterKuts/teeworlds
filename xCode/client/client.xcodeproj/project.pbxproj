@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE39C42A1BF39BAE00E87893 /* statistics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE39C4281BF39BAE00E87893 /* statistics.cpp */; };
 		CE85D79E1BEE5020000CC545 /* system.c in Sources */ = {isa = PBXBuildFile; fileRef = CE49497F1BD576C90031EFEC /* system.c */; };
 		CE85D79F1BEE5020000CC545 /* backend_sdl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49498D1BD576C90031EFEC /* backend_sdl.cpp */; };
 		CE85D7A01BEE5020000CC545 /* client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49498F1BD576C90031EFEC /* client.cpp */; };
@@ -110,11 +109,9 @@
 		CE85D8031BEE50CB000CC545 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE494B491BD57DBF0031EFEC /* SDL.framework */; };
 		CE85D9F61BEE521D000CC545 /* data in Resources */ = {isa = PBXBuildFile; fileRef = CE85D9F51BEE521D000CC545 /* data */; };
 		CE85DA031BEE563B000CC545 /* Teeworlds.icns in Resources */ = {isa = PBXBuildFile; fileRef = CE85DA021BEE563B000CC545 /* Teeworlds.icns */; };
-		CE85DA2E1BEE65FA000CC545 /* perksboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE85DA2C1BEE65FA000CC545 /* perksboard.cpp */; };
 		CEACD23E1BF0B1C7003101B0 /* libfreetype.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEACD23D1BF0B1C7003101B0 /* libfreetype.6.dylib */; };
 		CEACD2481BF0BAED003101B0 /* libfreetype.6.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = CEACD23D1BF0B1C7003101B0 /* libfreetype.6.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		CEACD2491BF0BAED003101B0 /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CE494B491BD57DBF0031EFEC /* SDL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		CEC98C421BF4DCFB0074217F /* healind.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CEC98C401BF4DCFB0074217F /* healind.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -132,8 +129,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CE39C4281BF39BAE00E87893 /* statistics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = statistics.cpp; sourceTree = "<group>"; };
-		CE39C4291BF39BAE00E87893 /* statistics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = statistics.h; sourceTree = "<group>"; };
 		CE49497D1BD576C90031EFEC /* detect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = detect.h; sourceTree = "<group>"; };
 		CE49497E1BD576C90031EFEC /* math.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = math.h; sourceTree = "<group>"; };
 		CE49497F1BD576C90031EFEC /* system.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = system.c; sourceTree = "<group>"; };
@@ -450,11 +445,7 @@
 		CE85D9F51BEE521D000CC545 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../../data; sourceTree = "<group>"; };
 		CE85DA001BEE5619000CC545 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE85DA021BEE563B000CC545 /* Teeworlds.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Teeworlds.icns; path = ../../../other/icons/Teeworlds.icns; sourceTree = "<group>"; };
-		CE85DA2C1BEE65FA000CC545 /* perksboard.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = perksboard.cpp; sourceTree = "<group>"; };
-		CE85DA2D1BEE65FA000CC545 /* perksboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = perksboard.h; sourceTree = "<group>"; };
 		CEACD23D1BF0B1C7003101B0 /* libfreetype.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libfreetype.6.dylib; sourceTree = "<group>"; };
-		CEC98C401BF4DCFB0074217F /* healind.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = healind.cpp; sourceTree = "<group>"; };
-		CEC98C411BF4DCFB0074217F /* healind.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = healind.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -725,10 +716,6 @@
 		CE494A1E1BD576C90031EFEC /* components */ = {
 			isa = PBXGroup;
 			children = (
-				CE39C4281BF39BAE00E87893 /* statistics.cpp */,
-				CE39C4291BF39BAE00E87893 /* statistics.h */,
-				CE85DA2C1BEE65FA000CC545 /* perksboard.cpp */,
-				CE85DA2D1BEE65FA000CC545 /* perksboard.h */,
 				CE494A1F1BD576C90031EFEC /* binds.cpp */,
 				CE494A201BD576C90031EFEC /* binds.h */,
 				CE494A211BD576C90031EFEC /* broadcast.cpp */,
@@ -745,8 +732,6 @@
 				CE494A2C1BD576C90031EFEC /* countryflags.h */,
 				CE494A2D1BD576C90031EFEC /* damageind.cpp */,
 				CE494A2E1BD576C90031EFEC /* damageind.h */,
-				CEC98C401BF4DCFB0074217F /* healind.cpp */,
-				CEC98C411BF4DCFB0074217F /* healind.h */,
 				CE494A2F1BD576C90031EFEC /* debughud.cpp */,
 				CE494A301BD576C90031EFEC /* debughud.h */,
 				CE494A311BD576C90031EFEC /* effects.cpp */,
@@ -1090,7 +1075,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE39C42A1BF39BAE00E87893 /* statistics.cpp in Sources */,
 				CE85D7FD1BEE507A000CC545 /* client.m in Sources */,
 				CE85D79E1BEE5020000CC545 /* system.c in Sources */,
 				CE85D79F1BEE5020000CC545 /* backend_sdl.cpp in Sources */,
@@ -1118,7 +1102,6 @@
 				CE85D7B51BEE5020000CC545 /* engine.cpp in Sources */,
 				CE85D7B61BEE5020000CC545 /* filecollection.cpp in Sources */,
 				CE85D7B71BEE5020000CC545 /* huffman.cpp in Sources */,
-				CEC98C421BF4DCFB0074217F /* healind.cpp in Sources */,
 				CE85D7B81BEE5020000CC545 /* jobs.cpp in Sources */,
 				CE85D7B91BEE5020000CC545 /* kernel.cpp in Sources */,
 				CE85D7BA1BEE5020000CC545 /* linereader.cpp in Sources */,
@@ -1180,7 +1163,6 @@
 				CE85D7F21BEE5020000CC545 /* io.cpp in Sources */,
 				CE85D7F31BEE5020000CC545 /* layer_game.cpp in Sources */,
 				CE85D7F41BEE5020000CC545 /* layer_quads.cpp in Sources */,
-				CE85DA2E1BEE65FA000CC545 /* perksboard.cpp in Sources */,
 				CE85D7F51BEE5020000CC545 /* layer_tiles.cpp in Sources */,
 				CE85D7F61BEE5020000CC545 /* popups.cpp in Sources */,
 				CE85D7F71BEE5020000CC545 /* gamecore.cpp in Sources */,
