@@ -30,9 +30,7 @@ IGameController::IGameController(class CGameContext *pGameServer)
 	m_UnbalancedTick = -1;
 	m_ForceBalanced = false;
 
-	m_aNumSpawnPoints[0] = 0;
-	m_aNumSpawnPoints[1] = 0;
-	m_aNumSpawnPoints[2] = 0;
+    mem_zero(m_aNumSpawnPoints, sizeof(int)*(TEAMS_COUNT+1));
 }
 
 IGameController::~IGameController()
@@ -136,6 +134,8 @@ bool IGameController::OnEntity(int Index, vec2 Pos)
 		m_aaSpawnPoints[1][m_aNumSpawnPoints[1]++] = Pos;
 	else if(Index == ENTITY_SPAWN_BLUE)
 		m_aaSpawnPoints[2][m_aNumSpawnPoints[2]++] = Pos;
+    else if(Index == ENTITY_SPAWN_YELLOW)
+        m_aaSpawnPoints[3][m_aNumSpawnPoints[3]++] = Pos;
 	else if(Index == ENTITY_ARMOR_1)
 		Type = POWERUP_ARMOR;
 	else if(Index == ENTITY_HEALTH_1)
