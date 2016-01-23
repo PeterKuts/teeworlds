@@ -322,8 +322,8 @@ void CHud::RenderTeambalanceWarning()
 	bool Flash = time_get()/(time_freq()/2)%2 == 0;
 	if(m_pClient->m_Snap.m_pGameInfoObj->m_GameFlags&GAMEFLAG_TEAMS)
 	{
-        int mx = 1e3;
-        int mn = -1e3;
+        int mx = -1e3;
+        int mn = 1e3;
         for (int i = 0; i < TEAMS_COUNT; ++i) {
             int size = m_pClient->m_Snap.m_aTeamSize[i];
             mx = max(size, mx);
