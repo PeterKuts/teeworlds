@@ -165,7 +165,7 @@ void CItems::RenderFlag(const CNetObj_Flag *pPrev, const CNetObj_Flag *pCurrent,
     } else if (pCurrent->m_Team == TEAM_BLUE) {
 		RenderTools()->SelectSprite(SPRITE_FLAG_BLUE);
     } else {
-        RenderTools()->SelectSprite(SPRITE_FLAG_RED, SPRITE_FLAG_FLIP_Y);
+        RenderTools()->SelectSprite(SPRITE_FLAG_YELLOW);
     }
 
 	Graphics()->QuadsSetRotation(Angle);
