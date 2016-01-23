@@ -347,8 +347,7 @@ void CGameClient::OnReset()
 		m_All.m_paComponents[i]->OnReset();
 
 	m_DemoSpecID = SPEC_FREEVIEW;
-	m_FlagDropTick[OLDTEAM_RED] = 0;
-	m_FlagDropTick[OLDTEAM_BLUE] = 0;
+    mem_zero(m_FlagDropTick, sizeof(int)*TEAMS_COUNT);
 	m_Tuning = CTuningParams();
 }
 
@@ -662,7 +661,7 @@ void CGameClient::OnNewSnapshot()
 
 	// go trough all the items in the snapshot and gather the info we want
 	{
-		m_Snap.m_aTeamSize[OLDTEAM_RED] = m_Snap.m_aTeamSize[OLDTEAM_BLUE] = 0;
+        mem_zero(m_Snap.m_aTeamSize, sizeof(int)*TEAMS_COUNT);
 
 		int Num = Client()->SnapNumItems(IClient::SNAP_CURRENT);
 		for(int i = 0; i < Num; i++)
@@ -726,7 +725,7 @@ void CGameClient::OnNewSnapshot()
 					m_Snap.m_LocalClientID = Item.m_ID;
 					m_Snap.m_pLocalInfo = pInfo;
 
-					if(pInfo->m_Team == OLDTEAM_SPECTATORS)
+					if(pInfo->m_Team == TEAM_SPECTATORS)
 					{
 						m_Snap.m_SpecInfo.m_Active = true;
 						m_Snap.m_SpecInfo.m_SpectatorID = SPEC_FREEVIEW;
@@ -734,7 +733,7 @@ void CGameClient::OnNewSnapshot()
 				}
 
 				// calculate team-balance
-				if(pInfo->m_Team != OLDTEAM_SPECTATORS)
+				if(pInfo->m_Team != TEAM_SPECTATORS)
 					m_Snap.m_aTeamSize[pInfo->m_Team]++;
 
 			}
@@ -774,23 +773,28 @@ void CGameClient::OnNewSnapshot()
 			{
 				m_Snap.m_pGameDataObj = (const CNetObj_GameData *)pData;
 				m_Snap.m_GameDataSnapID = Item.m_ID;
-				if(m_Snap.m_pGameDataObj->m_FlagCarrierRed == FLAG_TAKEN)
-				{
-					if(m_FlagDropTick[OLDTEAM_RED] == 0)
-						m_FlagDropTick[OLDTEAM_RED] = Client()->GameTick();
-				}
-				else if(m_FlagDropTick[OLDTEAM_RED] != 0)
-						m_FlagDropTick[OLDTEAM_RED] = 0;
-				if(m_Snap.m_pGameDataObj->m_FlagCarrierBlue == FLAG_TAKEN)
-				{
-					if(m_FlagDropTick[OLDTEAM_BLUE] == 0)
-						m_FlagDropTick[OLDTEAM_BLUE] = Client()->GameTick();
-				}
-				else if(m_FlagDropTick[OLDTEAM_BLUE] != 0)
-						m_FlagDropTick[OLDTEAM_BLUE] = 0;
+				if(m_Snap.m_pGameDataObj->m_FlagCarrierRed == FLAG_TAKEN) {
+					if(m_FlagDropTick[TEAM_RED] == 0)
+						m_FlagDropTick[TEAM_RED] = Client()->GameTick();
+                } else if(m_FlagDropTick[TEAM_RED] != 0) {
+						m_FlagDropTick[TEAM_RED] = 0;
+                }
+                if(m_Snap.m_pGameDataObj->m_FlagCarrierBlue == FLAG_TAKEN) {
+                    if(m_FlagDropTick[TEAM_BLUE] == 0)
+                        m_FlagDropTick[TEAM_BLUE] = Client()->GameTick();
+                } else if(m_FlagDropTick[TEAM_BLUE] != 0) {
+                    m_FlagDropTick[TEAM_BLUE] = 0;
+                }
+                if(m_Snap.m_pGameDataObj->m_FlagCarrierYellow == FLAG_TAKEN) {
+                    if(m_FlagDropTick[TEAM_YELLOW] == 0)
+                        m_FlagDropTick[TEAM_YELLOW] = Client()->GameTick();
+                } else if(m_FlagDropTick[TEAM_YELLOW] != 0) {
+                    m_FlagDropTick[TEAM_YELLOW] = 0;
+                }
 			}
-			else if(Item.m_Type == NETOBJTYPE_FLAG)
-				m_Snap.m_paFlags[Item.m_ID%2] = (const CNetObj_Flag *)pData;
+            else if(Item.m_Type == NETOBJTYPE_FLAG) {
+				m_Snap.m_paFlags[Item.m_ID%TEAMS_COUNT] = (const CNetObj_Flag *)pData;
+            }
 		}
 	}
 
@@ -851,9 +855,9 @@ void CGameClient::OnNewSnapshot()
 		}
 	}
 	// sort player infos by team
-	int Teams[3] = { OLDTEAM_RED, OLDTEAM_BLUE, OLDTEAM_SPECTATORS };
+	int Teams[TEAMS_COUNT+1] = { TEAM_RED, TEAM_BLUE, TEAM_YELLOW, TEAM_SPECTATORS };
 	int Index = 0;
-	for(int Team = 0; Team < 3; ++Team)
+	for(int Team = 0; Team < TEAMS_COUNT+1; ++Team)
 	{
 		for(int i = 0; i < MAX_CLIENTS && Index < MAX_CLIENTS; ++i)
 		{
@@ -1025,8 +1029,8 @@ void CGameClient::CClientData::UpdateRenderInfo()
 	if(g_GameClient.m_Snap.m_pGameInfoObj && g_GameClient.m_Snap.m_pGameInfoObj->m_GameFlags&GAMEFLAG_TEAMS)
 	{
 		m_RenderInfo.m_Texture = g_GameClient.m_pSkins->Get(m_SkinID)->m_ColorTexture;
-		const int TeamColors[2] = {65387, 10223467};
-		if(m_Team >= OLDTEAM_RED && m_Team <= OLDTEAM_BLUE)
+		const int TeamColors[TEAMS_COUNT] = {65387, 10223467, 2817899};
+		if(TEAM_SPECTATORS < m_Team && m_Team < TEAMS_COUNT)
 		{
 			m_RenderInfo.m_ColorBody = g_GameClient.m_pSkins->GetColorV4(TeamColors[m_Team]);
 			m_RenderInfo.m_ColorFeet = g_GameClient.m_pSkins->GetColorV4(TeamColors[m_Team]);

@@ -89,7 +89,7 @@ public:
 	bool m_SuppressEvents;
 	bool m_NewTick;
 	bool m_NewPredictedTick;
-	int m_FlagDropTick[2];
+	int m_FlagDropTick[TEAMS_COUNT];
 
 	// TODO: move this
 	CTuningParams m_Tuning;
@@ -118,7 +118,7 @@ public:
 		const CNetObj_PlayerInfo *m_pLocalInfo;
 		const CNetObj_SpectatorInfo *m_pSpectatorInfo;
 		const CNetObj_SpectatorInfo *m_pPrevSpectatorInfo;
-		const CNetObj_Flag *m_paFlags[2];
+		const CNetObj_Flag *m_paFlags[TEAMS_COUNT];
 		const CNetObj_GameInfo *m_pGameInfoObj;
 		const CNetObj_GameData *m_pGameDataObj;
 		int m_GameDataSnapID;
@@ -129,7 +129,7 @@ public:
 
 		int m_LocalClientID;
 		int m_NumPlayers;
-		int m_aTeamSize[2];
+		int m_aTeamSize[TEAMS_COUNT];
 
 		// spectate data
 		struct CSpectateInfo

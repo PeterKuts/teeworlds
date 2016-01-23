@@ -78,10 +78,11 @@ void CKillMessages::OnRender()
 				Graphics()->TextureSet(g_pData->m_aImages[IMAGE_GAME].m_Id);
 				Graphics()->QuadsBegin();
 
-				if(m_aKillmsgs[r].m_VictimTeam == OLDTEAM_RED)
-					RenderTools()->SelectSprite(SPRITE_FLAG_BLUE);
-				else
-					RenderTools()->SelectSprite(SPRITE_FLAG_RED);
+                RenderTools()->SelectSprite(SPRITE_FLAG_RED);
+//				if(m_aKillmsgs[r].m_VictimTeam == OLDTEAM_RED)
+//					RenderTools()->SelectSprite(SPRITE_FLAG_BLUE);
+//				else
+//					RenderTools()->SelectSprite(SPRITE_FLAG_RED);
 
 				float Size = 56.0f;
 				IGraphics::CQuadItem QuadItem(x, y-16, Size/2, Size);
@@ -115,10 +116,11 @@ void CKillMessages::OnRender()
 					Graphics()->TextureSet(g_pData->m_aImages[IMAGE_GAME].m_Id);
 					Graphics()->QuadsBegin();
 
-					if(m_aKillmsgs[r].m_KillerTeam == OLDTEAM_RED)
-						RenderTools()->SelectSprite(SPRITE_FLAG_BLUE, SPRITE_FLAG_FLIP_X);
-					else
-						RenderTools()->SelectSprite(SPRITE_FLAG_RED, SPRITE_FLAG_FLIP_X);
+                    RenderTools()->SelectSprite(SPRITE_FLAG_RED);
+//					if(m_aKillmsgs[r].m_KillerTeam == OLDTEAM_RED)
+//						RenderTools()->SelectSprite(SPRITE_FLAG_BLUE, SPRITE_FLAG_FLIP_X);
+//					else
+//						RenderTools()->SelectSprite(SPRITE_FLAG_RED, SPRITE_FLAG_FLIP_X);
 
 					float Size = 56.0f;
 					IGraphics::CQuadItem QuadItem(x-56, y-16, Size/2, Size);

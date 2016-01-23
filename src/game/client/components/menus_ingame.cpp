@@ -41,43 +41,47 @@ void CMenus::RenderGame(CUIRect MainView)
 
 	if(m_pClient->m_Snap.m_pLocalInfo && m_pClient->m_Snap.m_pGameInfoObj)
 	{
-		if(m_pClient->m_Snap.m_pLocalInfo->m_Team != OLDTEAM_SPECTATORS)
+		if(m_pClient->m_Snap.m_pLocalInfo->m_Team != TEAM_SPECTATORS)
 		{
 			ButtonBar.VSplitLeft(10.0f, 0, &ButtonBar);
 			ButtonBar.VSplitLeft(120.0f, &Button, &ButtonBar);
 			static int s_SpectateButton = 0;
 			if(DoButton_Menu(&s_SpectateButton, Localize("Spectate"), 0, &Button))
 			{
-				m_pClient->SendSwitchTeam(OLDTEAM_SPECTATORS);
+				m_pClient->SendSwitchTeam(TEAM_SPECTATORS);
 				SetActive(false);
 			}
 		}
 
 		if(m_pClient->m_Snap.m_pGameInfoObj->m_GameFlags & GAMEFLAG_TEAMS)
 		{
-			if(m_pClient->m_Snap.m_pLocalInfo->m_Team != OLDTEAM_RED)
-			{
+			if(m_pClient->m_Snap.m_pLocalInfo->m_Team != TEAM_RED) {
 				ButtonBar.VSplitLeft(10.0f, 0, &ButtonBar);
 				ButtonBar.VSplitLeft(120.0f, &Button, &ButtonBar);
 				static int s_SpectateButton = 0;
-				if(DoButton_Menu(&s_SpectateButton, Localize("Join red"), 0, &Button))
-				{
-					m_pClient->SendSwitchTeam(OLDTEAM_RED);
+				if(DoButton_Menu(&s_SpectateButton, Localize("Join red"), 0, &Button)) {
+					m_pClient->SendSwitchTeam(TEAM_RED);
 					SetActive(false);
 				}
 			}
-
-			if(m_pClient->m_Snap.m_pLocalInfo->m_Team != OLDTEAM_BLUE)
-			{
+			if(m_pClient->m_Snap.m_pLocalInfo->m_Team != TEAM_BLUE) {
 				ButtonBar.VSplitLeft(10.0f, 0, &ButtonBar);
 				ButtonBar.VSplitLeft(120.0f, &Button, &ButtonBar);
 				static int s_SpectateButton = 0;
-				if(DoButton_Menu(&s_SpectateButton, Localize("Join blue"), 0, &Button))
-				{
-					m_pClient->SendSwitchTeam(OLDTEAM_BLUE);
+				if(DoButton_Menu(&s_SpectateButton, Localize("Join blue"), 0, &Button)) {
+					m_pClient->SendSwitchTeam(TEAM_BLUE);
 					SetActive(false);
 				}
 			}
+            if(m_pClient->m_Snap.m_pLocalInfo->m_Team != TEAM_YELLOW) {
+                ButtonBar.VSplitLeft(10.0f, 0, &ButtonBar);
+                ButtonBar.VSplitLeft(120.0f, &Button, &ButtonBar);
+                static int s_SpectateButton = 0;
+                if(DoButton_Menu(&s_SpectateButton, Localize("Join yellow"), 0, &Button)) {
+                    m_pClient->SendSwitchTeam(TEAM_YELLOW);
+                    SetActive(false);
+                }
+            }
 		}
 		else
 		{
@@ -396,7 +400,7 @@ void CMenus::RenderServerControlKick(CUIRect MainView, bool FilterSpectators)
 			continue;
 
 		int Index = m_pClient->m_Snap.m_paInfoByTeam[i]->m_ClientID;
-		if(Index == m_pClient->m_Snap.m_LocalClientID || (FilterSpectators && m_pClient->m_Snap.m_paInfoByTeam[i]->m_Team == OLDTEAM_SPECTATORS))
+		if(Index == m_pClient->m_Snap.m_LocalClientID || (FilterSpectators && m_pClient->m_Snap.m_paInfoByTeam[i]->m_Team == TEAM_SPECTATORS))
 			continue;
 		if(m_CallvoteSelectedPlayer == Index)
 			Selected = NumOptions;
