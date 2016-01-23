@@ -18,6 +18,11 @@ public:
 
 	virtual bool OnEntity(int Index, vec2 Pos);
 	virtual int OnCharacterDeath(class CCharacter *pVictim, class CPlayer *pKiller, int Weapon);
+private:
+    void updateFlags_LeftGame();
+    void updateFlags_WithCarriers();
+    void updateFlags_WithoutCarriers();
+    void updateFlags_FreeFly();
 };
 
 #endif
