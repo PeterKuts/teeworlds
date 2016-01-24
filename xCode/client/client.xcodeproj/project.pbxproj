@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE4A1F7E1C550FFE00C8BBEC /* freetype.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE4A1F7D1C550FFE00C8BBEC /* freetype.framework */; };
+		CE4A1F7F1C55108000C8BBEC /* freetype.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CE4A1F7D1C550FFE00C8BBEC /* freetype.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CE85D79E1BEE5020000CC545 /* system.c in Sources */ = {isa = PBXBuildFile; fileRef = CE49497F1BD576C90031EFEC /* system.c */; };
 		CE85D79F1BEE5020000CC545 /* backend_sdl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49498D1BD576C90031EFEC /* backend_sdl.cpp */; };
 		CE85D7A01BEE5020000CC545 /* client.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CE49498F1BD576C90031EFEC /* client.cpp */; };
@@ -106,12 +108,10 @@
 		CE85D7FF1BEE50C4000CC545 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = CE494C041BD584550031EFEC /* libz.tbd */; };
 		CE85D8001BEE50C6000CC545 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE494C021BD583120031EFEC /* Cocoa.framework */; };
 		CE85D8011BEE50C7000CC545 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE494C001BD582EA0031EFEC /* OpenGL.framework */; };
-		CE85D8031BEE50CB000CC545 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE494B491BD57DBF0031EFEC /* SDL.framework */; };
+		CE85D8031BEE50CB000CC545 /* SDL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE494B491BD57DBF0031EFEC /* SDL.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		CE85D9F61BEE521D000CC545 /* data in Resources */ = {isa = PBXBuildFile; fileRef = CE85D9F51BEE521D000CC545 /* data */; };
 		CE85DA031BEE563B000CC545 /* Teeworlds.icns in Resources */ = {isa = PBXBuildFile; fileRef = CE85DA021BEE563B000CC545 /* Teeworlds.icns */; };
-		CEACD23E1BF0B1C7003101B0 /* libfreetype.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CEACD23D1BF0B1C7003101B0 /* libfreetype.6.dylib */; };
-		CEACD2481BF0BAED003101B0 /* libfreetype.6.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = CEACD23D1BF0B1C7003101B0 /* libfreetype.6.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
-		CEACD2491BF0BAED003101B0 /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CE494B491BD57DBF0031EFEC /* SDL.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CEACD2491BF0BAED003101B0 /* SDL.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = CE494B491BD57DBF0031EFEC /* SDL.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -121,8 +121,8 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				CEACD2481BF0BAED003101B0 /* libfreetype.6.dylib in CopyFiles */,
 				CEACD2491BF0BAED003101B0 /* SDL.framework in CopyFiles */,
+				CE4A1F7F1C55108000C8BBEC /* freetype.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,13 +439,13 @@
 		CE494C001BD582EA0031EFEC /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		CE494C021BD583120031EFEC /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CE494C041BD584550031EFEC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		CE4A1F7D1C550FFE00C8BBEC /* freetype.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = freetype.framework; sourceTree = "<group>"; };
 		CE85D70F1BEE4CC7000CC545 /* client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = client.h; sourceTree = "<group>"; };
 		CE85D7101BEE4CC7000CC545 /* client.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = client.m; sourceTree = "<group>"; };
 		CE85D71E1BEE4EA6000CC545 /* client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE85D9F51BEE521D000CC545 /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = data; path = ../../data; sourceTree = "<group>"; };
 		CE85DA001BEE5619000CC545 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE85DA021BEE563B000CC545 /* Teeworlds.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; name = Teeworlds.icns; path = ../../../other/icons/Teeworlds.icns; sourceTree = "<group>"; };
-		CEACD23D1BF0B1C7003101B0 /* libfreetype.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = libfreetype.6.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -454,8 +454,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE85D7FF1BEE50C4000CC545 /* libz.tbd in Frameworks */,
+				CE4A1F7E1C550FFE00C8BBEC /* freetype.framework in Frameworks */,
 				CE85D8001BEE50C6000CC545 /* Cocoa.framework in Frameworks */,
-				CEACD23E1BF0B1C7003101B0 /* libfreetype.6.dylib in Frameworks */,
 				CE85D8011BEE50C7000CC545 /* OpenGL.framework in Frameworks */,
 				CE85D8031BEE50CB000CC545 /* SDL.framework in Frameworks */,
 			);
@@ -810,7 +810,7 @@
 		CE494B461BD578A70031EFEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				CEACD23D1BF0B1C7003101B0 /* libfreetype.6.dylib */,
+				CE4A1F7D1C550FFE00C8BBEC /* freetype.framework */,
 				CE494C041BD584550031EFEC /* libz.tbd */,
 				CE494C021BD583120031EFEC /* Cocoa.framework */,
 				CE494C001BD582EA0031EFEC /* OpenGL.framework */,
@@ -1266,7 +1266,7 @@
 		CE85D72D1BEE4EA6000CC545 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1286,7 +1286,7 @@
 		CE85D72E1BEE4EA6000CC545 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
