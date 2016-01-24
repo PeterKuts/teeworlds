@@ -345,25 +345,44 @@ void CScoreboard::OnRender()
 			if(m_pClient->m_Snap.m_pGameInfoObj->m_GameStateFlags&GAMESTATEFLAG_GAMEOVER && m_pClient->m_Snap.m_pGameDataObj)
 			{
 				char aText[256];
-				str_copy(aText, Localize("Draw!"), sizeof(aText));
 
-				if(m_pClient->m_Snap.m_pGameDataObj->m_TeamscoreRed > m_pClient->m_Snap.m_pGameDataObj->m_TeamscoreBlue)
-				{
-					if(pRedClanName)
-						str_format(aText, sizeof(aText), Localize("%s wins!"), pRedClanName);
-					else
-						str_copy(aText, Localize("Red team wins!"), sizeof(aText));
-				}
-				else if(m_pClient->m_Snap.m_pGameDataObj->m_TeamscoreBlue > m_pClient->m_Snap.m_pGameDataObj->m_TeamscoreRed)
-				{
-					if(pBlueClanName)
-						str_format(aText, sizeof(aText), Localize("%s wins!"), pBlueClanName);
-					else
-						str_copy(aText, Localize("Blue team wins!"), sizeof(aText));
-				}
-
-				float w = TextRender()->TextWidth(0, 86.0f, aText, -1);
-				TextRender()->Text(0, Width/2-w/2, 39, 86.0f, aText, -1);
+                int scores[TEAMS_COUNT] = {
+                    m_pClient->m_Snap.m_pGameDataObj->m_TeamscoreRed,
+                    m_pClient->m_Snap.m_pGameDataObj->m_TeamscoreBlue,
+                    m_pClient->m_Snap.m_pGameDataObj->m_TeamscoreYellow
+                };
+                
+                int maxI = 0;
+                int maxCount = 1;
+                for (int i = 1; i < TEAMS_COUNT; ++i) {
+                    if (scores[i] > scores[maxI]) {
+                        maxI = i;
+                        maxCount = 1;
+                    } else if (scores[i] == scores[maxI]) {
+                        maxCount++;
+                    }
+                }
+                str_copy(aText, Localize("Draw!"), sizeof(aText));
+                if (maxCount == 1) {
+                    if (maxI == TEAM_RED) {
+                        if(pRedClanName)
+                            str_format(aText, sizeof(aText), Localize("%s wins!"), pRedClanName);
+                        else
+                            str_copy(aText, Localize("Red team wins!"), sizeof(aText));
+                    } else if (maxI == TEAM_BLUE) {
+                        if(pBlueClanName)
+                            str_format(aText, sizeof(aText), Localize("%s wins!"), pBlueClanName);
+                        else
+                            str_copy(aText, Localize("Blue team wins!"), sizeof(aText));
+                    } else if (maxI == TEAM_YELLOW) {
+                        if(pYellowClanName)
+                            str_format(aText, sizeof(aText), Localize("%s wins!"), pYellowClanName);
+                        else
+                            str_copy(aText, Localize("Yellow team wins!"), sizeof(aText));
+                    }
+                }
+                float w = TextRender()->TextWidth(0, 86.0f, aText, -1);
+                TextRender()->Text(0, Width/2-w/2, 39, 86.0f, aText, -1);
 			}
 
             float w = fullW / TEAMS_COUNT;
