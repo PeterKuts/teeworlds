@@ -72,18 +72,23 @@ void CKillMessages::OnRender()
 
 		if(m_pClient->m_Snap.m_pGameInfoObj && m_pClient->m_Snap.m_pGameInfoObj->m_GameFlags&GAMEFLAG_FLAGS)
 		{
-			if(m_aKillmsgs[r].m_ModeSpecial&1)
+            //0-00-0-00
+            //killerHadFlag-killerFlagTeam-victimHadFlag-victimFlagTeam
+            int hadFlag = m_aKillmsgs[r].m_ModeSpecial & 0b00000100;
+            int flagTeam = m_aKillmsgs[r].m_ModeSpecial & 0b00000011;
+			if(hadFlag && flagTeam < TEAMS_COUNT)
 			{
 				Graphics()->BlendNormal();
 				Graphics()->TextureSet(g_pData->m_aImages[IMAGE_GAME].m_Id);
 				Graphics()->QuadsBegin();
 
-                RenderTools()->SelectSprite(SPRITE_FLAG_RED);
-//				if(m_aKillmsgs[r].m_VictimTeam == OLDTEAM_RED)
-//					RenderTools()->SelectSprite(SPRITE_FLAG_BLUE);
-//				else
-//					RenderTools()->SelectSprite(SPRITE_FLAG_RED);
-
+                if (flagTeam == TEAM_RED) {
+                    RenderTools()->SelectSprite(SPRITE_FLAG_RED);
+                } else if (flagTeam == TEAM_BLUE) {
+                    RenderTools()->SelectSprite(SPRITE_FLAG_BLUE);
+                } else if (flagTeam == TEAM_YELLOW) {
+                    RenderTools()->SelectSprite(SPRITE_FLAG_YELLOW);
+                }
 				float Size = 56.0f;
 				IGraphics::CQuadItem QuadItem(x, y-16, Size/2, Size);
 				Graphics()->QuadsDrawTL(&QuadItem, 1);
@@ -110,17 +115,22 @@ void CKillMessages::OnRender()
 		{
 			if(m_pClient->m_Snap.m_pGameInfoObj && m_pClient->m_Snap.m_pGameInfoObj->m_GameFlags&GAMEFLAG_FLAGS)
 			{
-				if(m_aKillmsgs[r].m_ModeSpecial&2)
-				{
+                //0-00-0-00
+                //killerHadFlag-killerFlagTeam-victimHadFlag-victimFlagTeam
+                int hadFlag = m_aKillmsgs[r].m_ModeSpecial & 0b00100000;
+                int flagTeam = (m_aKillmsgs[r].m_ModeSpecial & 0b00011000) >> 3;
+                if(hadFlag && flagTeam < TEAMS_COUNT) {
 					Graphics()->BlendNormal();
 					Graphics()->TextureSet(g_pData->m_aImages[IMAGE_GAME].m_Id);
 					Graphics()->QuadsBegin();
 
-                    RenderTools()->SelectSprite(SPRITE_FLAG_RED);
-//					if(m_aKillmsgs[r].m_KillerTeam == OLDTEAM_RED)
-//						RenderTools()->SelectSprite(SPRITE_FLAG_BLUE, SPRITE_FLAG_FLIP_X);
-//					else
-//						RenderTools()->SelectSprite(SPRITE_FLAG_RED, SPRITE_FLAG_FLIP_X);
+                    if (flagTeam == TEAM_RED) {
+                        RenderTools()->SelectSprite(SPRITE_FLAG_RED);
+                    } else if (flagTeam == TEAM_BLUE) {
+                        RenderTools()->SelectSprite(SPRITE_FLAG_BLUE);
+                    } else if (flagTeam == TEAM_YELLOW) {
+                        RenderTools()->SelectSprite(SPRITE_FLAG_YELLOW);
+                    }
 
 					float Size = 56.0f;
 					IGraphics::CQuadItem QuadItem(x-56, y-16, Size/2, Size);

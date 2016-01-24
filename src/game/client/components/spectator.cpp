@@ -245,15 +245,23 @@ void CSpectator::OnRender()
 		TextRender()->Text(0, Width/2.0f+x+50.0f, Height/2.0f+y+5.0f, FontSize, m_pClient->m_aClients[i].m_aName, 220.0f);
 
 		// flag
-		if(m_pClient->m_Snap.m_pGameInfoObj->m_GameFlags&GAMEFLAG_FLAGS &&
-			m_pClient->m_Snap.m_pGameDataObj && (m_pClient->m_Snap.m_pGameDataObj->m_FlagCarrierRed == m_pClient->m_Snap.m_paPlayerInfos[i]->m_ClientID ||
-			m_pClient->m_Snap.m_pGameDataObj->m_FlagCarrierBlue == m_pClient->m_Snap.m_paPlayerInfos[i]->m_ClientID))
+		if(m_pClient->m_Snap.m_pGameDataObj && m_pClient->m_Snap.m_pGameInfoObj->m_GameFlags&GAMEFLAG_FLAGS &&
+			 (m_pClient->m_Snap.m_pGameDataObj->m_FlagCarrierRed == m_pClient->m_Snap.m_paPlayerInfos[i]->m_ClientID ||
+              m_pClient->m_Snap.m_pGameDataObj->m_FlagCarrierBlue == m_pClient->m_Snap.m_paPlayerInfos[i]->m_ClientID ||
+              m_pClient->m_Snap.m_pGameDataObj->m_FlagCarrierYellow == m_pClient->m_Snap.m_paPlayerInfos[i]->m_ClientID))
 		{
 			Graphics()->BlendNormal();
 			Graphics()->TextureSet(g_pData->m_aImages[IMAGE_GAME].m_Id);
 			Graphics()->QuadsBegin();
 
-            RenderTools()->SelectSprite(SPRITE_FLAG_RED, SPRITE_FLAG_FLIP_X | SPRITE_FLAG_FLIP_Y);
+            int clId = m_pClient->m_Snap.m_paPlayerInfos[i]->m_ClientID;
+            if (m_pClient->m_Snap.m_pGameDataObj->m_FlagCarrierRed == clId) {
+                RenderTools()->SelectSprite(SPRITE_FLAG_RED, SPRITE_FLAG_FLIP_X);
+            } else if (m_pClient->m_Snap.m_pGameDataObj->m_FlagCarrierBlue == clId) {
+                RenderTools()->SelectSprite(SPRITE_FLAG_BLUE, SPRITE_FLAG_FLIP_X);
+            } else if (m_pClient->m_Snap.m_pGameDataObj->m_FlagCarrierYellow == clId) {
+                RenderTools()->SelectSprite(SPRITE_FLAG_YELLOW, SPRITE_FLAG_FLIP_X);
+            }
 
 			float Size = LineHeight;
 			IGraphics::CQuadItem QuadItem(Width/2.0f+x-LineHeight/5.0f, Height/2.0f+y-LineHeight/3.0f, Size/2.0f, Size);

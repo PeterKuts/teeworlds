@@ -41,14 +41,17 @@ bool CGameControllerCTF::OnEntity(int Index, vec2 Pos)
 int CGameControllerCTF::OnCharacterDeath(class CCharacter *pVictim, class CPlayer *pKiller, int WeaponID)
 {
 	IGameController::OnCharacterDeath(pVictim, pKiller, WeaponID);
-	int HadFlag = 0;
+    int HadFlag = 0;
+    //0-00-0-00
+    //killerHadFlag-killerFlagTeam-victimHadFlag-victimFlagTeam
 
 	// drop flags
 	for(int i = 0; i < TEAMS_COUNT; i++)
 	{
 		CFlag *F = m_apFlags[i];
         if(F && pKiller && pKiller->GetCharacter() && F->m_pCarryingCharacter == pKiller->GetCharacter()) {
-			HadFlag |= 2;
+			HadFlag |= (1 << 5) & 0b00100000;
+            HadFlag |= (i << 3) & 0b00011000;
         }
 		if(F && F->m_pCarryingCharacter == pVictim)
 		{
@@ -60,10 +63,11 @@ int CGameControllerCTF::OnCharacterDeath(class CCharacter *pVictim, class CPlaye
 			if(pKiller && pKiller->GetTeam() != pVictim->GetPlayer()->GetTeam())
 				pKiller->m_Score++;
 
-			HadFlag |= 1;
+            HadFlag |= (1 << 2) & 0b00000100;
+            HadFlag |= (i << 0) & 0b00000011;
 		}
 	}
-
+    
 	return HadFlag;
 }
 
