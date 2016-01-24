@@ -100,13 +100,11 @@ bool IGameController::CanSpawn(int Team, vec2 *pOutPos)
 	if(IsTeamplay()) {
 		Eval.m_FriendlyTeam = Team;
 		// first try own team spawn, then normal spawn and then enemy
-		EvaluateSpawnType(&Eval, 1+(Team%TEAMS_COUNT));
-		if(!Eval.m_Got) {
-			EvaluateSpawnType(&Eval, 0);
-            if(!Eval.m_Got) {
-				EvaluateSpawnType(&Eval, 1+((Team+1)&1));
-            }
-		}
+		EvaluateSpawnType(&Eval, 1+Team);
+        for (int i = 0; i < TEAMS_COUNT+1 && !Eval.m_Got; ++i) {
+            if (i == (1+Team)) {continue;}
+            EvaluateSpawnType(&Eval, i);
+        }
 	} else {
         for (int i = 0; i < TEAMS_COUNT+1; ++i) {
             EvaluateSpawnType(&Eval, i);
