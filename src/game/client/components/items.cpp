@@ -159,7 +159,6 @@ void CItems::RenderFlag(const CNetObj_Flag *pPrev, const CNetObj_Flag *pCurrent,
 	Graphics()->BlendNormal();
 	Graphics()->TextureSet(g_pData->m_aImages[IMAGE_GAME].m_Id);
 	Graphics()->QuadsBegin();
-
     if(pCurrent->m_Team == TEAM_RED) {
 		RenderTools()->SelectSprite(SPRITE_FLAG_RED);
     } else if (pCurrent->m_Team == TEAM_BLUE) {
@@ -188,8 +187,15 @@ void CItems::RenderFlag(const CNetObj_Flag *pPrev, const CNetObj_Flag *pCurrent,
              (pCurrent->m_Team == TEAM_YELLOW && pCurGameData->m_FlagCarrierYellow == m_pClient->m_Snap.m_LocalClientID)))
 			Pos = m_pClient->m_LocalCharacterPos;
 	}
-
-	IGraphics::CQuadItem QuadItem(Pos.x, Pos.y-Size*0.75f, Size, Size*2);
+    float dx = 0;
+    if(pCurrent && pCurGameData &&
+       ((pCurrent->m_Team == TEAM_RED && pCurGameData->m_FlagCarrierRed >=0) ||
+        (pCurrent->m_Team == TEAM_BLUE && pCurGameData->m_FlagCarrierBlue >=0) ||
+        (pCurrent->m_Team == TEAM_YELLOW && pCurGameData->m_FlagCarrierYellow >=0)))
+    {
+        dx = pCurrent->m_Team*10;
+    }
+	IGraphics::CQuadItem QuadItem(Pos.x+dx, Pos.y-Size*0.75f, Size, Size*2);
 	Graphics()->QuadsDraw(&QuadItem, 1);
 	Graphics()->QuadsEnd();
 }
